@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Pixelique</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
+            line-height: 1.6;
+            color: #5a4a42;
+            background: linear-gradient(135deg, #fffef5 0%, #f5fffb 50%, #fffef5 100%);
+            min-height: 100vh;
+        }
+        header {
+            background: linear-gradient(90deg, #c8e6c9 0%, #b8e0b9 50%, #c8e6c9 100%);
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 15px rgba(184, 224, 185, 0.3);
+            border-bottom: 3px solid #a5d6a7;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo {
+            text-align: center;
+            color: #2e7d32;
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(46, 125, 50, 0.2);
+            letter-spacing: 1px;
+        }
+        .tagline {
+            text-align: center;
+            color: #558b2f;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: #5a4a42;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+        nav a:hover {
+            background-color: #fafbf8;
+            border: 2px solid #a5d6a7;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(165, 214, 167, 0.3);
+        }
+        nav a.active {
+            background-color: #b8e0b9;
+            color: #fff;
+            border: 2px solid #a5d6a7;
+            box-shadow: 0 4px 12px rgba(165, 214, 167, 0.4);
+        }
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        h1 {
+            color: #2e7d32;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        h2 {
+            color: #2e7d32;
+            font-size: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #b8e0b9;
+            padding-bottom: 0.5rem;
+        }
+        p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #5a4a42;
+        }
+        .contact-info {
+            background: linear-gradient(135deg, rgba(255, 254, 245, 0.9), rgba(245, 255, 251, 0.9));
+            padding: 2rem;
+            border-left: 5px solid #b8e0b9;
+            border-right: 5px solid #a5d6a7;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(184, 224, 185, 0.15);
+            margin-bottom: 2rem;
+        }
+        .contact-info p {
+            margin-bottom: 1rem;
+        }
+        .info-label {
+            color: #2e7d32;
+            font-weight: bold;
+        }
+        form {
+            background: linear-gradient(135deg, rgba(255, 254, 245, 0.9), rgba(245, 255, 251, 0.9));
+            padding: 2.5rem;
+            border-left: 5px solid #b8e0b9;
+            border-right: 5px solid #a5d6a7;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(184, 224, 185, 0.15);
+            margin-bottom: 2rem;
+        }
+        label {
+            display: block;
+            margin-top: 1.5rem;
+            font-weight: bold;
+            color: #2e7d32;
+        }
+        label:first-of-type {
+            margin-top: 0;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 0.8rem;
+            margin-top: 0.5rem;
+            border: 2px solid #c8e6c9;
+            border-radius: 8px;
+            background-color: rgba(255, 250, 245, 0.8);
+            color: #5a4a42;
+            font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        input::placeholder, textarea::placeholder {
+            color: #a8c59a;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #b8e0b9;
+            background-color: rgba(255, 250, 245, 1);
+            box-shadow: 0 0 12px rgba(184, 224, 185, 0.3);
+        }
+        button {
+            margin-top: 2rem;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, #b8e0b9 0%, #a5d6a7 100%);
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(165, 214, 167, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(46, 125, 50, 0.4);
+            background: linear-gradient(135deg, #a5d6a7 0%, #92c590 100%);
+        }
+        .highlight {
+            color: #2e7d32;
+        }
+        .social-links {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(200, 230, 201, 0.15), rgba(165, 214, 167, 0.15));
+            border-radius: 15px;
+            border: 2px solid #c8e6c9;
+            text-align: center;
+        }
+        .social-links a {
+            color: #2e7d32;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        .social-links a:hover {
+            color: #558b2f;
+            transform: translateY(-3px);
+        }
+        footer {
+            background: linear-gradient(90deg, #c8e6c9 0%, #b8e0b9 50%, #c8e6c9 100%);
+            color: #5a4a42;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-top: 3px solid #a5d6a7;
+            box-shadow: 0 -4px 15px rgba(184, 224, 185, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">🌸 PIXELIQUE 🌸</div>
+        <div class="tagline">"Play, Study, Relax — All in One Cozy World."</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services & Menu</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>We'd Love to Hear From You! 💌</h1>
+        <p>Have questions about our cozy gaming zones, study spaces, or delicious cafe menu? Want to book a room or just chat? Feel free to reach out—we're always happy to help!</p>
+
+        <h2>Visit Us</h2>
+        <div class="contact-info">
+            <p><span class="info-label">📍 Location:</span><br>
+            Pixelique Café & Gaming Lounge<br>
+            567 Cozy Corner Avenue<br>
+            Comfort Town, Happy Valley 98765</p>
+            
+            <p><span class="info-label">📞 Phone:</span> <span class="highlight">(555) 123-COZY (2699)</span></p>
+            
+            <p><span class="info-label">✉️ Email:</span> <span class="highlight">hello@pixeliquecafe.com</span></p>
+            
+            <p><span class="info-label">🕐 Hours:</span><br>
+            Monday - Thursday: 10:00 AM - 11:00 PM<br>
+            Friday - Saturday: 10:00 AM - 12:00 AM<br>
+            Sunday: 12:00 PM - 10:00 PM</p>
+            
+            <p><span class="info-label">💬 Discord:</span> Join our cozy community for updates and hangouts!</p>
+        </div>
+
+        <h2>Send Us a Message</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+            
+            <label for="phone">Phone (Optional):</label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+            
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" placeholder="What's on your mind?" required>
+            
+            <label for="category">What's This About?</label>
+            <select id="category" name="category" required>
+                <option value="">-- Choose a topic --</option>
+                <option value="gaming">Gaming Zone Inquiry</option>
+                <option value="study">Study Space Info</option>
+                <option value="event">Private Event/Party</option>
+                <option value="membership">Membership Questions</option>
+                <option value="cafe">Cafe Menu & Pricing</option>
+                <option value="feedback">Feedback & Suggestions</option>
+                <option value="other">Something Else</option>
+            </select>
+            
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" placeholder="Tell us what you'd like to know..." required></textarea>
+            
+            <button type="submit">Send Love Letter ✨</button>
+        </form>
+
+        <h2>Follow Our Cozy Vibes</h2>
+        <p>Stay in the loop with new menu items, cozy events, gaming gatherings, and special surprises!</p>
+        <div class="social-links">
+            <a href="#" target="_blank">Instagram 📸</a>
+            <a href="#" target="_blank">Twitter 🐦</a>
+            <a href="#" target="_blank">Discord 💬</a>
+            <a href="#" target="_blank">TikTok 🎥</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Pixelique Café & Gaming Lounge. Play, Study, Relax — All in One Cozy World. 🌸☕✨</p>
+    </footer>
+</body>
+</html>

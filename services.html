@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services & Menu - Pixelique</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
+            line-height: 1.6;
+            color: #5a4a42;
+            background: linear-gradient(135deg, #fffbf0 0%, #f0fff5 50%, #fffbf8 100%);
+            min-height: 100vh;
+        }
+        header {
+            background: linear-gradient(90deg, #b3e5fc 0%, #a3d5ff 50%, #b3e5fc 100%);
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 15px rgba(163, 213, 255, 0.3);
+            border-bottom: 3px solid #7fd4f4;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo {
+            text-align: center;
+            color: #0084d1;
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0, 132, 209, 0.2);
+            letter-spacing: 1px;
+        }
+        .tagline {
+            text-align: center;
+            color: #4fa8c5;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: #5a4a42;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+        nav a:hover {
+            background-color: #fafbff;
+            border: 2px solid #7fd4f4;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(127, 212, 244, 0.3);
+        }
+        nav a.active {
+            background-color: #a3d5ff;
+            color: #fff;
+            border: 2px solid #7fd4f4;
+            box-shadow: 0 4px 12px rgba(127, 212, 244, 0.4);
+        }
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        h1 {
+            color: #0084d1;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        h2 {
+            color: #0084d1;
+            font-size: 2rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #a3d5ff;
+            padding-bottom: 0.5rem;
+        }
+        .service-card {
+            background: linear-gradient(135deg, rgba(255, 251, 240, 0.9), rgba(240, 255, 245, 0.9));
+            padding: 2rem;
+            margin: 1.5rem 0;
+            border-left: 5px solid #a3d5ff;
+            border-right: 5px solid #c8e6ff;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(163, 213, 255, 0.15);
+            transition: all 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 132, 209, 0.25);
+        }
+        .service-card h3 {
+            color: #0084d1;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+        .service-card p {
+            color: #5a4a42;
+        }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .menu-item {
+            background: linear-gradient(135deg, rgba(240, 250, 255, 0.9), rgba(245, 255, 250, 0.9));
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 2px solid #a3d5ff;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(163, 213, 255, 0.15);
+            transition: all 0.3s;
+        }
+        .menu-item:hover {
+            border-color: #7fd4f4;
+            box-shadow: 0 6px 18px rgba(0, 132, 209, 0.2);
+            transform: translateY(-4px);
+        }
+        .menu-item h3 {
+            color: #0084d1;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        .menu-item p {
+            color: #5a7a8b;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+        .price {
+            color: #0084d1;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        .highlight {
+            color: #0084d1;
+        }
+        h3.subsection {
+            color: #0084d1;
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        footer {
+            background: linear-gradient(90deg, #b3e5fc 0%, #a3d5ff 50%, #b3e5fc 100%);
+            color: #5a4a42;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-top: 3px solid #7fd4f4;
+            box-shadow: 0 -4px 15px rgba(163, 213, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">🌸 PIXELIQUE 🌸</div>
+        <div class="tagline">"Play, Study, Relax — All in One Cozy World."</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html" class="active">Services & Menu</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Services & Menu</h1>
+
+        <h2>🎮 Gaming Services</h2>
+
+        <div class="service-card">
+            <h3>Cozy Gaming Stations</h3>
+            <p>Experience gaming on comfortable, well-maintained PCs and consoles in our warm gaming zone. Perfect for casual gaming with friends or enjoying your favorite titles in a welcoming atmosphere.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Console Gaming Area</h3>
+            <p>Play on PlayStation 5, Xbox Series X/S, and Nintendo Switch. Enjoy multiplayer sessions with friends on our large displays in a cozy, welcoming environment.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Hourly Gaming Sessions</h3>
+            <p>Rent gaming stations by the hour or day. Perfect for casual hangouts with friends. Price: <span class="highlight">$5-12/hour</span></p>
+        </div>
+
+        <div class="service-card">
+            <h3>Gaming Events & Tournaments</h3>
+            <p>Host friendly gaming events and tournaments in our venue. We provide comfortable seating, equipment, and a welcoming atmosphere for gaming communities.</p>
+        </div>
+
+        <h2>📚 Study & Work Services</h2>
+
+        <div class="service-card">
+            <h3>Quiet Study Zone</h3>
+            <p>A peaceful, distraction-free workspace with soft lighting, comfortable seating, and high-speed WiFi. Perfect for students and remote workers.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Hourly Desk Rental</h3>
+            <p>Rent a cozy desk in our study zone with access to WiFi and outlets. Ideal for focused work sessions or studying. Price: <span class="highlight">$3-7/hour</span></p>
+        </div>
+
+        <div class="service-card">
+            <h3>Private Meeting Rooms</h3>
+            <p>Quiet rooms for group projects, client meetings, or focused work. Cozy, comfortable, and equipped with WiFi. Price: <span class="highlight">$12-20/hour</span></p>
+        </div>
+
+        <div class="service-card">
+            <h3>Study Passes</h3>
+            <p>Daily, weekly, or monthly passes for unlimited study zone access. Great for students preparing for exams or professionals needing a dedicated workspace.</p>
+        </div>
+
+        <h2>☕ Cafe Menu</h2>
+
+        <h3 class="subsection">Specialty Coffee & Warm Drinks</h3>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <h3>Espresso</h3>
+                <p>Rich & Bold</p>
+                <div class="price">$2.50</div>
+            </div>
+            <div class="menu-item">
+                <h3>Cappuccino</h3>
+                <p>Warm & Creamy</p>
+                <div class="price">$3.75</div>
+            </div>
+            <div class="menu-item">
+                <h3>Latte</h3>
+                <p>Smooth & Comforting</p>
+                <div class="price">$3.75</div>
+            </div>
+            <div class="menu-item">
+                <h3>Americano</h3>
+                <p>Classic Blend</p>
+                <div class="price">$3.00</div>
+            </div>
+            <div class="menu-item">
+                <h3>Mocha</h3>
+                <p>Coffee + Chocolate</p>
+                <div class="price">$4.25</div>
+            </div>
+            <div class="menu-item">
+                <h3>Hot Chocolate</h3>
+                <p>Cozy & Sweet</p>
+                <div class="price">$3.50</div>
+            </div>
+            <div class="menu-item">
+                <h3>Iced Latte</h3>
+                <p>Cool & Smooth</p>
+                <div class="price">$4.00</div>
+            </div>
+            <div class="menu-item">
+                <h3>Vanilla Latte</h3>
+                <p>Warm & Vanilla-y</p>
+                <div class="price">$4.00</div>
+            </div>
+            <div class="menu-item">
+                <h3>Matcha Latte</h3>
+                <p>Creamy & Soothing</p>
+                <div class="price">$4.50</div>
+            </div>
+        </div>
+
+        <h3 class="subsection">Cozy Pastries & Snacks</h3>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <h3>Croissant</h3>
+                <p>Buttery & Flaky</p>
+                <div class="price">$2.50</div>
+            </div>
+            <div class="menu-item">
+                <h3>Blueberry Muffin</h3>
+                <p>Fresh & Sweet</p>
+                <div class="price">$2.75</div>
+            </div>
+            <div class="menu-item">
+                <h3>Chocolate Chip Cookie</h3>
+                <p>Warm & Delicious</p>
+                <div class="price">$1.75</div>
+            </div>
+            <div class="menu-item">
+                <h3>Bagel + Cream Cheese</h3>
+                <p>Classic Comfort</p>
+                <div class="price">$3.50</div>
+            </div>
+            <div class="menu-item">
+                <h3>Granola Bar</h3>
+                <p>Healthy & Tasty</p>
+                <div class="price">$2.00</div>
+            </div>
+            <div class="menu-item">
+                <h3>Mixed Pastries</h3>
+                <p>Variety Pack</p>
+                <div class="price">$3.50</div>
+            </div>
+            <div class="menu-item">
+                <h3>Brownie</h3>
+                <p>Fudgy & Rich</p>
+                <div class="price">$2.00</div>
+            </div>
+            <div class="menu-item">
+                <h3>Sandwich</h3>
+                <p>Fresh & Filling</p>
+                <div class="price">$5.50</div>
+            </div>
+            <div class="menu-item">
+                <h3>Apple Pie Slice</h3>
+                <p>Homey & Warm</p>
+                <div class="price">$2.75</div>
+            </div>
+        </div>
+
+        <h2>🎁 Special Cozy Packages</h2>
+
+        <div class="service-card">
+            <h3>Gaming Hangout Package</h3>
+            <p>Gather your friends for a cozy gaming session! Includes 4 gaming stations, snacks, and warm drinks. Price: <span class="highlight">$60-100+</span></p>
+        </div>
+
+        <div class="service-card">
+            <h3>Study Marathon Package</h3>
+            <p>12-hour or 24-hour study pass with unlimited coffee, tea, and snacks to fuel your studying. Cozy seating and peaceful ambiance included. Price: <span class="highlight">$20-40</span></p>
+        </div>
+
+        <div class="service-card">
+            <h3>Cozy Membership</h3>
+            <p>Unlimited access to gaming and study zones, 15% discount on cafe menu, priority room reservations, and exclusive member perks. Price: <span class="highlight">$69-119/month</span></p>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Pixelique Café & Gaming Lounge. Play, Study, Relax — All in One Cozy World. 🌸☕✨</p>
+    </footer>
+</body>
+</html>
