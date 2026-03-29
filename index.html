@@ -57,8 +57,9 @@
         .main-logo-image {
             width: 100%;      
             max-width: none;  
-            height: 160px;     /* Shorter height as requested */
-            object-fit: fill;  /* Distorts/stretches the image to make it look 'weird' */
+            height: 160px;     /* Shorter height */
+            object-fit: cover; /* Prevents distortion by cropping instead of stretching */
+            object-position: center; /* Ensures the middle of the logo is visible */
             display: block;
             mix-blend-mode: multiply; /* Keeps your background.png visible through the logo */
         }
