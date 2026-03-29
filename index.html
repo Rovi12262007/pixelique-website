@@ -202,3 +202,135 @@
 
         .fit-box {
             border: 2px dotted #ff00ff;
+            padding: 20px;
+            background-color: #fff9fc;
+            width: 100%; 
+            box-sizing: border-box;
+            font-size: 24px; 
+        }
+
+        .highlight {
+            color: #ff0000;
+            background: yellow;
+            padding: 0 4px;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 16px;
+            border-top: 3px double #ff99d0;
+            padding: 10px;
+        }
+
+        .visitor-counter {
+            font-family: 'VT323', monospace;
+            background: #000;
+            color: #0f0;
+            padding: 2px 8px;
+            border: 1px solid #999;
+            font-size: 18px;
+        }
+
+        .blink { animation: blinker 1s linear infinite; }
+        @keyframes blinker { 50% { opacity: 0; } }
+
+        @media (max-width: 800px) {
+            .split-layout { flex-direction: column; align-items: center; }
+            .left-side { flex: none; width: auto; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="logo">
+            <!-- logo.png is now centered and smaller -->
+            <img src="logo.png" alt="Welcome to Pixelique Cafe" class="main-logo-image">
+        </div>
+
+        <div class="marquee-container">
+            <marquee scrollamount="5">🌸 Welcome to Pixelique Café & Gaming Lounge! Play, Study, Relax — All in One Cozy World! 🌸</marquee>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-home">Home</a></li>
+                <li><a href="about.html" class="nav-about">About Us</a></li>
+                <li><a href="services.html" class="nav-services">Services & Menu</a></li>
+                <li><a href="contact.html" class="nav-contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="banner">
+        <img src="https://via.placeholder.com/150/FFB3DB/FFFFFF?text=GLITTER+LOGO" alt="Logo" style="border: 2px solid #000;">
+        <p class="blink" style="margin-top: 20px;">*** ~ Your Cozy Haven for Gaming, Studying & Relaxation ~ ***</p>
+        <br>
+        <a href="services.html" class="cta-button">CLICK HERE TO EXPLORE!</a>
+    </div>
+
+    <main>
+        <section>
+            <div class="intro-box">
+                <p>Welcome to <span class="highlight">Pixelique Café & Gaming Lounge</span>, a warm and inviting space designed for both entertainment and productivity. We offer a cozy and aesthetic environment where customers can enjoy gaming, studying, and relaxing all in one place. With separate zones for focus and fun, Pixelique is the perfect destination for students, gamers, and creatives seeking comfort and connection.</p>
+            </div>
+        </section>
+
+        <div class="split-layout">
+            <!-- LEFT SIDE -->
+            <div class="left-side">
+                <h2>-- Our Cozy Zones --</h2>
+                <div class="zones-container">
+                    <div class="zone-card">
+                        <img src="https://web.archive.org/web/20090804113119im_/http://geocities.com/TimesSquare/Labyrinth/3415/controller.gif" class="zone-icon" alt="Gaming GIF">
+                        <p><b>Gaming Zone</b></p>
+                        <p><small>Experience gaming on high-performance PCs and consoles.</small></p>
+                    </div>
+                    <div class="zone-card">
+                        <img src="https://web.archive.org/web/20091027083015im_/http://www.geocities.com/the_m_and_m_page/books.gif" class="zone-icon" alt="Study GIF">
+                        <p><b>Study Zone</b></p>
+                        <p><small>A quiet, comfortable space designed for focused work.</small></p>
+                    </div>
+                    <div class="zone-card">
+                        <img src="https://web.archive.org/web/20091027011432im_/http://geocities.com/Area51/Lair/5103/coffeecup.gif" class="zone-icon" alt="Coffee GIF">
+                        <p><b>Relaxation Lounge</b></p>
+                        <p><small>Unwind with premium coffee, pastries, and snacks.</small></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE -->
+            <div class="right-side">
+                <h2>-- Why Pixelique? --</h2>
+                <div class="fit-box">
+                    <ul style="list-style-type: '✨ '; padding-left: 20px; margin: 0;">
+                        <li><b>Warm Design</b> - Soft pastels and cozy aesthetics</li>
+                        <li><b>Comfortable Equipment</b> - Quality gaming PCs</li>
+                        <li><b>Soothing Ambiance</b> - Gentle music and warm lighting</li>
+                        <li><b>Delicious Refreshments</b> - Specialty coffee and pastries</li>
+                        <li><b>Welcoming Community</b> - Connect with like-minded people</li>
+                        <li><b>Extended Hours</b> - Open day or night!</li>
+                    </ul>
+                    <div style="margin-top:20px; text-align:center;">
+                        <img src="https://web.archive.org/web/20090830035043/http://geocities.com/Athens/Acropolis/3324/netscape.gif" alt="Netscape">
+                        <img src="https://web.archive.org/web/20091024053915/http://geocities.com/the_m_and_m_page/ie_logo.gif" alt="IE">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <center style="margin-top:30px;">
+            <p>Visitor Count: <span class="visitor-counter">0001337</span></p>
+        </center>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Pixelique Café & Gaming Lounge. <br> 
+        <span style="font-size: 14px; display: block; margin-top: 10px;">Play, Study, Relax — All in One Cozy World. 🌸☕✨</span></p>
+        <p><marquee direction="right" width="50%">^_^ Thanks for visiting! ^_^</marquee></p>
+    </footer>
+</div>
+
+</body>
+</html>
