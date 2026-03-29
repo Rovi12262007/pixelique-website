@@ -158,32 +158,30 @@
             font-size: 20px;
         }
 
-        /* CHANGED: UPDATED TO BE MORE BOXY AND TIDY */
+        /* UPDATED ZONE CARD: Sharp, square, and balanced */
         .zone-card {
-            border: 3px solid #ffb3db; /* Boxier solid border */
-            padding: 15px;
+            border: 4px solid #ffb3db; /* Solid thick boxy border */
+            padding: 20px;
             background: #ffffff;
             text-align: center;
             font-size: 18px;
-            margin-bottom: 15px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            margin-bottom: 20px;
+            /* Ensures everything stays centered and fits info normally */
+            display: block; 
+            min-height: 160px;
         }
 
-        /* CHANGED: REMOVED EXTRA PADDING/MARGINS FROM TEXT TO PREVENT WONKYNESS */
         .zone-card p {
-            margin: 5px 0 0 0;
+            margin: 8px 0;
             line-height: 1.2;
         }
 
-        /* CHANGED: RESIZED GIFS TO FIT BOXY CARDS BETTER */
+        /* RESIZED GIF FOR SQUARE BOX */
         .zone-icon {
             display: block;
-            margin-bottom: 10px;
-            width: 85px; 
-            height: 85px; 
+            margin: 0 auto 10px auto;
+            width: 75px; 
+            height: 75px; 
             object-fit: contain; 
             image-rendering: pixelated; 
         }
