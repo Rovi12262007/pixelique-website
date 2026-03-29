@@ -219,14 +219,6 @@
             padding: 10px;
         }
 
-        /* Hidden Audio Helper styling */
-        #music-status {
-            font-size: 12px;
-            text-align: center;
-            color: #ff99d0;
-            margin-top: 10px;
-        }
-
         @media (max-width: 800px) {
             .split-layout { flex-direction: column; align-items: center; }
             .left-side { flex: none; width: auto; }
@@ -234,14 +226,6 @@
     </style>
 </head>
 <body>
-
-<!-- 
-   BACKGROUND MUSIC CODE 
-   'autoplay' is included, but the script at the bottom ensures it plays on first click.
--->
-<audio id="bgMusic" loop autoplay>
-    <source src="stream cafe - boba date (1 hour) cute music.mp3" type="audio/mpeg">
-</audio>
 
 <div class="container">
     <header>
@@ -327,16 +311,6 @@
         <p><marquee direction="right" width="50%">^_^ Thanks for visiting! ^_^</marquee></p>
     </footer>
 </div>
-
-<!-- SCRIPT TO BYPASS AUTOPLAY BLOCKING -->
-<script>
-    document.addEventListener('click', function() {
-        var audio = document.getElementById('bgMusic');
-        if (audio.paused) {
-            audio.play();
-        }
-    }, { once: true }); // This ensures it only triggers on the VERY first click
-</script>
 
 </body>
 </html>
