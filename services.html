@@ -171,14 +171,21 @@
             padding: 12px;
             text-align: center;
             box-shadow: 4px 4px 0px rgba(255, 153, 208, 0.4);
+            transition: all 0.3s;
         }
 
+        /* UPDATED: Increased height to show drinks better */
         .menu-item img {
             width: 100%;
-            height: 150px;
+            height: 250px; 
             object-fit: cover;
             border: 1px solid #ffb3db;
             margin-bottom: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item:hover img {
+            transform: scale(1.03);
         }
 
         .menu-item h3 {
@@ -228,6 +235,7 @@
         @media (max-width: 850px) {
             .menu-grid { grid-template-columns: repeat(2, 1fr); }
             .services-text-grid { grid-template-columns: 1fr; }
+            .menu-item img { height: 200px; }
         }
     </style>
 </head>
@@ -322,27 +330,29 @@
                 <div class="price">AED 15.75</div>
             </div>
  
-        
             <div class="menu-item">
-                <img src="hot chocolate.jpg" alt="Hot Chocolate">
+                <img src="hot_chocolate.jpg" alt="Hot Chocolate">
                 <h3>Hot Chocolate</h3>
-                <p>Cozy & Sweet</p>
+                <p>Marshmallow Bliss</p>
                 <div class="price">AED 13.50</div>
             </div>
+
             <div class="menu-item">
-                <img src="boba.jpg" alt="Boba Milk Tea">
+                <img src="latte.jpg" alt="Iced Latte">
                 <h3>Iced Latte</h3>
                 <p>Cool & Smooth</p>
                 <div class="price">AED 14.00</div>
             </div>
+
             <div class="menu-item">
-                <img src="vanilla latte.jpg" alt="Vanilla Latte">
-                <h3>Vanilla Latte</h3>
-                <p>Warm & Vanilla-y</p>
-                <div class="price">AED 14.00</div>
+                <img src="boba.jpg" alt="Boba Milk Tea">
+                <h3>Boba Milk Tea</h3>
+                <p>Sweet & Chewy</p>
+                <div class="price">AED 16.00</div>
             </div>
+
             <div class="menu-item">
-                <img src="matcha latte.jpg" alt="Matcha Latte">
+                <img src="matcha_latte.jpg" alt="Matcha Latte">
                 <h3>Matcha Latte</h3>
                 <p>Creamy & Soothing</p>
                 <div class="price">AED 14.50</div>
