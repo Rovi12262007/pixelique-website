@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>*** About Us - Pixelique Café ***</title>
+    <title>*** Services & Menu - Pixelique Café ***</title>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=VT323&display=swap" rel="stylesheet">
     <style>
         /* 2000s Scrollbar */
@@ -14,7 +14,7 @@
         }
 
         body {
-            background-image: url('background.jpg'); /* MAKE SURE THIS FILE EXISTS */
+            background-image: url('background.jpg'); 
             background-size: cover;            
             background-attachment: fixed;      
             background-repeat: no-repeat;      
@@ -46,7 +46,7 @@
             text-align: center;
             margin: -15px -15px 15px -15px; 
             border-bottom: 4px outset #ff99d0;
-            background-image: url('background-banner.jpg'); /* RENAMED TO REMOVE SPACE */
+            background-image: url('background-banner.jpg'); 
             background-size: cover;
             background-position: center;
             overflow: hidden;
@@ -69,6 +69,7 @@
             margin: 10px 0;
         }
 
+        /* NAVIGATION */
         nav {
             background: linear-gradient(to bottom, #fff6f9, #ffd9e8); 
             border: 2px solid #ffb3db;
@@ -117,55 +118,113 @@
             font-size: 20px;
         }
 
+        h1 { text-align: center; color: #ff00ff; font-size: 45px; text-shadow: 2px 2px #ffb3db; }
+
         h2 {
             background-color: #ffb3db;
             color: white;
             padding: 10px;
             font-size: 32px; 
             border-left: 10px solid #ff00ff;
-            margin-top: 15px;
-            margin-bottom: 15px;
+            margin-top: 40px;
+            margin-bottom: 20px;
             text-align: center;
         }
 
-        .value-card {
-            border: 2px dotted #ff00ff;
-            padding: 15px;
-            background-color: #fff9fc;
-            margin-bottom: 15px;
-        }
-
-        .highlight { color: #ff0000; background: yellow; padding: 0 4px; }
-        .blink { animation: blinker 1s linear infinite; }
-        @keyframes blinker { 50% { opacity: 0; } }
-
-        /* FLEXBOX SETUP */
-        .side-by-side-container {
-            display: flex;
+        /* TEXT SERVICE GRIDS (2x2) */
+        .services-text-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 20px;
             margin-bottom: 20px;
         }
 
-        .flex-box {
-            flex: 1;
-            border: 2px solid #ffb3db;
+        .service-card {
+            border: 3px outset #ff99d0;
+            background: #fff9fc;
             padding: 15px;
-            background: #fffcfd;
+            box-shadow: 3px 3px 0px #ffb3db;
+        }
+        
+        .service-card h3 {
+            margin-top: 0;
+            color: #ff00ff;
+            font-size: 24px;
+            border-bottom: 1px dashed #ff99d0;
         }
 
-        /* Responsive Fix: Stack boxes on mobile */
-        @media (max-width: 700px) {
-            .side-by-side-container {
-                flex-direction: column;
-            }
+        /* CAFE MENU GRID (3x3) */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 40px;
         }
+
+        .menu-item {
+            border: 4px outset #ffb3db;
+            background-color: #ffffff;
+            padding: 12px;
+            text-align: center;
+            box-shadow: 4px 4px 0px rgba(255, 153, 208, 0.4);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border: 1px solid #ffb3db;
+            margin-bottom: 10px;
+        }
+
+        .menu-item h3 {
+            font-size: 22px;
+            margin: 5px 0;
+            color: #ff00ff;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #000080;
+            font-size: 20px;
+            background: #ffff00;
+            display: inline-block;
+            padding: 0 5px;
+            margin-top: 5px;
+        }
+
+        .subsection {
+            text-align: center;
+            color: #ff4da6;
+            font-size: 28px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .highlight {
+            color: #ff0000;
+            background: yellow;
+            padding: 0 4px;
+            font-weight: bold;
+        }
+
+        .blink { animation: blinker 1s linear infinite; }
+        @keyframes blinker { 50% { opacity: 0; } }
 
         footer {
-            margin-top: 20px;
+            margin-top: 40px;
             text-align: center;
             font-size: 16px;
             border-top: 3px double #ff99d0;
-            padding: 10px;
+            padding: 15px;
+        }
+
+        /* Responsive */
+        @media (max-width: 850px) {
+            .menu-grid { grid-template-columns: repeat(2, 1fr); }
+            .services-text-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -195,46 +254,195 @@
         <img src="logo.png" alt="Pixelique Logo" style="max-width: 200px; height: auto; margin-bottom: 10px;">
         <p class="blink" style="margin-top: 10px; font-weight: bold;">*** ~ Your Cozy Haven ~ ***</p>
         <br>
-        <a href="services.html" class="cta-button">CLICK HERE TO EXPLORE!</a>
+        <a href="contact.html" class="cta-button">CLICK HERE TO BOOK A SPOT!</a>
     </div>
 
     <main>
-        <h1 style="text-align: center; color: #ff00ff;">About Pixelique</h1>
+        <h1>Services & Menu</h1>
 
-        <div style="border: 2px solid #ffb3db; padding: 20px; background: #fffcfd;">
-            
-            <div class="side-by-side-container">
-                <div class="flex-box">
-                    <h2 style="margin-top: 0;">Our Story</h2>
-                    <p>Pixelique is a space where you can feel comfortable being both productive and relaxed. It’s designed for those moments when you want to focus on your work, and also for when you just want to unwind and have fun. With a warm and welcoming atmosphere, it brings together students, gamers, and friends in one place.</p>
-                </div>
-
-                <div class="flex-box">
-                    <h2 style="margin-top: 0;">Our Mission</h2>
-                    <p>We believe that <span class="highlight">every person deserves a space where they can feel comfortable</span>. Whether you're unwinding with friends, preparing for exams, or seeking peace—Pixelique is your safe haven.</p>
-                </div>
+        <!-- GAMING SERVICES -->
+        <h2>🎮 Gaming Services</h2>
+        <div class="services-text-grid">
+            <div class="service-card">
+                <h3>Cozy Gaming Stations</h3>
+                <p>Experience gaming on comfortable, well-maintained PCs and consoles in our warm gaming zone. Perfect for casual gaming with friends.</p>
             </div>
-
-            <h2>Our Core Values</h2>
-            <div class="value-card">
-                <h3 style="color:#ff00ff;">🎮 Joyful Gaming</h3>
-                <p>We create a fun, inclusive gaming environment where everyone can enjoy themselves.</p>
+            <div class="service-card">
+                <h3>Console Gaming Area</h3>
+                <p>Play on PlayStation 5, Xbox Series X/S, and Nintendo Switch. Enjoy multiplayer sessions on our large displays in a cozy environment.</p>
             </div>
-            <div class="value-card">
-                <h3 style="color:#ff00ff;">📚 Supportive Learning</h3>
-                <p>We understand the pressures students face. Our study zone is a judgment-free space.</p>
+            <div class="service-card">
+                <h3>Hourly Gaming Sessions</h3>
+                <p>Rent gaming stations by the hour or day. Perfect for casual hangouts. Price: <span class="highlight">AED 20-45/hour</span></p>
             </div>
-
-            <h2>Why We're Different</h2>
-            <p>Unlike typical gaming cafés, Pixelique seamlessly blends all three experiences into one cohesive, cozy environment.</p>
+            <div class="service-card">
+                <h3>Gaming Events & Tournaments</h3>
+                <p>Host friendly tournaments in our venue. We provide comfortable seating, equipment, and a welcoming atmosphere for communities.</p>
+            </div>
         </div>
+
+        <!-- STUDY SERVICES -->
+        <h2>📚 Study & Work Services</h2>
+        <div class="services-text-grid">
+            <div class="service-card">
+                <h3>Quiet Study Zone</h3>
+                <p>A peaceful, distraction-free workspace with soft lighting, comfortable seating, and high-speed WiFi. Perfect for students and remote workers.</p>
+            </div>
+            <div class="service-card">
+                <h3>Hourly Desk Rental</h3>
+                <p>Rent a cozy desk in our study zone with access to WiFi and outlets. Ideal for focused work sessions. Price: <span class="highlight">AED 10-25/hour</span></p>
+            </div>
+            <div class="service-card">
+                <h3>Private Meeting Rooms</h3>
+                <p>Quiet rooms for group projects, client meetings, or focused work. Equipped with high-speed WiFi. Price: <span class="highlight">AED 45-75/hour</span></p>
+            </div>
+            <div class="service-card">
+                <h3>Study Passes</h3>
+                <p>Daily, weekly, or monthly passes for unlimited access. Great for students preparing for exams or professionals.</p>
+            </div>
+        </div>
+
+        <!-- CAFE MENU 3x3 -->
+        <h2>☕ Cafe Menu</h2>
+        <h3 class="subsection">Specialty Coffee & Warm Drinks</h3>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="Espresso.jpg" alt="Espresso">
+                <h3>Espresso</h3>
+                <p>Rich & Bold</p>
+                <div class="price">AED 14.50</div>
+            </div>
+            <div class="menu-item">
+                <img src="cappucino.jpg" alt="Cappuccino">
+                <h3>Cappuccino</h3>
+                <p>Warm & Creamy</p>
+                <div class="price">AED 15.75</div>
+            </div>
+            <div class="menu-item">
+                <img src="latte.jpg" alt="Latte">
+                <h3>Latte</h3>
+                <p>Smooth & Comforting</p>
+                <div class="price">AED 13.75</div>
+            </div>
+            <div class="menu-item">
+                <img src="americano.jpg" alt="Americano">
+                <h3>Americano</h3>
+                <p>Classic Blend</p>
+                <div class="price">AED 13.00</div>
+            </div>
+            <div class="menu-item">
+                <img src="mocha.jpg" alt="Mocha">
+                <h3>Mocha</h3>
+                <p>Coffee + Chocolate</p>
+                <div class="price">AED 14.25</div>
+            </div>
+            <div class="menu-item">
+                <img src="hot chocolate.jpg" alt="Hot Chocolate">
+                <h3>Hot Chocolate</h3>
+                <p>Cozy & Sweet</p>
+                <div class="price">AED 13.50</div>
+            </div>
+            <div class="menu-item">
+                <img src="ice latte.jpg" alt="Iced Latte">
+                <h3>Iced Latte</h3>
+                <p>Cool & Smooth</p>
+                <div class="price">AED 14.00</div>
+            </div>
+            <div class="menu-item">
+                <img src="vanilla latte.jpg" alt="Vanilla Latte">
+                <h3>Vanilla Latte</h3>
+                <p>Warm & Vanilla-y</p>
+                <div class="price">AED 14.00</div>
+            </div>
+            <div class="menu-item">
+                <img src="matcha latte.jpg" alt="Matcha Latte">
+                <h3>Matcha Latte</h3>
+                <p>Creamy & Soothing</p>
+                <div class="price">AED 14.50</div>
+            </div>
+        </div>
+
+        <h3 class="subsection">Cozy Pastries & Snacks</h3>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="YOUR-IMAGE.jpg" alt="Croissant">
+                <h3>Croissant</h3>
+                <p>Buttery & Flaky</p>
+                <div class="price">AED 12.50</div>
+            </div>
+            <div class="menu-item">
+                <img src="YOUR-IMAGE.jpg" alt="Muffin">
+                <h3>Blueberry Muffin</h3>
+                <p>Fresh & Sweet</p>
+                <div class="price">AED 12.75</div>
+            </div>
+            <div class="menu-item">
+                <img src="YOUR-IMAGE.jpg" alt="Cookie">
+                <h3>Choc Chip Cookie</h3>
+                <p>Warm & Delicious</p>
+                <div class="price">AED 11.75</div>
+            </div>
+            <div class="menu-item">
+                <img src="YOUR-IMAGE.jpg" alt="Bagel">
+                <h3>Bagel + Cream</h3>
+                <p>Classic Comfort</p>
+                <div class="price">AED 10.50</div>
+            </div>
+            <div class="menu-item">
+                <img src="YOUR-IMAGE.jpg" alt="Granola">
+                <h3>Granola Bar</h3>
+                <p>Healthy & Tasty</p>
+                <div class="price">AED 3.00</div>
+            </div>
+            <div class="menu-item">
+                <img src="YOUR-IMAGE.jpg" alt="Pastries">
+                <h3>Mixed Pastries</h3>
+                <p>Variety Pack</p>
+                <div class="price">AED 13.50</div>
+            </div>
+            <div class="menu-item">
+                <img src="YOUR-IMAGE.jpg" alt="Brownie">
+                <h3>Brownie</h3>
+                <p>Fudgy & Rich</p>
+                <div class="price">AED 12.00</div>
+            </div>
+            <div class="menu-item">
+                <img src="YOUR-IMAGE.jpg" alt="Sandwich">
+                <h3>Sandwich</h3>
+                <p>Fresh & Filling</p>
+                <div class="price">AED 10.50</div>
+            </div>
+            <div class="menu-item">
+                <img src="YOUR-IMAGE.jpg" alt="Apple Pie">
+                <h3>Apple Pie Slice</h3>
+                <p>Homey & Warm</p>
+                <div class="price">AED 7.75</div>
+            </div>
+        </div>
+
+        <!-- SPECIAL PACKAGES -->
+        <h2>🎁 Special Cozy Packages</h2>
+        <div class="services-text-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+            <div class="service-card">
+                <h3>Gaming Hangout Package</h3>
+                <p>Gather your friends for a cozy gaming session! Includes 4 gaming stations, snacks, and warm drinks. Price: <span class="highlight">AED 220-370+</span></p>
+            </div>
+            <div class="service-card">
+                <h3>Study Marathon Package</h3>
+                <p>12-hour or 24-hour study pass with unlimited coffee, tea, and snacks to fuel your studying. Price: <span class="highlight">AED 75-150</span></p>
+            </div>
+            <div class="service-card">
+                <h3>Cozy Membership</h3>
+                <p>Unlimited access to gaming/study zones, 15% discount on menu, and exclusive member perks. Price: <span class="highlight">AED 250-440/month</span></p>
+            </div>
+        </div>
+
     </main>
 
     <footer>
-        <p>&copy; 2026 Pixelique Café. <br> 🌸☕✨</p>
+        <p>&copy; 2026 Pixelique Café & Gaming Lounge. <br> Play, Study, Relax — All in One Cozy World. 🌸☕✨</p>
         <p><marquee direction="right" width="50%">^_^ Thanks for visiting! ^_^</marquee></p>
     </footer>
 </div>
-
 </body>
 </html>
