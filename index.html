@@ -158,20 +158,32 @@
             font-size: 20px;
         }
 
+        /* CHANGED: UPDATED TO BE MORE BOXY AND TIDY */
         .zone-card {
-            border: 2px groove #ffb3db;
-            padding: 10px;
+            border: 3px solid #ffb3db; /* Boxier solid border */
+            padding: 15px;
             background: #ffffff;
             text-align: center;
             font-size: 18px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
+        /* CHANGED: REMOVED EXTRA PADDING/MARGINS FROM TEXT TO PREVENT WONKYNESS */
+        .zone-card p {
+            margin: 5px 0 0 0;
+            line-height: 1.2;
+        }
+
+        /* CHANGED: RESIZED GIFS TO FIT BOXY CARDS BETTER */
         .zone-icon {
             display: block;
-            margin: 0 auto 10px auto;
-            width: 65px; 
-            height: 65px; 
+            margin-bottom: 10px;
+            width: 85px; 
+            height: 85px; 
             object-fit: contain; 
             image-rendering: pixelated; 
         }
