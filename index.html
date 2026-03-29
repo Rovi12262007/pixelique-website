@@ -15,10 +15,8 @@
         }
 
         body {
-            /* CHANGE BACKGROUND IMAGE/COLOR HERE */
             background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
             background-color: #ffe6f2;
-            
             font-family: 'VT323', monospace;
             font-size: 20px; 
             color: #000080; 
@@ -30,11 +28,11 @@
 
         .container {
             width: 95%;
-            max-width: 1100px; /* Slightly wider to accommodate side-by-side comfortably */
+            max-width: 900px; /* narrowed to keep it looking like one clean page */
             margin: 20px auto;
             background-color: #ffffff;
             border: 4px outset #ff99d0;
-            padding: 10px;
+            padding: 15px;
         }
 
         header {
@@ -117,27 +115,15 @@
             font-size: 20px;
         }
 
-        /* SIDE-BY-SIDE LAYOUT */
-        .flex-row {
-            display: flex;
-            gap: 30px;
-            align-items: flex-start; 
-            margin-top: 20px;
-        }
-
-        .column {
-            flex: 1;
-        }
-
-        /* BIGGER HEADERS */
         h2 {
             background-color: #ffb3db;
             color: white;
             padding: 10px;
             font-size: 32px; 
             border-left: 10px solid #ff00ff;
-            margin-top: 0;
+            margin-top: 30px;
             margin-bottom: 15px;
+            text-align: center;
         }
 
         .intro-box {
@@ -148,48 +134,58 @@
             font-size: 20px;
         }
 
-        .fit-box {
-            border: 2px dotted #ff00ff;
-            padding: 15px;
-            background-color: #fff9fc;
-            width: fit-content; 
-            margin-bottom: 20px;
-            font-size: 20px;
+        /* SQUARE ZONE CARDS CONTAINER */
+        .zones-container {
+            display: flex;
+            flex-wrap: wrap; /* Stacks them if screen is small */
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
         }
 
-        /* UPDATED: FORCED SQUARE CARDS */
+        /* PERFECTLY SQUARE BOXES */
         .zone-card {
             border: 4px solid #ffb3db;
             background: #ffffff;
             text-align: center;
-            margin: 0 auto 20px auto; 
-            /* These lines force the square shape */
-            width: 100%;
-            max-width: 300px; 
-            aspect-ratio: 1 / 1; 
-            /* Centering content inside the square */
+            width: 260px;       /* Fixed Width */
+            height: 260px;      /* Fixed Height to make it a SQUARE */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 15px;
             box-sizing: border-box;
         }
 
         .zone-card p {
             margin: 5px 0;
             line-height: 1.1;
-            font-size: 18px;
+            font-size: 19px;
         }
 
-        /* UPDATED: RESIZED GIFS TO FIT THE SQUARE BETTER */
+        .zone-card b {
+            font-size: 22px;
+            color: #ff00ff;
+        }
+
+        /* RESIZED GIFS TO LOOK GOOD INSIDE SQUARE */
         .zone-icon {
             display: block;
-            width: 80px; 
-            height: 80px; 
+            width: 70px; 
+            height: 70px; 
             margin-bottom: 10px;
             object-fit: contain; 
             image-rendering: pixelated; 
+        }
+
+        .fit-box {
+            border: 2px dotted #ff00ff;
+            padding: 15px;
+            background-color: #fff9fc;
+            width: fit-content; 
+            margin: 0 auto 20px auto;
+            font-size: 20px;
         }
 
         .highlight {
@@ -267,46 +263,36 @@
             </div>
         </section>
 
-        <!-- START SIDE-BY-SIDE SECTION -->
-        <div class="flex-row">
-            
-            <!-- COLUMN 1: OUR COZY ZONES -->
-            <div class="column">
-                <h2 style="text-align: center;">-- Our Cozy Zones --</h2>
-                <div class="zone-card">
-                    <img src="https://web.archive.org/web/20090804113119im_/http://geocities.com/TimesSquare/Labyrinth/3415/controller.gif" class="zone-icon" alt="Gaming GIF">
-                    <p><b>Gaming Zone</b></p>
-                    <p><small>Experience gaming on high-performance PCs and consoles.</small></p>
-                </div>
-                <div class="zone-card">
-                    <img src="https://web.archive.org/web/20091027083015im_/http://www.geocities.com/the_m_and_m_page/books.gif" class="zone-icon" alt="Study GIF">
-                    <p><b>Study Zone</b></p>
-                    <p><small>A quiet, comfortable space designed for focused work.</small></p>
-                </div>
-                <div class="zone-card">
-                    <img src="https://web.archive.org/web/20091027011432im_/http://geocities.com/Area51/Lair/5103/coffeecup.gif" class="zone-icon" alt="Coffee GIF">
-                    <p><b>Relaxation Lounge</b></p>
-                    <p><small>Unwind with premium coffee, pastries, and snacks.</small></p>
-                </div>
+        <h2>-- Our Cozy Zones --</h2>
+        <div class="zones-container">
+            <div class="zone-card">
+                <img src="https://web.archive.org/web/20090804113119im_/http://geocities.com/TimesSquare/Labyrinth/3415/controller.gif" class="zone-icon" alt="Gaming GIF">
+                <p><b>Gaming Zone</b></p>
+                <p><small>Experience gaming on high-performance PCs and consoles.</small></p>
             </div>
-
-            <!-- COLUMN 2: WHY CHOOSE PIXELIQUE -->
-            <div class="column">
-                <h2>-- Why Pixelique? --</h2>
-                <div class="fit-box">
-                    <ul style="list-style-type: '✨ '; padding-left: 20px; margin: 0;">
-                        <li><b>Warm Design</b> - Soft pastels and cozy aesthetics</li>
-                        <li><b>Comfortable Equipment</b> - Quality gaming PCs</li>
-                        <li><b>Soothing Ambiance</b> - Gentle music and warm lighting</li>
-                        <li><b>Delicious Refreshments</b> - Specialty coffee and pastries</li>
-                        <li><b>Welcoming Community</b> - Connect with like-minded people</li>
-                        <li><b>Extended Hours</b> - Open day or night!</li>
-                    </ul>
-                </div>
+            <div class="zone-card">
+                <img src="https://web.archive.org/web/20091027083015im_/http://www.geocities.com/the_m_and_m_page/books.gif" class="zone-icon" alt="Study GIF">
+                <p><b>Study Zone</b></p>
+                <p><small>A quiet, comfortable space designed for focused work.</small></p>
             </div>
-
+            <div class="zone-card">
+                <img src="https://web.archive.org/web/20091027011432im_/http://geocities.com/Area51/Lair/5103/coffeecup.gif" class="zone-icon" alt="Coffee GIF">
+                <p><b>Relaxation Lounge</b></p>
+                <p><small>Unwind with premium coffee, pastries, and snacks.</small></p>
+            </div>
         </div>
-        <!-- END SIDE-BY-SIDE SECTION -->
+
+        <h2>-- Why Pixelique? --</h2>
+        <div class="fit-box">
+            <ul style="list-style-type: '✨ '; padding-left: 20px; margin: 0;">
+                <li><b>Warm Design</b> - Soft pastels and cozy aesthetics</li>
+                <li><b>Comfortable Equipment</b> - Quality gaming PCs</li>
+                <li><b>Soothing Ambiance</b> - Gentle music and warm lighting</li>
+                <li><b>Delicious Refreshments</b> - Specialty coffee and pastries</li>
+                <li><b>Welcoming Community</b> - Connect with like-minded people</li>
+                <li><b>Extended Hours</b> - Open day or night!</li>
+            </ul>
+        </div>
 
         <center style="margin-top:30px;">
             <p>Visitor Count: <span class="visitor-counter">0001337</span></p>
