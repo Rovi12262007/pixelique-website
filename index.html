@@ -32,40 +32,40 @@
             margin: 20px auto;
             background-color: #ffffff;
             border: 4px outset #ff99d0;
-            padding: 15px;
+            padding: 15px; /* Internal spacing for content */
+            overflow: hidden; /* Keeps the banner inside the border radius if you add any */
         }
 
         header {
             text-align: center;
-            border-bottom: 3px dashed #ff66b2;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+            /* margin-bottom removed to keep marquee close */
         }
 
-        /* LOGO AREA WITH BACKGROUND IMAGE */
+        /* --- UPDATED LOGO AREA TO COVER FULL TOP --- */
         .logo {
             display: block; 
             text-align: center;
-            margin-bottom: 15px;
             
-            /* Background photo behind the word */
+            /* NEGATIVE MARGINS: These pull the banner over the container's padding */
+            margin: -15px -15px 15px -15px; 
+            
+            /* Ensures the banner image is the focus */
             background-image: url('background.png'); 
             background-size: cover;
             background-position: center;
             
-            padding: 40px 0; 
-            border: 2px inset #ff99d0; 
-            background-color: transparent; /* Ensures no white box from the div */
+            border-bottom: 4px outset #ff99d0; 
+            overflow: hidden;
+            line-height: 0; /* Removes tiny gap under the image */
         }
 
         .main-logo-image {
-            max-width: 500px; 
-            width: 100%;      
+            width: 100%;      /* Makes image fill the width */
+            max-width: none;  /* Allows it to grow past 500px */
             height: auto;     
             display: block;
-            margin: 0 auto;   
             
-            /* REMOVES WHITE BACKGROUND FROM IMAGE */
+            /* If your image has a white background and you want it to see the 'background.png' behind it: */
             mix-blend-mode: multiply; 
         }
 
@@ -78,13 +78,14 @@
             margin: 10px 0;
         }
 
-        /* --- NAVIGATION DESIGN (PILL BUTTONS) --- */
+        /* --- NAVIGATION --- */
         nav {
             background: linear-gradient(to bottom, #fff6f9, #ffd9e8); 
             border: 2px solid #ffb3db;
             padding: 15px 10px;
             text-align: center;
             border-radius: 10px;
+            margin-bottom: 20px;
         }
 
         nav ul { list-style: none; padding: 0; margin: 0; }
@@ -258,7 +259,7 @@
 <div class="container">
     <header>
         <div class="logo">
-            <!-- This image now has mix-blend-mode: multiply to hide its white background -->
+            <!-- Full-width banner image -->
             <img src="banner pixel.jpg" alt="Welcome to Pixelique Cafe" class="main-logo-image">
         </div>
 
@@ -285,7 +286,7 @@
     <main>
         <section>
             <div class="intro-box">
-                <p>Welcome to <span class="highlight">Pixelique Café & Gaming Lounge</span>, a warm and inviting space designed for both entertainment and productivity. We offer a cozy and aesthetic environment where customers can enjoy gaming, studying, and relaxing all in one place. With separate zones for focus and fun, Pixelique is the perfect destination for students, gamers, and creatives seeking comfort and connection.</p>
+                <p>Welcome to <span class="highlight">Pixelique Café & Gaming Lounge</span>, a warm and inviting space designed for both entertainment and productivity. We offer a cozy and aesthetic environment where customers can enjoy gaming, studying, and relaxing all in one place.</p>
             </div>
         </section>
 
@@ -304,11 +305,6 @@
                         <p><b>Study Zone</b></p>
                         <p><small>A quiet, comfortable space designed for focused work.</small></p>
                     </div>
-                    <div class="zone-card">
-                        <img src="https://web.archive.org/web/20091027011432im_/http://geocities.com/Area51/Lair/5103/coffeecup.gif" class="zone-icon" alt="Coffee GIF">
-                        <p><b>Relaxation Lounge</b></p>
-                        <p><small>Unwind with premium coffee, pastries, and snacks.</small></p>
-                    </div>
                 </div>
             </div>
 
@@ -318,16 +314,9 @@
                 <div class="fit-box">
                     <ul style="list-style-type: '✨ '; padding-left: 20px; margin: 0;">
                         <li><b>Warm Design</b> - Soft pastels and cozy aesthetics</li>
-                        <li><b>Comfortable Equipment</b> - Quality gaming PCs</li>
-                        <li><b>Soothing Ambiance</b> - Gentle music and warm lighting</li>
+                        <li><b>Quality Equipment</b> - High-end gaming PCs</li>
                         <li><b>Delicious Refreshments</b> - Specialty coffee and pastries</li>
-                        <li><b>Welcoming Community</b> - Connect with like-minded people</li>
-                        <li><b>Extended Hours</b> - Open day or night!</li>
                     </ul>
-                    <div style="margin-top:20px; text-align:center;">
-                        <img src="https://web.archive.org/web/20090830035043/http://geocities.com/Athens/Acropolis/3324/netscape.gif" alt="Netscape">
-                        <img src="https://web.archive.org/web/20091024053915/http://geocities.com/the_m_and_m_page/ie_logo.gif" alt="IE">
-                    </div>
                 </div>
             </div>
         </div>
