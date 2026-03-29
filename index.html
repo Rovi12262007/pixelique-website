@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>*** Welcome to Pixelique Café ***</title>
-    <!-- Adding Great Vibes for Header and VT323 for thinner pixel font -->
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=VT323&display=swap" rel="stylesheet">
     <style>
         /* 2000s Scrollbar */
@@ -44,7 +43,6 @@
             text-align: center;
         }
 
-        /* BANNER AREA */
         .logo {
             display: block; 
             text-align: center;
@@ -74,7 +72,6 @@
             margin: 10px 0;
         }
 
-        /* NAVIGATION */
         nav {
             background: linear-gradient(to bottom, #fff6f9, #ffd9e8); 
             border: 2px solid #ffb3db;
@@ -100,10 +97,7 @@
             transition: transform 0.2s;
         }
 
-        nav a:hover {
-            transform: scale(1.05);
-            filter: brightness(1.1);
-        }
+        nav a:hover { transform: scale(1.05); filter: brightness(1.1); }
 
         .nav-home { border: 4px solid #ff4da6; color: #ff4da6; }
         .nav-about { border: 4px solid #a64dff; color: #a64dff; }
@@ -182,18 +176,8 @@
             box-shadow: 4px 4px 0px #ff99d0;
         }
 
-        .zone-card p {
-            margin: 8px 0;
-            line-height: 1.2;
-            font-size: 24px;   
-        }
-
-        .zone-card b {
-            font-size: 30px;   
-            color: #ff00ff;
-            display: block;
-            margin-bottom: 5px;
-        }
+        .zone-card p { margin: 8px 0; line-height: 1.2; font-size: 24px; }
+        .zone-card b { font-size: 30px; color: #ff00ff; display: block; margin-bottom: 5px; }
 
         .zone-icon {
             display: block;
@@ -213,11 +197,7 @@
             font-size: 24px; 
         }
 
-        .highlight {
-            color: #ff0000;
-            background: yellow;
-            padding: 0 4px;
-        }
+        .highlight { color: #ff0000; background: yellow; padding: 0 4px; }
 
         .visitor-counter {
             font-family: 'VT323', monospace;
@@ -231,21 +211,20 @@
         .blink { animation: blinker 1s linear infinite; }
         @keyframes blinker { 50% { opacity: 0; } }
 
-        /* MUSIC PLAYER STYLING */
-        .music-player {
-            text-align: center;
-            margin: 20px 0;
-            padding: 10px;
-            border: 2px dashed #ff99d0;
-            background: #fff9fc;
-        }
-
         footer {
             margin-top: 20px;
             text-align: center;
             font-size: 16px;
             border-top: 3px double #ff99d0;
             padding: 10px;
+        }
+
+        /* Hidden Audio Helper styling */
+        #music-status {
+            font-size: 12px;
+            text-align: center;
+            color: #ff99d0;
+            margin-top: 10px;
         }
 
         @media (max-width: 800px) {
@@ -255,6 +234,14 @@
     </style>
 </head>
 <body>
+
+<!-- 
+   BACKGROUND MUSIC CODE 
+   'autoplay' is included, but the script at the bottom ensures it plays on first click.
+-->
+<audio id="bgMusic" loop autoplay>
+    <source src="stream cafe - boba date (1 hour) cute music.mp3" type="audio/mpeg">
+</audio>
 
 <div class="container">
     <header>
@@ -293,12 +280,12 @@
                 <h2>-- Our Cozy Zones --</h2>
                 <div class="zones-container">
                     <div class="zone-card">
-                        <img src="https://64.media.tumblr.com/2768e091bb543847123d009a9dd9cda4/tumblr_olxe276oAh1u1eojzo1_r1_1280.gif" class="zone-icon" alt="Gaming GIF">
+                        <img src="https://web.archive.org/web/20090804113119im_/http://geocities.com/TimesSquare/Labyrinth/3415/controller.gif" class="zone-icon" alt="Gaming GIF">
                         <p><b>Gaming Zone</b></p>
                         <p><small>Experience gaming on high-performance PCs and consoles.</small></p>
                     </div>
                     <div class="zone-card">
-                        <img src="https://www.pinterest.com/muzhibenying99/gif/" class="zone-icon" alt="Study GIF">
+                        <img src="https://web.archive.org/web/20091027083015im_/http://www.geocities.com/the_m_and_m_page/books.gif" class="zone-icon" alt="Study GIF">
                         <p><b>Study Zone</b></p>
                         <p><small>A quiet, comfortable space designed for focused work.</small></p>
                     </div>
@@ -334,21 +321,22 @@
         </center>
     </main>
 
-    <!-- MUSIC PLAYER SECTION -->
-    <div class="music-player">
-        <p>♫ Play Background Music ♫</p>
-        <audio controls loop>
-            <source src="https://youtu.be/Uj93hicGDNc?si=ex5uLJw6_cKnF0Z6" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-    </div>
-
     <footer>
         <p>&copy; 2026 Pixelique Café & Gaming Lounge. <br> 
         <span style="font-size: 14px; display: block; margin-top: 10px;">Play, Study, Relax — All in One Cozy World. 🌸☕✨</span></p>
         <p><marquee direction="right" width="50%">^_^ Thanks for visiting! ^_^</marquee></p>
     </footer>
 </div>
+
+<!-- SCRIPT TO BYPASS AUTOPLAY BLOCKING -->
+<script>
+    document.addEventListener('click', function() {
+        var audio = document.getElementById('bgMusic');
+        if (audio.paused) {
+            audio.play();
+        }
+    }, { once: true }); // This ensures it only triggers on the VERY first click
+</script>
 
 </body>
 </html>
