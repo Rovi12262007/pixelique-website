@@ -52,16 +52,15 @@
             justify-content: center;
             align-items: baseline; 
             margin-bottom: 10px;
-            gap: 20px; /* Space between words */
+            gap: 20px; 
             
-            /* Apply the pixelation filter */
             filter: url(#pixelate); 
             -webkit-filter: url(#pixelate);
             image-rendering: pixelated;
         }
         
         .logo .welcome-text {
-            font-size: 5rem; /* MATCHED TO PIXELIQUE SIZE */
+            font-size: 5rem; 
             color: #f7a9ca;
             white-space: nowrap;
         }
@@ -79,7 +78,6 @@
         .logo span.i2 { color: #ffdae9; }
         .logo span.que { color: #ffdae9; }
 
-        /* The iconic Marquee */
         .marquee-container {
             background: #ffb3db;
             color: #fff;
@@ -181,10 +179,13 @@
             font-size: 9px;
         }
 
+        /* GIF ICON STYLING */
         .zone-icon {
-            font-size: 30px;
             display: block;
-            margin-bottom: 10px;
+            margin: 0 auto 10px auto;
+            width: 50px; /* Size for the GIFs */
+            height: 50px;
+            image-rendering: pixelated;
         }
 
         .highlight {
@@ -271,17 +272,20 @@
             <table class="zones-table">
                 <tr>
                     <td class="zone-card" width="33%">
-                        <span class="zone-icon">🎮</span>
+                        <!-- GIF for Gaming -->
+                        <img src="https://web.archive.org/web/20090804113119im_/http://geocities.com/TimesSquare/Labyrinth/3415/controller.gif" class="zone-icon" alt="Gaming GIF">
                         <p><b>Gaming Zone</b></p>
                         <p>Experience gaming on high-performance PCs and consoles in a warm, welcoming atmosphere.</p>
                     </td>
                     <td class="zone-card" width="33%">
-                        <span class="zone-icon">📚</span>
+                        <!-- GIF for Study -->
+                        <img src="https://web.archive.org/web/20091027083015im_/http://www.geocities.com/the_m_and_m_page/books.gif" class="zone-icon" alt="Study GIF">
                         <p><b>Study Zone</b></p>
                         <p>A quiet, comfortable space designed for focused work. Soft lighting and ergonomic seating.</p>
                     </td>
                     <td class="zone-card" width="33%">
-                        <span class="zone-icon">☕</span>
+                        <!-- GIF for Coffee -->
+                        <img src="https://web.archive.org/web/20091027011432im_/http://geocities.com/Area51/Lair/5103/coffeecup.gif" class="zone-icon" alt="Coffee GIF">
                         <p><b>Relaxation Lounge</b></p>
                         <p>Unwind with premium coffee, pastries, and snacks. Sink into our comfy seating!</p>
                     </td>
