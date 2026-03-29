@@ -42,7 +42,7 @@
             margin-bottom: 20px;
         }
 
-        /* UPDATED: LOGO CONTAINER FOR PNG */
+        /* LOGO CONTAINER FOR YOUR IMAGE */
         .logo {
             display: flex; 
             justify-content: center;
@@ -51,9 +51,9 @@
         }
 
         .main-logo-image {
-            max-width: 800px; /* Optimal width for a header */
-            width: 100%;      /* Responsive */
-            height: auto;     /* Keeps proportions perfect */
+            max-width: 800px; /* Limits the width so it doesn't overflow */
+            width: 100%;      /* Makes it responsive */
+            height: auto;     /* Keeps the height proportional */
             display: block;
         }
 
@@ -66,7 +66,7 @@
             margin: 10px 0;
         }
 
-        /* --- NAVIGATION DESIGN --- */
+        /* --- NAVIGATION DESIGN (PILL BUTTONS) --- */
         nav {
             background: linear-gradient(to bottom, #fff6f9, #ffd9e8); 
             border: 2px solid #ffb3db;
@@ -141,6 +141,7 @@
             font-size: 20px;
         }
 
+        /* SPLIT LAYOUT FOR ZONES AND WHY PIXELIQUE */
         .split-layout {
             display: flex;
             gap: 30px;
@@ -167,8 +168,8 @@
             border: 5px solid #ffb3db;
             background: #ffffff;
             text-align: center;
-            width: 320px;       
-            height: 320px;      
+            width: 320px;       /* Perfectly Square Width */
+            height: 320px;      /* Perfectly Square Height */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -246,8 +247,8 @@
 <div class="container">
     <header>
         <div class="logo">
-            <!-- REPLACE THE SRC BELOW WITH YOUR PNG LINK -->
-            <img src="https://via.placeholder.com/800x200/FFB3DB/FFFFFF?text=WELCOME+TO+PIXELIQUE+CAFE" alt="Welcome to Pixelique Cafe Logo" class="main-logo-image">
+            <!-- CHANGE "logo.png" TO THE NAME OF YOUR ACTUAL IMAGE FILE -->
+            <img src="banner.jpg" alt="Welcome to Pixelique Cafe" class="main-logo-image">
         </div>
 
         <div class="marquee-container">
@@ -264,7 +265,7 @@
     </header>
 
     <div class="banner">
-        <img src="banner.jpg" alt="Logo" style="border: 2px solid #000;">
+        <img src="https://via.placeholder.com/150/FFB3DB/FFFFFF?text=GLITTER+LOGO" alt="Logo" style="border: 2px solid #000;">
         <p class="blink" style="margin-top: 20px;">*** ~ Your Cozy Haven for Gaming, Studying & Relaxation ~ ***</p>
         <br>
         <a href="services.html" class="cta-button">CLICK HERE TO EXPLORE!</a>
@@ -278,6 +279,7 @@
         </section>
 
         <div class="split-layout">
+            <!-- LEFT SIDE -->
             <div class="left-side">
                 <h2>-- Our Cozy Zones --</h2>
                 <div class="zones-container">
@@ -299,6 +301,7 @@
                 </div>
             </div>
 
+            <!-- RIGHT SIDE -->
             <div class="right-side">
                 <h2>-- Why Pixelique? --</h2>
                 <div class="fit-box">
