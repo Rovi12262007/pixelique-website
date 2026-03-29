@@ -3,145 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Pixelique</title>
+    <title>*** Welcome to Pixelique Café ***</title>
+    <!-- Adding Great Vibes for Header and VT323 for thinner pixel font -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=VT323&display=swap" rel="stylesheet">
     <style>
-        * {
+        /* 2000s Scrollbar */
+        html {
+            scrollbar-face-color: #ffb3db;
+            scrollbar-arrow-color: #ffffff;
+            scrollbar-track-color: #ffe6f2;
+        }
+
+        body {
+            background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+            background-color: #ffe6f2;
+            font-family: 'VT323', monospace;
+            font-size: 20px; 
+            color: #000080; 
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            cursor: url('https://cur.cursors-4u.net/symbols/sym-1/sym49.cur'), auto;
+            line-height: 1.4;
         }
-        body {
-            font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
-            line-height: 1.6;
-            color: #5a4a42;
-            background: linear-gradient(135deg, #fff8f6 0%, #ffe8e8 50%, #fff5f8 100%);
-            min-height: 100vh;
+
+        .container {
+            width: 95%;
+            max-width: 1100px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border: 4px outset #ff99d0;
+            padding: 15px;
         }
+
         header {
-            background: linear-gradient(90deg, #ffb3ba 0%, #ffa3aa 50%, #ffb3ba 100%);
-            padding: 1.5rem 0;
-            box-shadow: 0 4px 15px rgba(255, 163, 170, 0.3);
-            border-bottom: 3px solid #ff8a94;
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            text-align: center;
+            border-bottom: 3px dashed #ff66b2;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
         }
+
+        /* UPDATED: CENTERED & SMALLER LOGO */
         .logo {
+            display: block; /* Changed to block for easier margin centering */
             text-align: center;
-            color: #c41c3b;
-            font-size: 2.2rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            text-shadow: 0 2px 4px rgba(196, 28, 59, 0.2);
-            letter-spacing: 1px;
+            margin-bottom: 15px;
         }
-        .tagline {
-            text-align: center;
-            color: #d9546f;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            font-style: italic;
+
+        .main-logo-image {
+            max-width: 500px; /* Reduced from 800px to make it smaller */
+            width: 100%;      
+            height: auto;     
+            display: block;
+            margin: 0 auto;   /* Perfectly centers the image */
         }
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-        nav a {
-            color: #5a4a42;
-            text-decoration: none;
-            font-weight: 600;
-            padding: 0.7rem 1.5rem;
-            border-radius: 25px;
-            transition: all 0.3s;
-            border: 2px solid transparent;
-            background-color: rgba(255, 255, 255, 0.6);
-        }
-        nav a:hover {
-            background-color: #fff9f8;
-            border: 2px solid #ff8a94;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(255, 138, 148, 0.3);
-        }
-        nav a.active {
-            background-color: #ffa3aa;
+
+        .marquee-container {
+            background: #ffb3db;
             color: #fff;
-            border: 2px solid #ff8a94;
-            box-shadow: 0 4px 12px rgba(255, 138, 148, 0.4);
+            padding: 5px;
+            font-size: 18px;
+            border: 2px inset #ffffff;
+            margin: 10px 0;
         }
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-        }
-        h1 {
-            color: #c41c3b;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        h2 {
-            color: #c41c3b;
-            font-size: 2rem;
-            margin-top: 2rem;
-            margin-bottom: 1.5rem;
-            border-bottom: 3px solid #ffa3aa;
-            padding-bottom: 0.5rem;
-            display: inline-block;
-        }
-        p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 1rem;
-            color: #5a4a42;
-        }
-        .value-card {
-            background: linear-gradient(135deg, rgba(255, 248, 246, 0.9), rgba(255, 232, 232, 0.9));
-            padding: 2rem;
-            margin: 1.5rem 0;
-            border-left: 5px solid #ffa3aa;
-            border-right: 5px solid #ffb3ba;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(255, 163, 170, 0.15);
-            transition: all 0.3s;
-        }
-        .value-card:hover {
-            transform: translateX(10px);
-            box-shadow: 0 6px 20px rgba(196, 28, 59, 0.25);
-        }
-        .value-card h3 {
-            color: #c41c3b;
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-        .highlight {
-            color: #c41c3b;
-        }
-        footer {
-            background: linear-gradient(90deg, #ffb3ba 0%, #ffa3aa 50%, #ffb3ba 100%);
-            color: #5a4a42;
+
+        /* --- NAVIGATION DESIGN (PILL BUTTONS) --- */
+        nav {
+            background: linear-gradient(to bottom, #fff6f9, #ffd9e8); 
+            border: 2px solid #ffb3db;
+            padding: 15px 10px;
             text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-            border-top: 3px solid #ff8a94;
-            box-shadow: 0 -4px 15px rgba(255, 163, 170, 0.3);
+            border-radius: 10px;
+        }
+
+        nav ul { list-style: none; padding: 0; margin: 0; }
+        nav li { display: inline-block; margin: 5px 10px; }
+        
+        nav a {
+            text-decoration: none;
+            font-family: 'VT323', monospace;
+            font-size: 24px;
+            padding: 8px 25px;
+            border-radius: 50px; 
+            display: inline-block;
+            background: white;
+            background: linear-gradient(to bottom, #ffffff 0%, #f2f2f2 100%); 
+            box-shadow: inset 0 2px 5px rgba(255,255,255,0.8), 0 3px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        nav a:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+
+        .nav-home { border: 4px solid #ff4da6; color: #ff4da6; }
+        .nav-about { border: 4px solid #a64dff; color: #a64dff; }
+        .nav-services { border: 4px solid #7cdb4f; color: #7cdb4f; }
+        .nav-contact { border: 4px solid #ffcc00; color: #ffcc00; }
+
+        .banner {
+            border: 5px double #ff99d0;
+            margin: 20px 0;
+            padding: 20px;
+            text-align: center;
+            background: #fff0f5;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #cccccc;
+            border-top: 2px solid #ffffff;
+            border-left: 2px solid #ffffff;
+            border-right: 2px solid #666666;
+            border-bottom: 2px solid #666666;
+            padding: 10px 25px;
+            color: #000;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        h2 {
+            background-color: #ffb3db;
+            color: white;
+            padding: 10px;
+            font-size: 32px; 
+            border-left: 10px solid #ff00ff;
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .intro-box {
+            border: 2px dotted #ff00ff;
+            padding: 15px;
+            background-color: #fff9fc;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .split-layout {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            margin-top: 30px;
+        }
+
+        .left-side {
+            flex: 0 0 340px; 
+        }
+
+        .right-side {
+            flex: 1;
+        }
+
+        .zones-container {
+            display: flex;
+            flex-direction: column; 
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .zone-card {
+            border: 5px solid #ffb3db;
+            background: #ffffff;
+            text-align: center;
+            width: 320px;       
+            height: 320px;      
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            box-shadow: 4px 4px 0px #ff99d0;
+        }
+
+        .zone-card p {
+            margin: 8px 0;
+            line-height: 1.2;
+            font-size: 24px;   
+        }
+
+        .zone-card b {
+            font-size: 30px;   
+            color: #ff00ff;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .zone-icon {
+            display: block;
+            width: 100px;      
+            height: 100px; 
+            margin-bottom: 15px;
+            object-fit: contain; 
+            image-rendering: pixelated; 
+        }
+
+        .fit-box {
+            border: 2px dotted #ff00ff;
+            padding: 20px;
+            background-color: #fff9fc;
+            width: 100%; 
+            box-sizing: border-box;
+            font-size: 24px; 
+        }
+
+        .highlight {
+            color: #ff0000;
+            background: yellow;
+            padding: 0 4px;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 16px;
+            border-top: 3px double #ff99d0;
+            padding: 10px;
+        }
+
+        .visitor-counter {
+            font-family: 'VT323', monospace;
+            background: #000;
+            color: #0f0;
+            padding: 2px 8px;
+            border: 1px solid #999;
+            font-size: 18px;
+        }
+
+        .blink { animation: blinker 1s linear infinite; }
+        @keyframes blinker { 50% { opacity: 0; } }
+
+        @media (max-width: 800px) {
+            .split-layout { flex-direction: column; align-items: center; }
+            .left-side { flex: none; width: auto; }
         }
     </style>
 </head>
-<body>
-    <header>
-        <div class="logo">🌸 PIXELIQUE 🌸</div>
-        <div class="tagline">"Play, Study, Relax — All in One Cozy World."</div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" class="active">About Us</a></li>
-                <li><a href="services.html">Services & Menu</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
     <main>
         <h1>About Pixelique</h1>
