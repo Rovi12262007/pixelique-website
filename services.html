@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>*** Welcome to Pixelique Café ***</title>
-    <!-- Adding Great Vibes for Header and VT323 for thinner pixel font -->
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=VT323&display=swap" rel="stylesheet">
     <style>
         /* 2000s Scrollbar */
@@ -42,18 +41,14 @@
             margin-bottom: 20px;
         }
 
-        /* UPDATED: LOGO WITH PNG BACKGROUND */
         .logo {
             display: block; 
             text-align: center;
             margin-bottom: 15px;
-            
-            /* THIS USES YOUR PNG FILE AS A BACKGROUND */
             background-image: url('background.png'); 
             background-size: cover;
             background-position: center;
-            
-            padding: 25px 0; /* Adjust this to show more or less of the background.png */
+            padding: 25px 0;
             border: 2px inset #ff99d0; 
         }
 
@@ -74,7 +69,6 @@
             margin: 10px 0;
         }
 
-        /* --- NAVIGATION DESIGN (PILL BUTTONS) --- */
         nav {
             background: linear-gradient(to bottom, #fff6f9, #ffd9e8); 
             border: 2px solid #ffb3db;
@@ -93,15 +87,9 @@
             padding: 8px 25px;
             border-radius: 50px; 
             display: inline-block;
-            background: white;
             background: linear-gradient(to bottom, #ffffff 0%, #f2f2f2 100%); 
             box-shadow: inset 0 2px 5px rgba(255,255,255,0.8), 0 3px 6px rgba(0,0,0,0.1);
             transition: transform 0.2s;
-        }
-
-        nav a:hover {
-            transform: scale(1.05);
-            filter: brightness(1.1);
         }
 
         .nav-home { border: 4px solid #ff4da6; color: #ff4da6; }
@@ -120,7 +108,6 @@
             text-align: center;
         }
 
-        /* --- NEW STYLES FOR SERVICE BOXES --- */
         .service-card {
             border: 3px outset #ff99d0;
             background: #fff9fc;
@@ -128,37 +115,35 @@
             margin-bottom: 15px;
             box-shadow: 3px 3px 0px #ffb3db;
         }
-        
-        .service-card h3 {
-            margin-top: 0;
-            color: #ff00ff;
-            border-bottom: 1px dashed #ff99d0;
-        }
 
-        /* --- NEW STYLES FOR MENU BORDER BOXES --- */
+        /* --- UPDATED TO 3x3 GRID --- */
         .menu-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(3, 1fr); /* FORCES 3 COLUMNS */
+            gap: 15px;
             margin-bottom: 40px;
         }
 
+        /* LITTLE BORDER BOXES */
         .menu-item {
-            border: 4px outset #ffb3db;
+            border: 4px outset #ffb3db; /* Makes it look like a 3D button/box */
             background-color: #ffffff;
-            padding: 10px;
+            padding: 12px;
             text-align: center;
-            box-shadow: 4px 4px 0px rgba(255, 153, 208, 0.3);
-            transition: background 0.3s;
+            box-shadow: 4px 4px 0px rgba(255, 153, 208, 0.4);
         }
 
-        .menu-item:hover {
-            background-color: #fff0f5;
+        .menu-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border: 1px solid #ffb3db;
+            margin-bottom: 10px;
         }
 
         .menu-item h3 {
             font-size: 22px;
-            margin: 10px 0 5px 0;
+            margin: 5px 0;
             color: #ff00ff;
         }
 
@@ -171,11 +156,11 @@
         .price {
             font-weight: bold;
             color: #000080;
-            font-size: 22px;
-            margin-top: 8px;
+            font-size: 20px;
             background: #ffff00;
             display: inline-block;
             padding: 0 5px;
+            margin-top: 5px;
         }
 
         .subsection {
@@ -183,7 +168,6 @@
             color: #ff4da6;
             font-size: 28px;
             margin-top: 20px;
-            text-decoration: underline;
         }
 
         .highlight {
@@ -200,8 +184,12 @@
             padding: 10px;
         }
 
-        @media (max-width: 800px) {
-            .menu-grid { grid-template-columns: 1fr 1fr; }
+        /* Responsive: switch to 2 columns on small tablets, 1 on phones */
+        @media (max-width: 900px) {
+            .menu-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .menu-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -230,103 +218,68 @@
         <h1>Services & Menu</h1>
 
         <h2>🎮 Gaming Services</h2>
-
         <div class="service-card">
             <h3>Cozy Gaming Stations</h3>
-            <p>Experience gaming on comfortable, well-maintained PCs and consoles in our warm gaming zone. Perfect for casual gaming with friends or enjoying your favorite titles in a welcoming atmosphere.</p>
-        </div>
-
-        <div class="service-card">
-            <h3>Console Gaming Area</h3>
-            <p>Play on PlayStation 5, Xbox Series X/S, and Nintendo Switch. Enjoy multiplayer sessions with friends on our large displays in a cozy, welcoming environment.</p>
-        </div>
-
-        <div class="service-card">
-            <h3>Hourly Gaming Sessions</h3>
-            <p>Rent gaming stations by the hour or day. Perfect for casual hangouts with friends. Price: <span class="highlight">$5-12/hour</span></p>
-        </div>
-
-        <div class="service-card">
-            <h3>Gaming Events & Tournaments</h3>
-            <p>Host friendly gaming events and tournaments in our venue. We provide comfortable seating, equipment, and a welcoming atmosphere for gaming communities.</p>
-        </div>
-
-        <h2>📚 Study & Work Services</h2>
-
-        <div class="service-card">
-            <h3>Quiet Study Zone</h3>
-            <p>A peaceful, distraction-free workspace with soft lighting, comfortable seating, and high-speed WiFi. Perfect for students and remote workers.</p>
-        </div>
-
-        <div class="service-card">
-            <h3>Hourly Desk Rental</h3>
-            <p>Rent a cozy desk in our study zone with access to WiFi and outlets. Ideal for focused work sessions or studying. Price: <span class="highlight">$3-7/hour</span></p>
-        </div>
-
-        <div class="service-card">
-            <h3>Private Meeting Rooms</h3>
-            <p>Quiet rooms for group projects, client meetings, or focused work. Cozy, comfortable, and equipped with WiFi. Price: <span class="highlight">$12-20/hour</span></p>
-        </div>
-
-        <div class="service-card">
-            <h3>Study Passes</h3>
-            <p>Daily, weekly, or monthly passes for unlimited study zone access. Great for students preparing for exams or professionals needing a dedicated workspace.</p>
+            <p>Experience gaming on comfortable PCs and consoles. Price: <span class="highlight">$5-12/hour</span></p>
         </div>
 
         <h2>☕ Cafe Menu</h2>
 
         <h3 class="subsection">Specialty Coffee & Warm Drinks</h3>
         <div class="menu-grid">
+            <!-- Row 1 -->
             <div class="menu-item">
-                <img src="Espresso.jpg" alt="Espresso" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                <img src="Espresso.jpg" alt="Menu Item">
                 <h3>Espresso</h3>
                 <p>Rich & Bold</p>
                 <div class="price">AED14.50</div>
             </div>
             <div class="menu-item">
-                <img src="cappucino.jpg" alt="Cappuccino" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                <img src="cappucino.jpg" alt="Menu Item">
                 <h3>Cappuccino</h3>
                 <p>Warm & Creamy</p>
                 <div class="price">AED15.75</div>
             </div>
             <div class="menu-item">
-                <img src="latte.jpg" alt="Latte" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                <img src="latte.jpg" alt="Menu Item">
                 <h3>Latte</h3>
                 <p>Smooth & Comforting</p>
                 <div class="price">AED13.75</div>
             </div>
+            <!-- Row 2 -->
             <div class="menu-item">
-                <img src="americano.jpg" alt="Americano" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                <img src="americano.jpg" alt="Menu Item">
                 <h3>Americano</h3>
                 <p>Classic Blend</p>
                 <div class="price">AED13.00</div>
             </div>
             <div class="menu-item">
-              <img src="mocha.jpg" alt="Mocha" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                <img src="mocha.jpg" alt="Menu Item">
                 <h3>Mocha</h3>
                 <p>Coffee + Chocolate</p>
                 <div class="price">AED14.25</div>
             </div>
             <div class="menu-item">
-                <img src="hot chocolate.jpg" alt="Hot Chocolate" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                <img src="hot chocolate.jpg" alt="Menu Item">
                 <h3>Hot Chocolate</h3>
                 <p>Cozy & Sweet</p>
                 <div class="price">AED13.50</div>
             </div>
+            <!-- Row 3 -->
             <div class="menu-item">
-                <img src="ice latte.jpg" alt="Iced Latte" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                <img src="ice latte.jpg" alt="Menu Item">
                 <h3>Iced Latte</h3>
                 <p>Cool & Smooth</p>
                 <div class="price">AED14.00</div>
             </div>
             <div class="menu-item">
-                <img src="vanilla latte.jpg" alt="Vanilla Latte" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                <img src="vanilla latte.jpg" alt="Menu Item">
                 <h3>Vanilla Latte</h3>
                 <p>Warm & Vanilla-y</p>
                 <div class="price">AED14.00</div>
             </div>
             <div class="menu-item">
-                <img src="matcha latte.jpg" alt="Matcha Latte" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                <img src="matcha latte.jpg" alt="Menu Item">
                 <h3>Matcha Latte</h3>
                 <p>Creamy & Soothing</p>
                 <div class="price">AED14.50</div>
@@ -335,83 +288,70 @@
 
         <h3 class="subsection">Cozy Pastries & Snacks</h3>
         <div class="menu-grid">
+            <!-- Row 1 -->
             <div class="menu-item">
-                <img src="YOUR-IMAGE.jpg" alt="Croissant" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                <img src="YOUR-IMAGE.jpg" alt="Menu Item">
                 <h3>Croissant</h3>
                 <p>Buttery & Flaky</p>
                 <div class="price">AED12.50</div>
             </div>
             <div class="menu-item">
-                <img src="YOUR-IMAGE.jpg" alt="Blueberry Muffin" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                <img src="YOUR-IMAGE.jpg" alt="Menu Item">
                 <h3>Blueberry Muffin</h3>
                 <p>Fresh & Sweet</p>
                 <div class="price">AED12.75</div>
             </div>
             <div class="menu-item">
-                <img src="YOUR-IMAGE.jpg" alt="Cookie" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-                <h3>Chocolate Chip Cookie</h3>
+                <img src="YOUR-IMAGE.jpg" alt="Menu Item">
+                <h3>Choc Chip Cookie</h3>
                 <p>Warm & Delicious</p>
                 <div class="price">AED11.75</div>
             </div>
+            <!-- Row 2 -->
             <div class="menu-item">
-                <img src="YOUR-IMAGE.jpg" alt="Bagel" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                <img src="YOUR-IMAGE.jpg" alt="Menu Item">
                 <h3>Bagel + Cream Cheese</h3>
                 <p>Classic Comfort</p>
                 <div class="price">AED10.50</div>
             </div>
             <div class="menu-item">
-                <img src="YOUR-IMAGE.jpg" alt="Granola" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                <img src="YOUR-IMAGE.jpg" alt="Menu Item">
                 <h3>Granola Bar</h3>
                 <p>Healthy & Tasty</p>
                 <div class="price">AED3.00</div>
             </div>
             <div class="menu-item">
-                <img src="YOUR-IMAGE.jpg" alt="Mixed Pastries" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                <img src="YOUR-IMAGE.jpg" alt="Menu Item">
                 <h3>Mixed Pastries</h3>
                 <p>Variety Pack</p>
                 <div class="price">AED13.50</div>
             </div>
+            <!-- Row 3 -->
             <div class="menu-item">
-                <img src="YOUR-IMAGE.jpg" alt="Brownie" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                <img src="YOUR-IMAGE.jpg" alt="Menu Item">
                 <h3>Brownie</h3>
                 <p>Fudgy & Rich</p>
                 <div class="price">AED12.00</div>
             </div>
             <div class="menu-item">
-                <img src="YOUR-IMAGE.jpg" alt="Sandwich" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                <img src="YOUR-IMAGE.jpg" alt="Menu Item">
                 <h3>Sandwich</h3>
                 <p>Fresh & Filling</p>
                 <div class="price">AED10.50</div>
             </div>
             <div class="menu-item">
-                <img src="YOUR-IMAGE.jpg" alt="Apple Pie" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                <img src="YOUR-IMAGE.jpg" alt="Menu Item">
                 <h3>Apple Pie Slice</h3>
                 <p>Homey & Warm</p>
                 <div class="price">AED7.75</div>
             </div>
         </div>
 
-        <h2>🎁 Special Cozy Packages</h2>
-
-        <div class="service-card">
-            <h3>Gaming Hangout Package</h3>
-            <p>Gather your friends for a cozy gaming session! Includes 4 gaming stations, snacks, and warm drinks. Price: <span class="highlight">$60-100+</span></p>
-        </div>
-
-        <div class="service-card">
-            <h3>Study Marathon Package</h3>
-            <p>12-hour or 24-hour study pass with unlimited coffee, tea, and snacks to fuel your studying. Cozy seating and peaceful ambiance included. Price: <span class="highlight">$20-40</span></p>
-        </div>
-
-        <div class="service-card">
-            <h3>Cozy Membership</h3>
-            <p>Unlimited access to gaming and study zones, 15% discount on cafe menu, priority room reservations, and exclusive member perks. Price: <span class="highlight">$69-119/month</span></p>
-        </div>
-
     </main>
 
     <footer>
-        <p>&copy; 2026 Pixelique Café & Gaming Lounge. Play, Study, Relax — All in One Cozy World. 🌸☕✨</p>
+        <p>&copy; 2026 Pixelique Café & Gaming Lounge. 🌸☕✨</p>
     </footer>
+</div>
 </body>
 </html>
