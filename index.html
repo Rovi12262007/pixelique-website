@@ -179,13 +179,15 @@
             font-size: 9px;
         }
 
-        /* GIF ICON STYLING */
+        /* UPDATED GIF ICON STYLING BASED ON RECOMMENDATION */
         .zone-icon {
             display: block;
-            margin: 0 auto 10px auto;
-            width: 50px; /* Size for the GIFs */
-            height: 50px;
-            image-rendering: pixelated;
+            margin: 0 auto 15px auto;
+            width: 80px;  /* Recommended size */
+            height: 80px; /* Recommended size */
+            object-fit: contain; /* Prevents stretching */
+            image-rendering: pixelated; /* Sharp edges */
+            image-rendering: crisp-edges;
         }
 
         .highlight {
@@ -273,7 +275,7 @@
                 <tr>
                     <td class="zone-card" width="33%">
                         <!-- GIF for Gaming -->
-                        <img src="https://64.media.tumblr.com/2768e091bb543847123d009a9dd9cda4/tumblr_olxe276oAh1u1eojzo1_r1_1280.gif" class="zone-icon" alt="Gaming GIF" style="width: 50px; height: auto;>
+                        <img src="https://web.archive.org/web/20090804113119im_/http://geocities.com/TimesSquare/Labyrinth/3415/controller.gif" class="zone-icon" alt="Gaming GIF">
                         <p><b>Gaming Zone</b></p>
                         <p>Experience gaming on high-performance PCs and consoles in a warm, welcoming atmosphere.</p>
                     </td>
