@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>*** Welcome to Pixelique Café ***</title>
+    <!-- Adding the script font for the logo -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
         /* 2000s Scrollbar */
         html {
@@ -39,13 +41,26 @@
             margin-bottom: 20px;
         }
 
+        /* UPDATED LOGO STYLE TO MATCH IMAGE */
         .logo {
-            font-size: 3rem;
-            font-weight: bold;
+            font-family: 'Great Vibes', cursive;
+            font-size: 5rem;
+            font-weight: normal;
             color: #ff00ff;
-            text-shadow: 2px 2px #00ffff;
-            letter-spacing: 5px;
-            text-decoration: underline;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        .logo span.p { color: #f7a9ca; }
+        .logo span.i1 { color: #f9e38e; }
+        .logo span.x { color: #b3d683; }
+        .logo span.e1 { color: #b3d683; }
+        .logo span.l { color: #a4d7f1; }
+        .logo span.i2 { color: #d4b6f0; }
+        .logo span.que { 
+            color: #fdfdfd; 
+            -webkit-text-stroke: 1px #999;
         }
 
         /* The iconic Marquee */
@@ -194,7 +209,11 @@
 
 <div class="container">
     <header>
-        <div class="logo">PIXELIQUE</div>
+        <!-- UPDATED LOGO HTML -->
+        <div class="logo">
+            <span class="p">P</span><span class="i1">i</span><span class="x">x</span><span class="e1">e</span><span class="l">l</span><span class="i2">i</span><span class="que">que</span>
+        </div>
+
         <div class="marquee-container">
             <marquee scrollamount="5">🌸 Welcome to Pixelique Café & Gaming Lounge! Play, Study, Relax — All in One Cozy World! 🌸</marquee>
         </div>
@@ -272,6 +291,7 @@
         <span style="font-size: 10px;">Play, Study, Relax — All in One Cozy World. 🌸☕✨</span></p>
         <p><marquee direction="right" width="50%">^_^ Thanks for visiting! ^_^</marquee></p>
     </footer>
+
 </div>
 
 </body>
