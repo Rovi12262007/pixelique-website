@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>*** Welcome to Pixelique Café ***</title>
-    <!-- Adding both fonts: Great Vibes for Logo, Press Start 2P for everything else -->
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- Adding Great Vibes for Header and VT323 for a thinner pixel font everywhere else -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=VT323&display=swap" rel="stylesheet">
     <style>
         /* 2000s Scrollbar */
         html {
@@ -15,17 +15,21 @@
         }
 
         body {
-            /* Classic Tiled Background */
+            /* ************************************************************ */
+            /* CHANGE BACKGROUND IMAGE/COLOR HERE */
+            /* ************************************************************ */
             background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
             background-color: #ffe6f2;
-            /* GLOBAL PIXEL FONT */
-            font-family: 'Press Start 2P', cursive;
-            font-size: 12px;
+            /* ************************************************************ */
+            
+            /* THINNER PIXEL FONT APPLIED HERE */
+            font-family: 'VT323', monospace;
+            font-size: 20px; /* Increased slightly because VT323 is thinner/taller */
             color: #000080; 
             margin: 0;
             padding: 0;
             cursor: url('https://cur.cursors-4u.net/symbols/sym-1/sym49.cur'), auto;
-            line-height: 1.6;
+            line-height: 1.4;
         }
 
         .container {
@@ -44,7 +48,7 @@
             margin-bottom: 20px;
         }
 
-        /* HEADER LOGO - EQUAL SIZES SIDE-BY-SIDE */
+        /* HEADER LOGO - KEPT ORIGINAL FONT AND SIZE */
         .logo {
             font-family: 'Great Vibes', cursive;
             text-decoration: none;
@@ -81,8 +85,8 @@
         .marquee-container {
             background: #ffb3db;
             color: #fff;
-            padding: 8px;
-            font-size: 10px;
+            padding: 5px;
+            font-size: 18px;
             border: 2px inset #ffffff;
             margin: 10px 0;
         }
@@ -108,9 +112,9 @@
         nav a {
             text-decoration: none;
             color: #0000ff;
-            font-size: 10px;
+            font-size: 18px;
             border: 1px solid #ccc;
-            padding: 5px;
+            padding: 2px 8px;
             background: #e0e0e0;
         }
 
@@ -135,10 +139,10 @@
             border-left: 2px solid #ffffff;
             border-right: 2px solid #666666;
             border-bottom: 2px solid #666666;
-            padding: 15px 20px;
+            padding: 10px 25px;
             color: #000;
             text-decoration: none;
-            font-size: 10px;
+            font-size: 20px;
         }
 
         .cta-button:active {
@@ -151,8 +155,8 @@
         h2 {
             background-color: #ffb3db;
             color: white;
-            padding: 10px;
-            font-size: 12px;
+            padding: 8px;
+            font-size: 24px;
             border-left: 10px solid #ff00ff;
         }
 
@@ -161,7 +165,7 @@
             padding: 15px;
             background-color: #fff9fc;
             margin-bottom: 20px;
-            font-size: 11px;
+            font-size: 20px;
         }
 
         .zones-table {
@@ -176,40 +180,40 @@
             vertical-align: top;
             background: #ffffff;
             text-align: center;
-            font-size: 9px;
+            font-size: 18px;
         }
 
-        /* UPDATED GIF ICON STYLING BASED ON RECOMMENDATION */
         .zone-icon {
             display: block;
             margin: 0 auto 15px auto;
-            width: 80px;  /* Recommended size */
-            height: 80px; /* Recommended size */
-            object-fit: contain; /* Prevents stretching */
-            image-rendering: pixelated; /* Sharp edges */
+            width: 80px; 
+            height: 80px; 
+            object-fit: contain; 
+            image-rendering: pixelated; 
             image-rendering: crisp-edges;
         }
 
         .highlight {
             color: #ff0000;
             background: yellow;
+            padding: 0 4px;
         }
 
         footer {
             margin-top: 20px;
             text-align: center;
-            font-size: 8px;
+            font-size: 16px;
             border-top: 3px double #ff99d0;
             padding: 10px;
         }
 
         .visitor-counter {
-            font-family: 'Press Start 2P', monospace;
+            font-family: 'VT323', monospace;
             background: #000;
             color: #0f0;
-            padding: 5px;
+            padding: 2px 8px;
             border: 1px solid #999;
-            font-size: 10px;
+            font-size: 18px;
         }
 
         .blink {
@@ -274,19 +278,16 @@
             <table class="zones-table">
                 <tr>
                     <td class="zone-card" width="33%">
-                        <!-- GIF for Gaming -->
-                        <img src="https://64.media.tumblr.com/2768e091bb543847123d009a9dd9cda4/tumblr_olxe276oAh1u1eojzo1_r1_1280.gif" class="zone-icon" alt="Gaming GIF">
+                        <img src="https://web.archive.org/web/20090804113119im_/http://geocities.com/TimesSquare/Labyrinth/3415/controller.gif" class="zone-icon" alt="Gaming GIF">
                         <p><b>Gaming Zone</b></p>
                         <p>Experience gaming on high-performance PCs and consoles in a warm, welcoming atmosphere.</p>
                     </td>
                     <td class="zone-card" width="33%">
-                        <!-- GIF for Study -->
-                        <img src="https://i.pinimg.com/originals/fe/f8/65/fef865f1df5fa7bfefafaa56f4d7aaec.gif" class="zone-icon" alt="Study GIF">
+                        <img src="https://web.archive.org/web/20091027083015im_/http://www.geocities.com/the_m_and_m_page/books.gif" class="zone-icon" alt="Study GIF">
                         <p><b>Study Zone</b></p>
                         <p>A quiet, comfortable space designed for focused work. Soft lighting and ergonomic seating.</p>
                     </td>
                     <td class="zone-card" width="33%">
-                        <!-- GIF for Coffee -->
                         <img src="https://web.archive.org/web/20091027011432im_/http://geocities.com/Area51/Lair/5103/coffeecup.gif" class="zone-icon" alt="Coffee GIF">
                         <p><b>Relaxation Lounge</b></p>
                         <p>Unwind with premium coffee, pastries, and snacks. Sink into our comfy seating!</p>
@@ -318,7 +319,7 @@
 
     <footer>
         <p>&copy; 2026 Pixelique Café & Gaming Lounge. <br> 
-        <span style="font-size: 8px; display: block; margin-top: 10px;">Play, Study, Relax — All in One Cozy World. 🌸☕✨</span></p>
+        <span style="font-size: 14px; display: block; margin-top: 10px;">Play, Study, Relax — All in One Cozy World. 🌸☕✨</span></p>
         <p><marquee direction="right" width="50%">^_^ Thanks for visiting! ^_^</marquee></p>
     </footer>
 
