@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>*** Services & Menu - Pixelique Café ***</title>
-    <!-- Adding Great Vibes for Header and VT323 for thinner pixel font -->
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=VT323&display=swap" rel="stylesheet">
     <style>
         /* 2000s Scrollbar */
@@ -44,7 +43,6 @@
             text-align: center;
         }
 
-        /* LOGO WITH PNG BACKGROUND */
         .logo {
             display: block; 
             text-align: center;
@@ -74,7 +72,6 @@
             margin: 10px 0;
         }
 
-        /* NAVIGATION DESIGN (PILL BUTTONS) */
         nav {
             background: linear-gradient(to bottom, #fff6f9, #ffd9e8); 
             border: 2px solid #ffb3db;
@@ -107,7 +104,6 @@
         .nav-services { border: 4px solid #7cdb4f; color: #7cdb4f; }
         .nav-contact { border: 4px solid #ffcc00; color: #ffcc00; }
 
-        /* BANNER SECTION */
         .banner {
             border: 5px double #ff99d0;
             margin: 20px 0;
@@ -142,7 +138,6 @@
             text-align: center;
         }
 
-        /* TEXT SERVICE GRIDS (2x2) */
         .services-text-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -164,7 +159,6 @@
             border-bottom: 1px dashed #ff99d0;
         }
 
-        /* CAFE MENU GRID (3x3) */
         .menu-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -232,7 +226,6 @@
             padding: 15px;
         }
 
-        /* Responsive */
         @media (max-width: 850px) {
             .menu-grid { grid-template-columns: repeat(2, 1fr); }
             .services-text-grid { grid-template-columns: 1fr; }
@@ -263,4 +256,78 @@
 
     <div class="banner">
         <img src="logo.png" alt="Pixelique Logo" style="max-width: 200px; height: auto; margin-bottom: 10px;">
-        <p class="blink" style="margin-top: 10px; font-weight: bold;">*** ~
+        <p class="blink" style="margin-top: 10px; font-weight: bold;">*** ~ Your Cozy Haven for Gaming, Studying & Relaxation ~ ***</p>
+        <br>
+        <a href="services.html" class="cta-button">CLICK HERE TO EXPLORE!</a>
+    </div>
+
+    <main>
+        <h1>Services & Menu</h1>
+
+        <h2>🎮 Gaming Services</h2>
+        <div class="services-text-grid">
+            <div class="service-card">
+                <h3>Cozy Gaming Stations</h3>
+                <p>Experience gaming on comfortable, well-maintained PCs and consoles. Price: <span class="highlight">AED 18-45/hour</span></p>
+            </div>
+            <div class="service-card">
+                <h3>Console Gaming Area</h3>
+                <p>Play on PS5, Xbox, and Switch in a cozy environment. Price: <span class="highlight">AED 15-30/hour</span></p>
+            </div>
+        </div>
+
+        <h2>📚 Study & Work Services</h2>
+        <div class="services-text-grid">
+            <div class="service-card">
+                <h3>Quiet Study Zone</h3>
+                <p>A peaceful workspace with high-speed WiFi. Price: <span class="highlight">AED 10-25/hour</span></p>
+            </div>
+            <div class="service-card">
+                <h3>Private Meeting Rooms</h3>
+                <p>Quiet rooms for group projects or focused work. Price: <span class="highlight">AED 45-75/hour</span></p>
+            </div>
+        </div>
+
+        <h2>☕ Cafe Menu</h2>
+        <h3 class="subsection">Specialty Coffee & Warm Drinks</h3>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="Espresso.jpg" alt="Espresso">
+                <h3>Espresso</h3>
+                <p>Rich & Bold</p>
+                <div class="price">AED 14.50</div>
+            </div>
+            <div class="menu-item">
+                <img src="cappucino.jpg" alt="Cappuccino">
+                <h3>Cappuccino</h3>
+                <p>Warm & Creamy</p>
+                <div class="price">AED 15.75</div>
+            </div>
+            <div class="menu-item">
+                <img src="latte.jpg" alt="Latte">
+                <h3>Latte</h3>
+                <p>Smooth & Comforting</p>
+                <div class="price">AED 13.75</div>
+            </div>
+        </div>
+
+        <h2>🎁 Special Cozy Packages</h2>
+        <div class="services-text-grid">
+            <div class="service-card">
+                <h3>Gaming Hangout</h3>
+                <p>Includes 4 stations, snacks, and warm drinks. Price: <span class="highlight">AED 220-360+</span></p>
+            </div>
+            <div class="service-card">
+                <h3>Study Marathon</h3>
+                <p>12-hour study pass with unlimited coffee and tea. Price: <span class="highlight">AED 75-145</span></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Pixelique Café & Gaming Lounge. <br> 🌸☕✨</p>
+    </footer>
+</div>
+
+</body>
+</html>
