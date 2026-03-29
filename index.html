@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>*** Welcome to Pixelique Café ***</title>
-    <!-- Adding Great Vibes for Header and VT323 for thinner pixel font -->
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=VT323&display=swap" rel="stylesheet">
     <style>
         /* 2000s Scrollbar */
@@ -33,22 +32,24 @@
             background-color: #ffffff;
             border: 4px outset #ff99d0;
             padding: 15px;
-            overflow: hidden; /* Ensures the top banner doesn't spill over the border */
+            overflow: hidden; 
         }
 
         header {
             text-align: center;
         }
 
-        /* BANNER FULL COVERAGE FIX */
+        /* --- BANNER AREA --- */
         .logo {
             display: block; 
             text-align: center;
-            /* Negative margins pull the banner over the container's padding to touch edges */
             margin: -15px -15px 15px -15px; 
             border-bottom: 4px outset #ff99d0;
-            background-image: url('background.png'); 
-            background-size: cover;
+            
+            /* PLACE YOUR BACKGROUND IMAGE LINK HERE */
+            background-image: url('https://www.transparenttextures.com/patterns/pinstriped-suit.png'), linear-gradient(to right, #ff99d0, #ffccff); 
+            
+            background-size: auto; /* Use 'cover' for a full photo or 'auto' for repeating patterns */
             background-position: center;
             overflow: hidden;
             line-height: 0; 
@@ -57,11 +58,13 @@
         .main-logo-image {
             width: 100%;      
             max-width: none;  
-            height: 160px;     /* Shorter height */
-            object-fit: cover; /* Prevents distortion by cropping instead of stretching */
-            object-position: center; /* Ensures the middle of the logo is visible */
+            height: 160px;     
+            object-fit: cover; 
+            object-position: center; 
             display: block;
-            mix-blend-mode: multiply; /* Keeps your background.png visible through the logo */
+            
+            /* This allows the background-image of '.logo' to show through the white parts of your banner */
+            mix-blend-mode: multiply; 
         }
 
         .marquee-container {
@@ -249,7 +252,8 @@
 <div class="container">
     <header>
         <div class="logo">
-            <img src="banner pixel.jpg" alt="Welcome to Pixelique Cafe" class="main-logo-image">
+            <!-- Your banner image sits on top of the background image -->
+            <img src="banner.png" alt="Welcome to Pixelique Cafe" class="main-logo-image">
         </div>
 
         <div class="marquee-container">
@@ -279,7 +283,6 @@
         </section>
 
         <div class="split-layout">
-            <!-- LEFT SIDE -->
             <div class="left-side">
                 <h2>-- Our Cozy Zones --</h2>
                 <div class="zones-container">
@@ -301,7 +304,6 @@
                 </div>
             </div>
 
-            <!-- RIGHT SIDE -->
             <div class="right-side">
                 <h2>-- Why Pixelique? --</h2>
                 <div class="fit-box">
