@@ -4,254 +4,310 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>*** Welcome to Pixelique Café ***</title>
-    <!-- Aesthetic Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=VT323&display=swap" rel="stylesheet">
+    <!-- Adding the script font for the logo -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
-        /* --- DUMBY-INSPIRED CORE STYLES --- */
-        :root {
-            --purple: #d1b3ff;
-            --blue: #a4d7f1;
-            --yellow: #f9e38e;
-            --green: #b3d683;
-            --bg-color: #f3e5f5;
+        /* 2000s Scrollbar */
+        html {
+            scrollbar-face-color: #ffb3db;
+            scrollbar-arrow-color: #ffffff;
+            scrollbar-track-color: #ffe6f2;
         }
 
         body {
-            background-color: var(--bg-color);
-            /* Retro tiling background pattern */
-            background-image: url('https://www.transparenttextures.com/patterns/60-lines.png');
-            font-family: "Comic Sans MS", cursive, sans-serif;
-            color: #4b0082;
+            /* Classic Tiled Background */
+            background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+            background-color: #ffe6f2;
+            font-family: "Comic Sans MS", "Chalkboard SE", cursive;
+            color: #000080; /* Classic Navy Blue text */
             margin: 0;
-            padding: 20px;
+            padding: 0;
             cursor: url('https://cur.cursors-4u.net/symbols/sym-1/sym49.cur'), auto;
         }
 
-        /* Centered "Window" Container */
-        .main-window {
-            max-width: 850px;
-            margin: 0 auto;
-            background: white;
-            border: 4px solid var(--purple);
-            box-shadow: 10px 10px 0px var(--blue);
-            border-radius: 15px;
-            overflow: hidden;
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border: 4px outset #ff99d0;
+            padding: 10px;
         }
 
-        /* Top Header Area */
         header {
-            background: var(--purple);
-            padding: 20px;
             text-align: center;
-            border-bottom: 3px dashed white;
+            border-bottom: 3px dashed #ff66b2;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
         }
 
+        /* UPDATED LOGO STYLE - PIXELATED EFFECT */
         .logo {
             font-family: 'Great Vibes', cursive;
-            font-size: 5rem;
-            filter: drop-shadow(3px 3px 0px var(--yellow));
-            margin: 0;
+            font-size: 5.5rem; /* Slightly larger to help the pixel effect */
+            font-weight: normal;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 10px;
+            
+            /* Apply the pixelation filter defined in the SVG below */
+            filter: url(#pixelate); 
+            -webkit-filter: url(#pixelate);
+            
+            /* Vintage aliasing look */
+            image-rendering: pixelated;
+            text-rendering: optimizeSpeed;
         }
         
-        /* Pixelated span colors for logo */
-        .logo .p { color: white; }
-        .logo .i1 { color: var(--yellow); }
-        .logo .x { color: var(--green); }
-        .logo .e { color: var(--blue); }
-        .logo .l { color: var(--yellow); }
-        .logo .ique { color: #ffdae9; } /* Kept the faint pink you liked */
+        .logo span.p { color: #f7a9ca; }
+        .logo span.i1 { color: #f9e38e; }
+        .logo span.x { color: #b3d683; }
+        .logo span.e1 { color: #b3d683; }
+        .logo span.l { color: #a4d7f1; }
+        /* "ique" section - faint pastel pink */
+        .logo span.i2 { color: #ffdae9; }
+        .logo span.que { color: #ffdae9; }
 
-        /* Navigation Bar */
+        /* The iconic Marquee */
+        .marquee-container {
+            background: #ffb3db;
+            color: #fff;
+            padding: 5px;
+            font-weight: bold;
+            border: 2px inset #ffffff;
+            margin: 10px 0;
+        }
+
         nav {
-            background: var(--blue);
-            padding: 10px;
+            background: #eeeeee;
+            border: 2px solid #999;
+            padding: 5px;
             text-align: center;
-            border-bottom: 2px solid var(--purple);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline;
+            margin: 0 10px;
         }
 
         nav a {
             text-decoration: none;
-            color: white;
+            color: #0000ff;
             font-weight: bold;
-            padding: 5px 15px;
-            margin: 0 5px;
-            background: var(--purple);
-            border: 2px outset white;
-            font-family: 'VT323', monospace;
-            font-size: 1.5rem;
+            border: 1px solid #ccc;
+            padding: 2px 5px;
+            background: #e0e0e0;
         }
 
         nav a:hover {
-            background: var(--yellow);
-            color: #333;
-            border: 2px inset white;
+            background: #ffccff;
+            color: #ff0000;
+            border: 1px solid #000;
         }
 
-        /* Marquee Section */
-        .marquee-box {
-            background: var(--yellow);
-            color: #555;
-            padding: 5px;
-            font-size: 0.9rem;
-            border-bottom: 2px solid var(--green);
+        .banner {
+            border: 5px double #ff99d0;
+            margin: 20px 0;
+            padding: 20px;
+            text-align: center;
+            background: #fff0f5;
         }
 
-        /* Content Sections */
-        .content-area {
-            padding: 30px;
-            line-height: 1.6;
+        .banner h1 {
+            color: #ff1493;
+            filter: drop-shadow(2px 2px 0px #000);
+        }
+
+        /* Retro Button Style */
+        .cta-button {
+            display: inline-block;
+            background: #cccccc;
+            border-top: 2px solid #ffffff;
+            border-left: 2px solid #ffffff;
+            border-right: 2px solid #666666;
+            border-bottom: 2px solid #666666;
+            padding: 10px 20px;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .cta-button:active {
+            border-top: 2px solid #666666;
+            border-left: 2px solid #666666;
+            border-right: 2px solid #ffffff;
+            border-bottom: 2px solid #ffffff;
         }
 
         h2 {
-            font-family: 'VT323', monospace;
-            background: var(--green);
+            background-color: #ffb3db;
             color: white;
-            display: inline-block;
-            padding: 5px 20px;
-            border-radius: 0 20px 20px 0;
-            margin-left: -30px;
-            font-size: 2rem;
-            box-shadow: 3px 3px 0px var(--yellow);
+            padding: 5px;
+            font-size: 1.5rem;
+            border-left: 10px solid #ff00ff;
         }
 
-        .section-box {
-            border: 2px dotted var(--purple);
-            padding: 20px;
-            margin-bottom: 30px;
-            background: #fffdf9;
-            border-radius: 10px;
+        .intro-box {
+            border: 2px dotted #ff00ff;
+            padding: 15px;
+            background-color: #fff9fc;
+            margin-bottom: 20px;
         }
 
-        /* Grid for Zones */
-        .zones-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
+        /* Tables were used for grids back then! */
+        .zones-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 10px;
         }
 
         .zone-card {
-            background: white;
-            border: 3px double var(--blue);
-            padding: 15px;
+            border: 2px groove #ffb3db;
+            padding: 10px;
+            vertical-align: top;
+            background: #ffffff;
             text-align: center;
-            transition: transform 0.2s;
         }
 
-        .zone-card:hover {
-            transform: scale(1.05);
-            background: var(--yellow);
-        }
-
-        .zone-icon { font-size: 2.5rem; }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            background: var(--green);
-            color: white;
-            padding: 20px;
-            font-size: 0.8rem;
-        }
-
-        /* Decorative Sparkles/Blinkies */
-        .blink { animation: blinker 1s linear infinite; }
-        @keyframes blinker { 50% { opacity: 0; } }
-
-        .sparkle-img {
-            max-width: 100px;
+        .zone-icon {
+            font-size: 40px;
             display: block;
-            margin: 10px auto;
         }
 
+        .highlight {
+            color: #ff0000;
+            background: yellow;
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0.8rem;
+            border-top: 3px double #ff99d0;
+            padding: 10px;
+        }
+
+        .visitor-counter {
+            font-family: "Courier New", monospace;
+            background: #000;
+            color: #0f0;
+            padding: 2px 5px;
+            border: 1px solid #999;
+        }
+
+        .blink {
+            animation: blinker 1s linear infinite;
+        }
+
+        @keyframes blinker {
+            50% { opacity: 0; }
+        }
     </style>
 </head>
 <body>
 
-<div class="main-window">
+<!-- Hidden SVG Filter to create the pixelated effect -->
+<svg width="0" height="0" style="position:absolute;">
+  <filter id="pixelate" x="0" y="0">
+    <!-- This creates a grid of "pixels" -->
+    <feFlood x="2" y="2" height="1" width="1" />
+    <feComposite width="3" height="3" />
+    <feTile result="a" />
+    <feComposite in="SourceGraphic" in2="a" operator="in" />
+    <feMorphology operator="dilate" radius="1" />
+  </filter>
+</svg>
+
+<div class="container">
     <header>
         <div class="logo">
-            <span class="p">P</span><span class="i1">i</span><span class="x">x</span><span class="e">e</span><span class="l">l</span><span class="ique">ique</span>
+            <span class="p">P</span><span class="i1">i</span><span class="x">x</span><span class="e1">e</span><span class="l">l</span><span class="i2">i</span><span class="que">que</span>
         </div>
-        <p class="blink" style="color: white; font-weight: bold;">✨ ~ Play, Study, Relax — All in One Cozy World! ~ ✨</p>
+
+        <div class="marquee-container">
+            <marquee scrollamount="5">🌸 Welcome to Pixelique Café & Gaming Lounge! Play, Study, Relax — All in One Cozy World! 🌸</marquee>
+        </div>
+        <nav>
+            <ul>
+                <li>[ <a href="index.html">Home</a> ]</li>
+                <li>[ <a href="about.html">About Us</a> ]</li>
+                <li>[ <a href="services.html">Services & Menu</a> ]</li>
+                <li>[ <a href="contact.html">Contact</a> ]</li>
+            </ul>
+        </nav>
     </header>
 
-    <nav>
-        <a href="#home">HOME</a>
-        <a href="#about">ABOUT US</a>
-        <a href="#services">SERVICES & MENU</a>
-        <a href="#contact">CONTACT</a>
-    </nav>
-
-    <div class="marquee-box">
-        <marquee scrollamount="4">🌸 Welcome to Pixelique Café & Gaming Lounge! 🌸 High-speed PCs 🎮 Quiet Study Nooks 📚 Fresh Coffee ☕ Open Day & Night! 🌸</marquee>
+    <div class="banner">
+        <img src="https://via.placeholder.com/150/FFB3DB/FFFFFF?text=GLITTER+LOGO" alt="Logo" style="border: 2px solid #000;">
+        <h1>Welcome to Pixelique</h1>
+        <p class="blink">*** ~ Your Cozy Haven for Gaming, Studying & Relaxation ~ ***</p>
+        <br>
+        <a href="services.html" class="cta-button">CLICK HERE TO EXPLORE!</a>
     </div>
 
-    <div class="content-area">
-        
-        <!-- HOME SECTION -->
-        <section id="home">
-            <div class="section-box" style="text-align: center;">
-                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJndnBqMjdqcndvNndvNndvNndvNndvNndvNndvNndvNndvNndvJmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/3o7TKVUn7iM8FMEU24/giphy.gif" class="sparkle-img" alt="stars">
-                <p>Welcome to <b>Pixelique Café & Gaming Lounge</b>, a warm and inviting space designed for both entertainment and productivity. We offer a cozy and aesthetic environment where customers can enjoy gaming, studying, and relaxing all in one place.</p>
-                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJndnBqMjdqcndvNndvNndvNndvNndvNndvNndvNndvNndvNndvJmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/3o7TKVUn7iM8FMEU24/giphy.gif" class="sparkle-img" alt="stars">
+    <main>
+        <section>
+            <div class="intro-box">
+                <p>Welcome to <span class="highlight">Pixelique Café & Gaming Lounge</span>, a warm and inviting space designed for both entertainment and productivity. We offer a cozy and aesthetic environment where customers can enjoy gaming, studying, and relaxing all in one place. With separate zones for focus and fun, Pixelique is the perfect destination for students, gamers, and creatives seeking comfort and connection.</p>
             </div>
         </section>
 
-        <!-- ABOUT US SECTION -->
-        <section id="about">
-            <h2>-- About Us --</h2>
-            <div class="section-box">
-                <p>Founded with a passion for community, Pixelique is more than just a café. It’s a haven for students, gamers, and creatives seeking comfort and connection. With separate zones for focus and fun, we strive to provide the perfect destination for everyone in our cozy digital world.</p>
+        <section>
+            <h2>-- Our Cozy Zones --</h2>
+            <table class="zones-table">
+                <tr>
+                    <td class="zone-card" width="33%">
+                        <span class="zone-icon">🎮</span>
+                        <p><b>Gaming Zone</b></p>
+                        <p><small>Experience gaming on high-performance PCs and consoles in a warm, welcoming atmosphere.</small></p>
+                    </td>
+                    <td class="zone-card" width="33%">
+                        <span class="zone-icon">📚</span>
+                        <p><b>Study Zone</b></p>
+                        <p><small>A quiet, comfortable space designed for focused work. Soft lighting and ergonomic seating.</small></p>
+                    </td>
+                    <td class="zone-card" width="33%">
+                        <span class="zone-icon">☕</span>
+                        <p><b>Relaxation Lounge</b></p>
+                        <p><small>Unwind with premium coffee, pastries, and snacks. Sink into our comfy seating!</small></p>
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>-- Why Choose Pixelique? --</h2>
+            <div class="intro-box">
                 <ul style="list-style-type: '✨ ';">
                     <li><b>Warm Design</b> - Soft pastels and cozy aesthetics</li>
                     <li><b>Comfortable Equipment</b> - Quality gaming PCs</li>
                     <li><b>Soothing Ambiance</b> - Gentle music and warm lighting</li>
+                    <li><b>Delicious Refreshments</b> - Specialty coffee and pastries</li>
+                    <li><b>Welcoming Community</b> - Connect with like-minded people</li>
+                    <li><b>Extended Hours</b> - Open day or night!</li>
                 </ul>
             </div>
         </section>
 
-        <!-- SERVICES & MENU SECTION -->
-        <section id="services">
-            <h2>-- Services & Menu --</h2>
-            <div class="zones-grid">
-                <div class="zone-card">
-                    <span class="zone-icon">🎮</span>
-                    <p><b>Gaming Zone</b></p>
-                    <p><small>High-performance PCs & Consoles.</small></p>
-                </div>
-                <div class="zone-card">
-                    <span class="zone-icon">📚</span>
-                    <p><b>Study Zone</b></p>
-                    <p><small>Quiet space with ergonomic seating.</small></p>
-                </div>
-                <div class="zone-card">
-                    <span class="zone-icon">☕</span>
-                    <p><b>Relaxation Lounge</b></p>
-                    <p><small>Specialty coffee, pastries, & snacks.</small></p>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT SECTION -->
-        <section id="contact">
-            <h2>-- Contact Us --</h2>
-            <div class="section-box" style="border-color: var(--blue);">
-                <p>📍 <b>Location:</b> Visit us in the Heart of the City!</p>
-                <p>📧 <b>Email:</b> hello@pixelique.cafe</p>
-                <p>🕒 <b>Hours:</b> Open 24/7 for your gaming & study needs!</p>
-                <center>
-                    <p>Visitor Count: <span style="background: black; color: #0f0; padding: 2px 5px; font-family: monospace;">0001337</span></p>
-                </center>
-            </div>
-        </section>
-
-    </div>
+        <center>
+            <p>Visitor Count: <span class="visitor-counter">0001337</span></p>
+            <img src="https://web.archive.org/web/20090830035043/http://geocities.com/Athens/Acropolis/3324/netscape.gif" alt="Netscape">
+            <img src="https://web.archive.org/web/20091024053915/http://geocities.com/the_m_and_m_page/ie_logo.gif" alt="IE">
+        </center>
+    </main>
 
     <footer>
         <p>&copy; 2026 Pixelique Café & Gaming Lounge. <br> 
-        <span>Play, Study, Relax — All in One Cozy World. 🌸☕✨</span></p>
+        <span style="font-size: 10px;">Play, Study, Relax — All in One Cozy World. 🌸☕✨</span></p>
+        <p><marquee direction="right" width="50%">^_^ Thanks for visiting! ^_^</marquee></p>
     </footer>
+
 </div>
 
 </body>
