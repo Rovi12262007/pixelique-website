@@ -33,7 +33,7 @@
             background-color: #ffffff;
             border: 4px outset #ff99d0;
             padding: 15px;
-            overflow: hidden; /* Keeps the banner from spilling over the border */
+            overflow: hidden; /* Ensures the top banner doesn't spill over the border */
         }
 
         header {
@@ -44,14 +44,14 @@
         .logo {
             display: block; 
             text-align: center;
-            /* Negative margins pull the banner over the container's 15px padding */
+            /* Negative margins pull the banner over the container's padding to touch edges */
             margin: -15px -15px 15px -15px; 
             border-bottom: 4px outset #ff99d0;
             background-image: url('background.png'); 
             background-size: cover;
             background-position: center;
             overflow: hidden;
-            line-height: 0; /* Removes white space gap at bottom of image */
+            line-height: 0; 
         }
 
         .main-logo-image {
@@ -59,7 +59,7 @@
             max-width: none;  
             height: auto;     
             display: block;
-            /* mix-blend-mode: multiply;  <- Optional: Use if you want background.png to show through white parts of your logo */
+            mix-blend-mode: multiply; /* Keeps your background.png visible through the logo */
         }
 
         .marquee-container {
@@ -71,7 +71,7 @@
             margin: 10px 0;
         }
 
-        /* --- NAVIGATION --- */
+        /* NAVIGATION */
         nav {
             background: linear-gradient(to bottom, #fff6f9, #ffd9e8); 
             border: 2px solid #ffb3db;
@@ -91,9 +91,15 @@
             padding: 8px 25px;
             border-radius: 50px; 
             display: inline-block;
+            background: white;
             background: linear-gradient(to bottom, #ffffff 0%, #f2f2f2 100%); 
             box-shadow: inset 0 2px 5px rgba(255,255,255,0.8), 0 3px 6px rgba(0,0,0,0.1);
             transition: transform 0.2s;
+        }
+
+        nav a:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
         }
 
         .nav-home { border: 4px solid #ff4da6; color: #ff4da6; }
@@ -101,7 +107,26 @@
         .nav-services { border: 4px solid #7cdb4f; color: #7cdb4f; }
         .nav-contact { border: 4px solid #ffcc00; color: #ffcc00; }
 
-        h1 { text-align: center; font-size: 40px; color: #ff00ff; text-shadow: 2px 2px #ffb3db; }
+        .banner {
+            border: 5px double #ff99d0;
+            margin: 20px 0;
+            padding: 20px;
+            text-align: center;
+            background: #fff0f5;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #cccccc;
+            border-top: 2px solid #ffffff;
+            border-left: 2px solid #ffffff;
+            border-right: 2px solid #666666;
+            border-bottom: 2px solid #666666;
+            padding: 10px 25px;
+            color: #000;
+            text-decoration: none;
+            font-size: 20px;
+        }
 
         h2 {
             background-color: #ffb3db;
@@ -109,72 +134,80 @@
             padding: 10px;
             font-size: 32px; 
             border-left: 10px solid #ff00ff;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        /* SERVICE CARD STYLING */
-        .service-card {
-            border: 3px outset #ff99d0;
-            background: #fff9fc;
-            padding: 15px;
-            margin-bottom: 15px;
-            box-shadow: 3px 3px 0px #ffb3db;
-        }
-        
-        .service-card h3 {
             margin-top: 0;
-            color: #ff00ff;
-            border-bottom: 1px dashed #ff99d0;
-        }
-
-        /* 3x3 MENU GRID */
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-bottom: 40px;
-        }
-
-        .menu-item {
-            border: 4px outset #ffb3db;
-            background-color: #ffffff;
-            padding: 12px;
+            margin-bottom: 15px;
             text-align: center;
-            box-shadow: 4px 4px 0px rgba(255, 153, 208, 0.4);
         }
 
-        .menu-item img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border: 1px solid #ffb3db;
-            margin-bottom: 10px;
-        }
-
-        .menu-item h3 {
-            font-size: 22px;
-            margin: 5px 0;
-            color: #ff00ff;
-        }
-
-        .price {
-            font-weight: bold;
-            color: #000080;
+        .intro-box {
+            border: 2px dotted #ff00ff;
+            padding: 15px;
+            background-color: #fff9fc;
+            margin-bottom: 20px;
             font-size: 20px;
-            background: #ffff00;
-            display: inline-block;
-            padding: 0 5px;
-            margin-top: 5px;
         }
 
-        .subsection {
+        .split-layout {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            margin-top: 30px;
+        }
+
+        .left-side { flex: 0 0 340px; }
+        .right-side { flex: 1; }
+
+        .zones-container {
+            display: flex;
+            flex-direction: column; 
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .zone-card {
+            border: 5px solid #ffb3db;
+            background: #ffffff;
             text-align: center;
-            color: #ff4da6;
-            font-size: 28px;
-            margin-top: 20px;
-            text-decoration: underline;
+            width: 320px;       
+            height: 320px;      
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            box-shadow: 4px 4px 0px #ff99d0;
+        }
+
+        .zone-card p {
+            margin: 8px 0;
+            line-height: 1.2;
+            font-size: 24px;   
+        }
+
+        .zone-card b {
+            font-size: 30px;   
+            color: #ff00ff;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .zone-icon {
+            display: block;
+            width: 100px;      
+            height: 100px; 
+            margin-bottom: 15px;
+            object-fit: contain; 
+            image-rendering: pixelated; 
+        }
+
+        .fit-box {
+            border: 2px dotted #ff00ff;
+            padding: 20px;
+            background-color: #fff9fc;
+            width: 100%; 
+            box-sizing: border-box;
+            font-size: 24px; 
         }
 
         .highlight {
@@ -183,19 +216,29 @@
             padding: 0 4px;
         }
 
+        .visitor-counter {
+            font-family: 'VT323', monospace;
+            background: #000;
+            color: #0f0;
+            padding: 2px 8px;
+            border: 1px solid #999;
+            font-size: 18px;
+        }
+
+        .blink { animation: blinker 1s linear infinite; }
+        @keyframes blinker { 50% { opacity: 0; } }
+
         footer {
-            margin-top: 40px;
+            margin-top: 20px;
             text-align: center;
             font-size: 16px;
             border-top: 3px double #ff99d0;
             padding: 10px;
         }
 
-        @media (max-width: 850px) {
-            .menu-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 600px) {
-            .menu-grid { grid-template-columns: 1fr; }
+        @media (max-width: 800px) {
+            .split-layout { flex-direction: column; align-items: center; }
+            .left-side { flex: none; width: auto; }
         }
     </style>
 </head>
@@ -220,186 +263,73 @@
         </nav>
     </header>
 
+    <div class="banner">
+        <p class="blink" style="margin-top: 10px; font-weight: bold;">*** ~ Your Cozy Haven for Gaming, Studying & Relaxation ~ ***</p>
+        <br>
+        <a href="services.html" class="cta-button">CLICK HERE TO EXPLORE!</a>
+    </div>
+
     <main>
-        <h1>Services & Menu</h1>
+        <section>
+            <div class="intro-box">
+                <p>Welcome to <span class="highlight">Pixelique Café & Gaming Lounge</span>, a warm and inviting space designed for both entertainment and productivity. We offer a cozy and aesthetic environment where customers can enjoy gaming, studying, and relaxing all in one place. With separate zones for focus and fun, Pixelique is the perfect destination for students, gamers, and creatives seeking comfort and connection.</p>
+            </div>
+        </section>
 
-        <!-- RESTORED GAMING SERVICES -->
-        <h2>🎮 Gaming Services</h2>
-        <div class="service-card">
-            <h3>Cozy Gaming Stations</h3>
-            <p>Experience gaming on comfortable, well-maintained PCs and consoles in our warm gaming zone. Perfect for casual gaming with friends or enjoying your favorite titles in a welcoming atmosphere.</p>
-        </div>
-        <div class="service-card">
-            <h3>Console Gaming Area</h3>
-            <p>Play on PlayStation 5, Xbox Series X/S, and Nintendo Switch. Enjoy multiplayer sessions with friends on our large displays in a cozy, welcoming environment.</p>
-        </div>
-        <div class="service-card">
-            <h3>Hourly Gaming Sessions</h3>
-            <p>Rent gaming stations by the hour or day. Perfect for casual hangouts with friends. Price: <span class="highlight">$5-12/hour</span></p>
-        </div>
-        <div class="service-card">
-            <h3>Gaming Events & Tournaments</h3>
-            <p>Host friendly gaming events and tournaments in our venue. We provide comfortable seating, equipment, and a welcoming atmosphere for gaming communities.</p>
-        </div>
+        <div class="split-layout">
+            <!-- LEFT SIDE -->
+            <div class="left-side">
+                <h2>-- Our Cozy Zones --</h2>
+                <div class="zones-container">
+                    <div class="zone-card">
+                        <img src="https://web.archive.org/web/20090804113119im_/http://geocities.com/TimesSquare/Labyrinth/3415/controller.gif" class="zone-icon" alt="Gaming GIF">
+                        <p><b>Gaming Zone</b></p>
+                        <p><small>Experience gaming on high-performance PCs and consoles.</small></p>
+                    </div>
+                    <div class="zone-card">
+                        <img src="https://web.archive.org/web/20091027083015im_/http://www.geocities.com/the_m_and_m_page/books.gif" class="zone-icon" alt="Study GIF">
+                        <p><b>Study Zone</b></p>
+                        <p><small>A quiet, comfortable space designed for focused work.</small></p>
+                    </div>
+                    <div class="zone-card">
+                        <img src="https://web.archive.org/web/20091027011432im_/http://geocities.com/Area51/Lair/5103/coffeecup.gif" class="zone-icon" alt="Coffee GIF">
+                        <p><b>Relaxation Lounge</b></p>
+                        <p><small>Unwind with premium coffee, pastries, and snacks.</small></p>
+                    </div>
+                </div>
+            </div>
 
-        <!-- RESTORED STUDY SERVICES -->
-        <h2>📚 Study & Work Services</h2>
-        <div class="service-card">
-            <h3>Quiet Study Zone</h3>
-            <p>A peaceful, distraction-free workspace with soft lighting, comfortable seating, and high-speed WiFi. Perfect for students and remote workers.</p>
-        </div>
-        <div class="service-card">
-            <h3>Hourly Desk Rental</h3>
-            <p>Rent a cozy desk in our study zone with access to WiFi and outlets. Ideal for focused work sessions or studying. Price: <span class="highlight">$3-7/hour</span></p>
-        </div>
-        <div class="service-card">
-            <h3>Private Meeting Rooms</h3>
-            <p>Quiet rooms for group projects, client meetings, or focused work. Cozy, comfortable, and equipped with WiFi. Price: <span class="highlight">$12-20/hour</span></p>
-        </div>
-        <div class="service-card">
-            <h3>Study Passes</h3>
-            <p>Daily, weekly, or monthly passes for unlimited study zone access. Great for students preparing for exams or professionals needing a dedicated workspace.</p>
-        </div>
-
-        <!-- RESTORED 3x3 COFFEE MENU -->
-        <h2>☕ Cafe Menu</h2>
-        <h3 class="subsection">Specialty Coffee & Warm Drinks</h3>
-        <div class="menu-grid">
-            <div class="menu-item">
-                <img src="Espresso.jpg" alt="Espresso">
-                <h3>Espresso</h3>
-                <p>Rich & Bold</p>
-                <div class="price">AED14.50</div>
-            </div>
-            <div class="menu-item">
-                <img src="cappucino.jpg" alt="Cappuccino">
-                <h3>Cappuccino</h3>
-                <p>Warm & Creamy</p>
-                <div class="price">AED15.75</div>
-            </div>
-            <div class="menu-item">
-                <img src="latte.jpg" alt="Latte">
-                <h3>Latte</h3>
-                <p>Smooth & Comforting</p>
-                <div class="price">AED13.75</div>
-            </div>
-            <div class="menu-item">
-                <img src="americano.jpg" alt="Americano">
-                <h3>Americano</h3>
-                <p>Classic Blend</p>
-                <div class="price">AED13.00</div>
-            </div>
-            <div class="menu-item">
-                <img src="mocha.jpg" alt="Mocha">
-                <h3>Mocha</h3>
-                <p>Coffee + Chocolate</p>
-                <div class="price">AED14.25</div>
-            </div>
-            <div class="menu-item">
-                <img src="hot chocolate.jpg" alt="Hot Chocolate">
-                <h3>Hot Chocolate</h3>
-                <p>Cozy & Sweet</p>
-                <div class="price">AED13.50</div>
-            </div>
-            <div class="menu-item">
-                <img src="ice latte.jpg" alt="Iced Latte">
-                <h3>Iced Latte</h3>
-                <p>Cool & Smooth</p>
-                <div class="price">AED14.00</div>
-            </div>
-            <div class="menu-item">
-                <img src="vanilla latte.jpg" alt="Vanilla Latte">
-                <h3>Vanilla Latte</h3>
-                <p>Warm & Vanilla-y</p>
-                <div class="price">AED14.00</div>
-            </div>
-            <div class="menu-item">
-                <img src="matcha latte.jpg" alt="Matcha Latte">
-                <h3>Matcha Latte</h3>
-                <p>Creamy & Soothing</p>
-                <div class="price">AED14.50</div>
+            <!-- RIGHT SIDE -->
+            <div class="right-side">
+                <h2>-- Why Pixelique? --</h2>
+                <div class="fit-box">
+                    <ul style="list-style-type: '✨ '; padding-left: 20px; margin: 0;">
+                        <li><b>Warm Design</b> - Soft pastels and cozy aesthetics</li>
+                        <li><b>Comfortable Equipment</b> - Quality gaming PCs</li>
+                        <li><b>Soothing Ambiance</b> - Gentle music and warm lighting</li>
+                        <li><b>Delicious Refreshments</b> - Specialty coffee and pastries</li>
+                        <li><b>Welcoming Community</b> - Connect with like-minded people</li>
+                        <li><b>Extended Hours</b> - Open day or night!</li>
+                    </ul>
+                    <div style="margin-top:20px; text-align:center;">
+                        <img src="https://web.archive.org/web/20090830035043/http://geocities.com/Athens/Acropolis/3324/netscape.gif" alt="Netscape">
+                        <img src="https://web.archive.org/web/20091024053915/http://geocities.com/the_m_and_m_page/ie_logo.gif" alt="IE">
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- RESTORED 3x3 PASTRY MENU -->
-        <h3 class="subsection">Cozy Pastries & Snacks</h3>
-        <div class="menu-grid">
-            <div class="menu-item">
-                <img src="YOUR-IMAGE.jpg" alt="Croissant">
-                <h3>Croissant</h3>
-                <p>Buttery & Flaky</p>
-                <div class="price">AED12.50</div>
-            </div>
-            <div class="menu-item">
-                <img src="YOUR-IMAGE.jpg" alt="Muffin">
-                <h3>Blueberry Muffin</h3>
-                <p>Fresh & Sweet</p>
-                <div class="price">AED12.75</div>
-            </div>
-            <div class="menu-item">
-                <img src="YOUR-IMAGE.jpg" alt="Cookie">
-                <h3>Choc Chip Cookie</h3>
-                <p>Warm & Delicious</p>
-                <div class="price">AED11.75</div>
-            </div>
-            <div class="menu-item">
-                <img src="YOUR-IMAGE.jpg" alt="Bagel">
-                <h3>Bagel + Cream</h3>
-                <p>Classic Comfort</p>
-                <div class="price">AED10.50</div>
-            </div>
-            <div class="menu-item">
-                <img src="YOUR-IMAGE.jpg" alt="Granola">
-                <h3>Granola Bar</h3>
-                <p>Healthy & Tasty</p>
-                <div class="price">AED3.00</div>
-            </div>
-            <div class="menu-item">
-                <img src="YOUR-IMAGE.jpg" alt="Pastries">
-                <h3>Mixed Pastries</h3>
-                <p>Variety Pack</p>
-                <div class="price">AED13.50</div>
-            </div>
-            <div class="menu-item">
-                <img src="YOUR-IMAGE.jpg" alt="Brownie">
-                <h3>Brownie</h3>
-                <p>Fudgy & Rich</p>
-                <div class="price">AED12.00</div>
-            </div>
-            <div class="menu-item">
-                <img src="YOUR-IMAGE.jpg" alt="Sandwich">
-                <h3>Sandwich</h3>
-                <p>Fresh & Filling</p>
-                <div class="price">AED10.50</div>
-            </div>
-            <div class="menu-item">
-                <img src="YOUR-IMAGE.jpg" alt="Apple Pie">
-                <h3>Apple Pie Slice</h3>
-                <p>Homey & Warm</p>
-                <div class="price">AED7.75</div>
-            </div>
-        </div>
-
-        <!-- RESTORED SPECIAL PACKAGES -->
-        <h2>🎁 Special Cozy Packages</h2>
-        <div class="service-card">
-            <h3>Gaming Hangout Package</h3>
-            <p>Gather your friends for a cozy gaming session! Includes 4 gaming stations, snacks, and warm drinks. Price: <span class="highlight">$60-100+</span></p>
-        </div>
-        <div class="service-card">
-            <h3>Study Marathon Package</h3>
-            <p>12-hour or 24-hour study pass with unlimited coffee, tea, and snacks to fuel your studying. Cozy seating and peaceful ambiance included. Price: <span class="highlight">$20-40</span></p>
-        </div>
-        <div class="service-card">
-            <h3>Cozy Membership</h3>
-            <p>Unlimited access to gaming and study zones, 15% discount on cafe menu, priority room reservations, and exclusive member perks. Price: <span class="highlight">$69-119/month</span></p>
-        </div>
-
+        <center style="margin-top:30px;">
+            <p>Visitor Count: <span class="visitor-counter">0001337</span></p>
+        </center>
     </main>
 
     <footer>
-        <p>&copy; 2026 Pixelique Café & Gaming Lounge. Play, Study, Relax — All in One Cozy World. 🌸☕✨</p>
+        <p>&copy; 2026 Pixelique Café & Gaming Lounge. <br> 
+        <span style="font-size: 14px; display: block; margin-top: 10px;">Play, Study, Relax — All in One Cozy World. 🌸☕✨</span></p>
+        <p><marquee direction="right" width="50%">^_^ Thanks for visiting! ^_^</marquee></p>
     </footer>
 </div>
+
 </body>
 </html>
