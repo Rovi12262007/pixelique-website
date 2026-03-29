@@ -197,13 +197,27 @@
             font-size: 24px; 
         }
 
-        /* STYLING FOR THE NEW ICON SLOTS */
+        /* UPDATED ICON STYLING: LARGER AND CENTERED */
         .why-icon {
             display: block;
-            width: 40px; 
-            height: 40px;
-            margin-bottom: 5px;
+            width: 120px;        /* Increased size significantly */
+            height: 120px;       /* Increased size significantly */
+            margin: 0 auto 10px auto; /* Centers the image and adds bottom spacing */
+            object-fit: contain;
             image-rendering: pixelated;
+            border: 2px solid #ffb3db; /* Added a small decorative border */
+            background: #fff;
+        }
+
+        .fit-box ul {
+            list-style: none;    /* Removed the side sparkles to allow perfect centering */
+            padding: 0;
+            margin: 0;
+            text-align: center;  /* Centers all the text and images inside */
+        }
+
+        .fit-box li {
+            margin-bottom: 30px; /* Space between each point */
         }
 
         .highlight { color: #ff0000; background: yellow; padding: 0 4px; }
@@ -296,26 +310,26 @@
             <div class="right-side">
                 <h2>-- Why Pixelique? --</h2>
                 <div class="fit-box">
-                    <ul style="list-style-type: '✨ '; padding-left: 20px; margin: 0;">
-                        <li style="margin-bottom: 15px;">
+                    <ul>
+                        <li>
                             <img src="warm.jpg" class="why-icon">
-                            <b>Warm Design</b> - Soft pastels and cozy aesthetics
+                            <span>✨ <b>Warm Design</b> - Soft pastels and cozy aesthetics</span>
                         </li>
-                        <li style="margin-bottom: 15px;">
+                        <li>
                             <img src="comfortable.jpg" class="why-icon">
-                            <b>Comfortable Equipment</b> - Quality gaming PCs
+                            <span>✨ <b>Comfortable Equipment</b> - Quality gaming PCs</span>
                         </li>
-                        <li style="margin-bottom: 15px;">
+                        <li>
                             <img src="soothing.jpg" class="why-icon">
-                            <b>Soothing Ambiance</b> - Gentle music and warm lighting
+                            <span>✨ <b>Soothing Ambiance</b> - Gentle music and warm lighting</span>
                         </li>
-                        <li style="margin-bottom: 15px;">
+                        <li>
                             <img src="welcoming.jpg" class="why-icon">
-                            <b>Welcoming Community</b> - Connect with like-minded people
+                            <span>✨ <b>Welcoming Community</b> - Connect with like-minded people</span>
                         </li>
-                        <li style="margin-bottom: 15px;">
+                        <li>
                             <img src="extended.jpg" class="why-icon">
-                            <b>Extended Hours</b> - Open day or night!
+                            <span>✨ <b>Extended Hours</b> - Open day or night!</span>
                         </li>
                     </ul>
                     <div style="margin-top:20px; text-align:center;">
