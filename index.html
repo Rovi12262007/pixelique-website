@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>*** Welcome to Pixelique Café ***</title>
-    <!-- Adding Great Vibes for Header and VT323 for a thinner pixel font everywhere else -->
+    <!-- Adding Great Vibes for Header and VT323 for thinner pixel font -->
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=VT323&display=swap" rel="stylesheet">
     <style>
         /* 2000s Scrollbar */
@@ -15,16 +15,12 @@
         }
 
         body {
-            /* ************************************************************ */
             /* CHANGE BACKGROUND IMAGE/COLOR HERE */
-            /* ************************************************************ */
             background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
             background-color: #ffe6f2;
-            /* ************************************************************ */
             
-            /* THINNER PIXEL FONT APPLIED HERE */
             font-family: 'VT323', monospace;
-            font-size: 20px; /* Increased slightly because VT323 is thinner/taller */
+            font-size: 20px; 
             color: #000080; 
             margin: 0;
             padding: 0;
@@ -34,7 +30,7 @@
 
         .container {
             width: 95%;
-            max-width: 950px;
+            max-width: 1000px; /* Slightly wider for the side-by-side layout */
             margin: 20px auto;
             background-color: #ffffff;
             border: 4px outset #ff99d0;
@@ -48,7 +44,7 @@
             margin-bottom: 20px;
         }
 
-        /* HEADER LOGO - KEPT ORIGINAL FONT AND SIZE */
+        /* HEADER LOGO */
         .logo {
             font-family: 'Great Vibes', cursive;
             text-decoration: none;
@@ -57,23 +53,13 @@
             align-items: baseline; 
             margin-bottom: 10px;
             gap: 20px; 
-            
             filter: url(#pixelate); 
             -webkit-filter: url(#pixelate);
             image-rendering: pixelated;
         }
         
-        .logo .welcome-text {
-            font-size: 5rem; 
-            color: #f7a9ca;
-            white-space: nowrap;
-        }
-
-        .logo-main {
-            font-size: 5rem;
-            white-space: nowrap;
-        }
-
+        .logo .welcome-text { font-size: 5rem; color: #f7a9ca; white-space: nowrap; }
+        .logo-main { font-size: 5rem; white-space: nowrap; }
         .logo span.p { color: #f7a9ca; }
         .logo span.i1 { color: #f9e38e; }
         .logo span.x { color: #b3d683; }
@@ -98,17 +84,8 @@
             text-align: center;
         }
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        nav li {
-            display: inline-block;
-            margin: 5px 10px;
-        }
-
+        nav ul { list-style: none; padding: 0; margin: 0; }
+        nav li { display: inline-block; margin: 5px 10px; }
         nav a {
             text-decoration: none;
             color: #0000ff;
@@ -117,12 +94,7 @@
             padding: 2px 8px;
             background: #e0e0e0;
         }
-
-        nav a:hover {
-            background: #ffccff;
-            color: #ff0000;
-            border: 1px solid #000;
-        }
+        nav a:hover { background: #ffccff; color: #ff0000; border: 1px solid #000; }
 
         .banner {
             border: 5px double #ff99d0;
@@ -145,19 +117,26 @@
             font-size: 20px;
         }
 
-        .cta-button:active {
-            border-top: 2px solid #666666;
-            border-left: 2px solid #666666;
-            border-right: 2px solid #ffffff;
-            border-bottom: 2px solid #ffffff;
+        /* NEW SIDE-BY-SIDE LAYOUT */
+        .flex-row {
+            display: flex;
+            gap: 20px;
+            align-items: stretch;
+            margin-top: 20px;
         }
 
+        .column {
+            flex: 1;
+        }
+
+        /* BIGGER HEADERS */
         h2 {
             background-color: #ffb3db;
             color: white;
-            padding: 8px;
-            font-size: 24px;
+            padding: 10px;
+            font-size: 32px; /* INCREASED SIZE */
             border-left: 10px solid #ff00ff;
+            margin-top: 0;
         }
 
         .intro-box {
@@ -168,29 +147,24 @@
             font-size: 20px;
         }
 
-        .zones-table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 10px;
-        }
-
+        /* VERTICAL ZONE CARD STYLING */
         .zone-card {
             border: 2px groove #ffb3db;
             padding: 10px;
-            vertical-align: top;
             background: #ffffff;
             text-align: center;
             font-size: 18px;
+            margin-bottom: 10px;
         }
 
+        /* ADJUSTED GIF SIZE FOR SIDE-BY-SIDE */
         .zone-icon {
             display: block;
-            margin: 0 auto 15px auto;
-            width: 80px; 
-            height: 80px; 
+            margin: 0 auto 10px auto;
+            width: 65px;  /* Adjusted for narrower columns */
+            height: 65px; 
             object-fit: contain; 
             image-rendering: pixelated; 
-            image-rendering: crisp-edges;
         }
 
         .highlight {
@@ -216,13 +190,8 @@
             font-size: 18px;
         }
 
-        .blink {
-            animation: blinker 1s linear infinite;
-        }
-
-        @keyframes blinker {
-            50% { opacity: 0; }
-        }
+        .blink { animation: blinker 1s linear infinite; }
+        @keyframes blinker { 50% { opacity: 0; } }
     </style>
 </head>
 <body>
@@ -273,44 +242,48 @@
             </div>
         </section>
 
-        <section>
-            <h2>-- Our Cozy Zones --</h2>
-            <table class="zones-table">
-                <tr>
-                    <td class="zone-card" width="33%">
-                        <img src="https://web.archive.org/web/20090804113119im_/http://geocities.com/TimesSquare/Labyrinth/3415/controller.gif" class="zone-icon" alt="Gaming GIF">
-                        <p><b>Gaming Zone</b></p>
-                        <p>Experience gaming on high-performance PCs and consoles in a warm, welcoming atmosphere.</p>
-                    </td>
-                    <td class="zone-card" width="33%">
-                        <img src="https://web.archive.org/web/20091027083015im_/http://www.geocities.com/the_m_and_m_page/books.gif" class="zone-icon" alt="Study GIF">
-                        <p><b>Study Zone</b></p>
-                        <p>A quiet, comfortable space designed for focused work. Soft lighting and ergonomic seating.</p>
-                    </td>
-                    <td class="zone-card" width="33%">
-                        <img src="https://web.archive.org/web/20091027011432im_/http://geocities.com/Area51/Lair/5103/coffeecup.gif" class="zone-icon" alt="Coffee GIF">
-                        <p><b>Relaxation Lounge</b></p>
-                        <p>Unwind with premium coffee, pastries, and snacks. Sink into our comfy seating!</p>
-                    </td>
-                </tr>
-            </table>
-        </section>
-
-        <section>
-            <h2>-- Why Choose Pixelique? --</h2>
-            <div class="intro-box">
-                <ul style="list-style-type: '✨ ';">
-                    <li><b>Warm Design</b> - Soft pastels and cozy aesthetics</li>
-                    <li><b>Comfortable Equipment</b> - Quality gaming PCs</li>
-                    <li><b>Soothing Ambiance</b> - Gentle music and warm lighting</li>
-                    <li><b>Delicious Refreshments</b> - Specialty coffee and pastries</li>
-                    <li><b>Welcoming Community</b> - Connect with like-minded people</li>
-                    <li><b>Extended Hours</b> - Open day or night!</li>
-                </ul>
+        <!-- START SIDE-BY-SIDE SECTION -->
+        <div class="flex-row">
+            
+            <!-- COLUMN 1: OUR COZY ZONES -->
+            <div class="column">
+                <h2>-- Our Cozy Zones --</h2>
+                <div class="zone-card">
+                    <img src="https://web.archive.org/web/20090804113119im_/http://geocities.com/TimesSquare/Labyrinth/3415/controller.gif" class="zone-icon" alt="Gaming GIF">
+                    <p><b>Gaming Zone</b></p>
+                    <p><small>Experience gaming on high-performance PCs and consoles.</small></p>
+                </div>
+                <div class="zone-card">
+                    <img src="https://web.archive.org/web/20091027083015im_/http://www.geocities.com/the_m_and_m_page/books.gif" class="zone-icon" alt="Study GIF">
+                    <p><b>Study Zone</b></p>
+                    <p><small>A quiet, comfortable space designed for focused work.</small></p>
+                </div>
+                <div class="zone-card">
+                    <img src="https://web.archive.org/web/20091027011432im_/http://geocities.com/Area51/Lair/5103/coffeecup.gif" class="zone-icon" alt="Coffee GIF">
+                    <p><b>Relaxation Lounge</b></p>
+                    <p><small>Unwind with premium coffee, pastries, and snacks.</small></p>
+                </div>
             </div>
-        </section>
 
-        <center>
+            <!-- COLUMN 2: WHY CHOOSE PIXELIQUE -->
+            <div class="column">
+                <h2>-- Why Pixelique? --</h2>
+                <div class="intro-box" style="height: calc(100% - 75px);">
+                    <ul style="list-style-type: '✨ ';">
+                        <li><b>Warm Design</b> - Soft pastels and cozy aesthetics</li>
+                        <li><b>Comfortable Equipment</b> - Quality gaming PCs</li>
+                        <li><b>Soothing Ambiance</b> - Gentle music and warm lighting</li>
+                        <li><b>Delicious Refreshments</b> - Specialty coffee and pastries</li>
+                        <li><b>Welcoming Community</b> - Connect with like-minded people</li>
+                        <li><b>Extended Hours</b> - Open day or night!</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <!-- END SIDE-BY-SIDE SECTION -->
+
+        <center style="margin-top:30px;">
             <p>Visitor Count: <span class="visitor-counter">0001337</span></p>
             <img src="https://web.archive.org/web/20090830035043/http://geocities.com/Athens/Acropolis/3324/netscape.gif" alt="Netscape">
             <img src="https://web.archive.org/web/20091024053915/http://geocities.com/the_m_and_m_page/ie_logo.gif" alt="IE">
