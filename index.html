@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>*** Welcome to Pixelique Café ***</title>
-    <!-- Adding the Pixel font for the entire site -->
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- Adding both fonts: Great Vibes for Logo, Press Start 2P for everything else -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
         /* 2000s Scrollbar */
         html {
@@ -18,10 +18,10 @@
             /* Classic Tiled Background */
             background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
             background-color: #ffe6f2;
-            /* CHANGED TO PIXEL FONT */
+            /* GLOBAL PIXEL FONT */
             font-family: 'Press Start 2P', cursive;
             font-size: 12px;
-            color: #000080; /* Classic Navy Blue text */
+            color: #000080; 
             margin: 0;
             padding: 0;
             cursor: url('https://cur.cursors-4u.net/symbols/sym-1/sym49.cur'), auto;
@@ -44,32 +44,27 @@
             margin-bottom: 20px;
         }
 
-        /* UPDATED LOGO STYLE - MOVED "WELCOME TO" HERE */
+        /* HEADER LOGO - RESTORED TO ORIGINAL SCRIPT FONT */
         .logo {
-            /* CHANGED TO PIXEL FONT */
-            font-family: 'Press Start 2P', cursive;
-            font-size: 1.8rem; 
+            font-family: 'Great Vibes', cursive;
+            font-size: 5rem; 
             font-weight: normal;
             text-decoration: none;
             display: inline-block;
             margin-bottom: 10px;
-            line-height: 1.2;
+            line-height: 1;
             
-            /* Apply the pixelation filter defined in the SVG below */
+            /* Apply the pixelation filter */
             filter: url(#pixelate); 
             -webkit-filter: url(#pixelate);
-            
-            /* Vintage aliasing look */
             image-rendering: pixelated;
-            text-rendering: optimizeSpeed;
         }
         
-        /* Styling for the relocated "Welcome to" */
         .logo .welcome-text {
             display: block;
-            font-size: 0.8rem;
-            margin-bottom: 10px;
-            color: #f7a9ca;
+            font-size: 2.5rem;
+            color: #f7a9ca; /* Matching the pink in the logo */
+            margin-bottom: -10px;
         }
 
         .logo span.p { color: #f7a9ca; }
@@ -131,7 +126,6 @@
             background: #fff0f5;
         }
 
-        /* Retro Button Style */
         .cta-button {
             display: inline-block;
             background: #cccccc;
@@ -168,7 +162,6 @@
             font-size: 11px;
         }
 
-        /* Tables were used for grids back then! */
         .zones-table {
             width: 100%;
             border-collapse: separate;
@@ -223,7 +216,6 @@
 </head>
 <body>
 
-<!-- Hidden SVG Filter to create the pixelated effect -->
 <svg width="0" height="0" style="position:absolute;">
   <filter id="pixelate" x="0" y="0">
     <feFlood x="2" y="2" height="1" width="1" />
@@ -237,7 +229,7 @@
 <div class="container">
     <header>
         <div class="logo">
-            <span class="welcome-text">WELCOME TO</span>
+            <span class="welcome-text">Welcome to</span>
             <span class="p">P</span><span class="i1">i</span><span class="x">x</span><span class="e1">e</span><span class="l">l</span><span class="i2">i</span><span class="que">que</span>
         </div>
 
@@ -256,7 +248,6 @@
 
     <div class="banner">
         <img src="https://via.placeholder.com/150/FFB3DB/FFFFFF?text=GLITTER+LOGO" alt="Logo" style="border: 2px solid #000;">
-        <!-- Removed "Welcome to Pixelique" H1 from here as requested -->
         <p class="blink" style="margin-top: 20px;">*** ~ Your Cozy Haven for Gaming, Studying & Relaxation ~ ***</p>
         <br>
         <a href="services.html" class="cta-button">CLICK HERE TO EXPLORE!</a>
