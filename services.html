@@ -109,112 +109,81 @@
         .nav-services { border: 4px solid #7cdb4f; color: #7cdb4f; }
         .nav-contact { border: 4px solid #ffcc00; color: #ffcc00; }
 
-        .banner {
-            border: 5px double #ff99d0;
-            margin: 20px 0;
-            padding: 20px;
-            text-align: center;
-            background: #fff0f5;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: #cccccc;
-            border-top: 2px solid #ffffff;
-            border-left: 2px solid #ffffff;
-            border-right: 2px solid #666666;
-            border-bottom: 2px solid #666666;
-            padding: 10px 25px;
-            color: #000;
-            text-decoration: none;
-            font-size: 20px;
-        }
-
         h2 {
             background-color: #ffb3db;
             color: white;
             padding: 10px;
             font-size: 32px; 
             border-left: 10px solid #ff00ff;
-            margin-top: 0;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        .intro-box {
-            border: 2px dotted #ff00ff;
-            padding: 15px;
-            background-color: #fff9fc;
-            margin-bottom: 20px;
-            font-size: 20px;
-        }
-
-        .split-layout {
-            display: flex;
-            gap: 30px;
-            align-items: flex-start;
             margin-top: 30px;
-        }
-
-        .left-side {
-            flex: 0 0 340px; 
-        }
-
-        .right-side {
-            flex: 1;
-        }
-
-        .zones-container {
-            display: flex;
-            flex-direction: column; 
-            gap: 25px;
-            margin-bottom: 30px;
-        }
-
-        .zone-card {
-            border: 5px solid #ffb3db;
-            background: #ffffff;
-            text-align: center;
-            width: 320px;       
-            height: 320px;      
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            box-sizing: border-box;
-            box-shadow: 4px 4px 0px #ff99d0;
-        }
-
-        .zone-card p {
-            margin: 8px 0;
-            line-height: 1.2;
-            font-size: 24px;   
-        }
-
-        .zone-card b {
-            font-size: 30px;   
-            color: #ff00ff;
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .zone-icon {
-            display: block;
-            width: 100px;      
-            height: 100px; 
             margin-bottom: 15px;
-            object-fit: contain; 
-            image-rendering: pixelated; 
+            text-align: center;
         }
 
-        .fit-box {
-            border: 2px dotted #ff00ff;
-            padding: 20px;
-            background-color: #fff9fc;
-            width: 100%; 
-            box-sizing: border-box;
-            font-size: 24px; 
+        /* --- NEW STYLES FOR SERVICE BOXES --- */
+        .service-card {
+            border: 3px outset #ff99d0;
+            background: #fff9fc;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 3px 3px 0px #ffb3db;
+        }
+        
+        .service-card h3 {
+            margin-top: 0;
+            color: #ff00ff;
+            border-bottom: 1px dashed #ff99d0;
+        }
+
+        /* --- NEW STYLES FOR MENU BORDER BOXES --- */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .menu-item {
+            border: 4px outset #ffb3db;
+            background-color: #ffffff;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 4px 4px 0px rgba(255, 153, 208, 0.3);
+            transition: background 0.3s;
+        }
+
+        .menu-item:hover {
+            background-color: #fff0f5;
+        }
+
+        .menu-item h3 {
+            font-size: 22px;
+            margin: 10px 0 5px 0;
+            color: #ff00ff;
+        }
+
+        .menu-item p {
+            font-size: 18px;
+            margin: 0;
+            color: #555;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #000080;
+            font-size: 22px;
+            margin-top: 8px;
+            background: #ffff00;
+            display: inline-block;
+            padding: 0 5px;
+        }
+
+        .subsection {
+            text-align: center;
+            color: #ff4da6;
+            font-size: 28px;
+            margin-top: 20px;
+            text-decoration: underline;
         }
 
         .highlight {
@@ -231,21 +200,8 @@
             padding: 10px;
         }
 
-        .visitor-counter {
-            font-family: 'VT323', monospace;
-            background: #000;
-            color: #0f0;
-            padding: 2px 8px;
-            border: 1px solid #999;
-            font-size: 18px;
-        }
-
-        .blink { animation: blinker 1s linear infinite; }
-        @keyframes blinker { 50% { opacity: 0; } }
-
         @media (max-width: 800px) {
-            .split-layout { flex-direction: column; align-items: center; }
-            .left-side { flex: none; width: auto; }
+            .menu-grid { grid-template-columns: 1fr 1fr; }
         }
     </style>
 </head>
@@ -254,7 +210,6 @@
 <div class="container">
     <header>
         <div class="logo">
-            <!-- Your logo image stays here -->
             <img src="banner.jpg" alt="Welcome to Pixelique Cafe" class="main-logo-image">
         </div>
 
@@ -323,136 +278,55 @@
         <h3 class="subsection">Specialty Coffee & Warm Drinks</h3>
         <div class="menu-grid">
             <div class="menu-item">
-<img src="Espresso.jpg"
-     alt="Menu Item"
-     style="
-        width: 100%;
-        height: 160px;
-        object-fit: cover;
-        border-radius: 12px;
-        margin-bottom: 0.8rem;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-     ">
+                <img src="Espresso.jpg" alt="Espresso" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
                 <h3>Espresso</h3>
                 <p>Rich & Bold</p>
                 <div class="price">AED14.50</div>
             </div>
             <div class="menu-item">
-                <img src="cappucino.jpg"
-     alt="Menu Item"
-     style="
-        width: 100%;
-        height: 160px;
-        object-fit: cover;
-        border-radius: 12px;
-        margin-bottom: 0.8rem;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-     ">
+                <img src="cappucino.jpg" alt="Cappuccino" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
                 <h3>Cappuccino</h3>
                 <p>Warm & Creamy</p>
                 <div class="price">AED15.75</div>
             </div>
             <div class="menu-item">
-                <img src="latte.jpg"
-     alt="Menu Item"
-     style="
-        width: 100%;
-        height: 160px;
-        object-fit: cover;
-        border-radius: 12px;
-        margin-bottom: 0.8rem;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-     ">
+                <img src="latte.jpg" alt="Latte" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
                 <h3>Latte</h3>
                 <p>Smooth & Comforting</p>
                 <div class="price">AED13.75</div>
             </div>
             <div class="menu-item">
-                <img src="americano.jpg"
-     alt="Menu Item"
-     style="
-        width: 100%;
-        height: 160px;
-        object-fit: cover;
-        border-radius: 12px;
-        margin-bottom: 0.8rem;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-     ">
+                <img src="americano.jpg" alt="Americano" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
                 <h3>Americano</h3>
                 <p>Classic Blend</p>
                 <div class="price">AED13.00</div>
             </div>
             <div class="menu-item">
-              <img src="mocha.jpg"
-     alt="Menu Item"
-     style="
-        width: 100%;
-        height: 160px;
-        object-fit: cover;
-        border-radius: 12px;
-        margin-bottom: 0.8rem;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-     ">
+              <img src="mocha.jpg" alt="Mocha" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
                 <h3>Mocha</h3>
                 <p>Coffee + Chocolate</p>
                 <div class="price">AED14.25</div>
             </div>
             <div class="menu-item">
-                    <img src="hot chocolate.jpg"
-     alt="Menu Item"
-     style="
-        width: 100%;
-        height: 160px;
-        object-fit: cover;
-        border-radius: 12px;
-        margin-bottom: 0.8rem;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-     ">
+                <img src="hot chocolate.jpg" alt="Hot Chocolate" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
                 <h3>Hot Chocolate</h3>
                 <p>Cozy & Sweet</p>
                 <div class="price">AED13.50</div>
             </div>
             <div class="menu-item">
-                    <img src="ice latte.jpg"
-     alt="Menu Item"
-     style="
-        width: 100%;
-        height: 160px;
-        object-fit: cover;
-        border-radius: 12px;
-        margin-bottom: 0.8rem;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-     ">
+                <img src="ice latte.jpg" alt="Iced Latte" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
                 <h3>Iced Latte</h3>
                 <p>Cool & Smooth</p>
                 <div class="price">AED14.00</div>
             </div>
             <div class="menu-item">
-                    <img src="vanilla latte.jpg"
-     alt="Menu Item"
-     style="
-        width: 100%;
-        height: 160px;
-        object-fit: cover;
-        border-radius: 12px;
-        margin-bottom: 0.8rem;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-     ">
+                <img src="vanilla latte.jpg" alt="Vanilla Latte" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
                 <h3>Vanilla Latte</h3>
                 <p>Warm & Vanilla-y</p>
                 <div class="price">AED14.00</div>
             </div>
             <div class="menu-item">
-                    <img src="matcha latte.jpg"
-     alt="Menu Item"
-     style="
-        width: 100%;
-        height: 160px;
-        object-fit: cover;
-        border-radius: 12px;
-        margin-bottom: 0.8rem;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-     ">
+                <img src="matcha latte.jpg" alt="Matcha Latte" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
                 <h3>Matcha Latte</h3>
                 <p>Creamy & Soothing</p>
                 <div class="price">AED14.50</div>
@@ -462,136 +336,55 @@
         <h3 class="subsection">Cozy Pastries & Snacks</h3>
         <div class="menu-grid">
             <div class="menu-item">
-                    <img src="YOUR-IMAGE.jpg"
-     alt="Menu Item"
-     style="
-        width: 100%;
-        height: 160px;
-        object-fit: cover;
-        border-radius: 12px;
-        margin-bottom: 0.8rem;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-     ">
+                <img src="YOUR-IMAGE.jpg" alt="Croissant" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
                 <h3>Croissant</h3>
                 <p>Buttery & Flaky</p>
                 <div class="price">AED12.50</div>
             </div>
             <div class="menu-item">
-                    <img src="YOUR-IMAGE.jpg"
-     alt="Menu Item"
-     style="
-        width: 100%;
-        height: 160px;
-        object-fit: cover;
-        border-radius: 12px;
-        margin-bottom: 0.8rem;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-     ">
+                <img src="YOUR-IMAGE.jpg" alt="Blueberry Muffin" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
                 <h3>Blueberry Muffin</h3>
                 <p>Fresh & Sweet</p>
                 <div class="price">AED12.75</div>
             </div>
             <div class="menu-item">
-                    <img src="YOUR-IMAGE.jpg"
-     alt="Menu Item"
-     style="
-        width: 100%;
-        height: 160px;
-        object-fit: cover;
-        border-radius: 12px;
-        margin-bottom: 0.8rem;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-     ">
+                <img src="YOUR-IMAGE.jpg" alt="Cookie" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
                 <h3>Chocolate Chip Cookie</h3>
                 <p>Warm & Delicious</p>
                 <div class="price">AED11.75</div>
             </div>
             <div class="menu-item">
-                    <img src="YOUR-IMAGE.jpg"
-     alt="Menu Item"
-     style="
-        width: 100%;
-        height: 160px;
-        object-fit: cover;
-        border-radius: 12px;
-        margin-bottom: 0.8rem;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-     ">
+                <img src="YOUR-IMAGE.jpg" alt="Bagel" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
                 <h3>Bagel + Cream Cheese</h3>
                 <p>Classic Comfort</p>
                 <div class="price">AED10.50</div>
             </div>
             <div class="menu-item">
-                    <img src="YOUR-IMAGE.jpg"
-     alt="Menu Item"
-     style="
-        width: 100%;
-        height: 160px;
-        object-fit: cover;
-        border-radius: 12px;
-        margin-bottom: 0.8rem;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-     ">
+                <img src="YOUR-IMAGE.jpg" alt="Granola" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
                 <h3>Granola Bar</h3>
                 <p>Healthy & Tasty</p>
                 <div class="price">AED3.00</div>
             </div>
             <div class="menu-item">
-                    <img src="YOUR-IMAGE.jpg"
-     alt="Menu Item"
-     style="
-        width: 100%;
-        height: 160px;
-        object-fit: cover;
-        border-radius: 12px;
-        margin-bottom: 0.8rem;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-     ">
+                <img src="YOUR-IMAGE.jpg" alt="Mixed Pastries" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
                 <h3>Mixed Pastries</h3>
                 <p>Variety Pack</p>
                 <div class="price">AED13.50</div>
             </div>
             <div class="menu-item">
-                    <img src="YOUR-IMAGE.jpg"
-     alt="Menu Item"
-     style="
-        width: 100%;
-        height: 160px;
-        object-fit: cover;
-        border-radius: 12px;
-        margin-bottom: 0.8rem;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-     ">
+                <img src="YOUR-IMAGE.jpg" alt="Brownie" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
                 <h3>Brownie</h3>
                 <p>Fudgy & Rich</p>
                 <div class="price">AED12.00</div>
             </div>
             <div class="menu-item">
-                    <img src="YOUR-IMAGE.jpg"
-     alt="Menu Item"
-     style="
-        width: 100%;
-        height: 160px;
-        object-fit: cover;
-        border-radius: 12px;
-        margin-bottom: 0.8rem;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-     ">
+                <img src="YOUR-IMAGE.jpg" alt="Sandwich" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
                 <h3>Sandwich</h3>
                 <p>Fresh & Filling</p>
                 <div class="price">AED10.50</div>
             </div>
             <div class="menu-item">
-                    <img src="YOUR-IMAGE.jpg"
-     alt="Menu Item"
-     style="
-        width: 100%;
-        height: 160px;
-        object-fit: cover;
-        border-radius: 12px;
-        margin-bottom: 0.8rem;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-     ">
+                <img src="YOUR-IMAGE.jpg" alt="Apple Pie" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
                 <h3>Apple Pie Slice</h3>
                 <p>Homey & Warm</p>
                 <div class="price">AED7.75</div>
