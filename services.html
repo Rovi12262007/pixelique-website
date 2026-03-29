@@ -39,9 +39,7 @@
             overflow: hidden; 
         }
 
-        header {
-            text-align: center;
-        }
+        header { text-align: center; }
 
         .logo {
             display: block; 
@@ -115,10 +113,7 @@
         .cta-button {
             display: inline-block;
             background: #ffb3db; 
-            border-top: 2px solid #ffffff;
-            border-left: 2px solid #ffffff;
-            border-right: 2px solid #666666;
-            border-bottom: 2px solid #666666;
+            border: 2px outset white;
             padding: 10px 25px;
             color: #000;
             text-decoration: none;
@@ -264,18 +259,28 @@
     <main>
         <h1>Services & Menu</h1>
 
+        <!-- GAMING SERVICES -->
         <h2>🎮 Gaming Services</h2>
         <div class="services-text-grid">
             <div class="service-card">
                 <h3>Cozy Gaming Stations</h3>
-                <p>Experience gaming on comfortable, well-maintained PCs and consoles. Price: <span class="highlight">AED 18-45/hour</span></p>
+                <p>Experience gaming on comfortable PCs and consoles. Price: <span class="highlight">AED 18-45/hour</span></p>
             </div>
             <div class="service-card">
                 <h3>Console Gaming Area</h3>
                 <p>Play on PS5, Xbox, and Switch in a cozy environment. Price: <span class="highlight">AED 15-30/hour</span></p>
             </div>
+            <div class="service-card">
+                <h3>Hourly Gaming Sessions</h3>
+                <p>Rent gaming stations by the hour or day. Price: <span class="highlight">AED 15-45/hour</span></p>
+            </div>
+            <div class="service-card">
+                <h3>Gaming Events</h3>
+                <p>Host friendly tournaments in our venue with communities.</p>
+            </div>
         </div>
 
+        <!-- STUDY SERVICES -->
         <h2>📚 Study & Work Services</h2>
         <div class="services-text-grid">
             <div class="service-card">
@@ -283,11 +288,20 @@
                 <p>A peaceful workspace with high-speed WiFi. Price: <span class="highlight">AED 10-25/hour</span></p>
             </div>
             <div class="service-card">
+                <h3>Hourly Desk Rental</h3>
+                <p>Rent a cozy desk with access to WiFi and outlets. Price: <span class="highlight">AED 10-25/hour</span></p>
+            </div>
+            <div class="service-card">
                 <h3>Private Meeting Rooms</h3>
-                <p>Quiet rooms for group projects or focused work. Price: <span class="highlight">AED 45-75/hour</span></p>
+                <p>Quiet rooms for group projects. Price: <span class="highlight">AED 45-75/hour</span></p>
+            </div>
+            <div class="service-card">
+                <h3>Study Passes</h3>
+                <p>Daily, weekly, or monthly passes for unlimited access.</p>
             </div>
         </div>
 
+        <!-- CAFE MENU -->
         <h2>☕ Cafe Menu</h2>
         <h3 class="subsection">Specialty Coffee & Warm Drinks</h3>
         <div class="menu-grid">
@@ -309,8 +323,103 @@
                 <p>Smooth & Comforting</p>
                 <div class="price">AED 13.75</div>
             </div>
+            <div class="menu-item">
+                <img src="americano.jpg" alt="Americano">
+                <h3>Americano</h3>
+                <p>Classic Blend</p>
+                <div class="price">AED 13.00</div>
+            </div>
+            <div class="menu-item">
+                <img src="mocha.jpg" alt="Mocha">
+                <h3>Mocha</h3>
+                <p>Coffee + Chocolate</p>
+                <div class="price">AED 14.25</div>
+            </div>
+            <div class="menu-item">
+                <img src="hot chocolate.jpg" alt="Hot Chocolate">
+                <h3>Hot Chocolate</h3>
+                <p>Cozy & Sweet</p>
+                <div class="price">AED 13.50</div>
+            </div>
+            <div class="menu-item">
+                <img src="ice latte.jpg" alt="Iced Latte">
+                <h3>Iced Latte</h3>
+                <p>Cool & Smooth</p>
+                <div class="price">AED 14.00</div>
+            </div>
+            <div class="menu-item">
+                <img src="vanilla latte.jpg" alt="Vanilla Latte">
+                <h3>Vanilla Latte</h3>
+                <p>Warm & Vanilla-y</p>
+                <div class="price">AED 14.00</div>
+            </div>
+            <div class="menu-item">
+                <img src="matcha latte.jpg" alt="Matcha Latte">
+                <h3>Matcha Latte</h3>
+                <p>Creamy & Soothing</p>
+                <div class="price">AED 14.50</div>
+            </div>
         </div>
 
+        <h3 class="subsection">Cozy Pastries & Snacks</h3>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="croissant.jpg" alt="Croissant">
+                <h3>Croissant</h3>
+                <p>Buttery & Flaky</p>
+                <div class="price">AED 12.50</div>
+            </div>
+            <div class="menu-item">
+                <img src="muffin.jpg" alt="Muffin">
+                <h3>Blueberry Muffin</h3>
+                <p>Fresh & Sweet</p>
+                <div class="price">AED 12.75</div>
+            </div>
+            <div class="menu-item">
+                <img src="cookie.jpg" alt="Cookie">
+                <h3>Choc Chip Cookie</h3>
+                <p>Warm & Delicious</p>
+                <div class="price">AED 11.75</div>
+            </div>
+            <div class="menu-item">
+                <img src="bagel.jpg" alt="Bagel">
+                <h3>Bagel + Cream</h3>
+                <p>Classic Comfort</p>
+                <div class="price">AED 10.50</div>
+            </div>
+            <div class="menu-item">
+                <img src="granola.jpg" alt="Granola">
+                <h3>Granola Bar</h3>
+                <p>Healthy & Tasty</p>
+                <div class="price">AED 3.00</div>
+            </div>
+            <div class="menu-item">
+                <img src="mixed_pastries.jpg" alt="Pastries">
+                <h3>Mixed Pastries</h3>
+                <p>Variety Pack</p>
+                <div class="price">AED 13.50</div>
+            </div>
+            <div class="menu-item">
+                <img src="brownie.jpg" alt="Brownie">
+                <h3>Brownie</h3>
+                <p>Fudgy & Rich</p>
+                <div class="price">AED 12.00</div>
+            </div>
+            <div class="menu-item">
+                <img src="sandwich.jpg" alt="Sandwich">
+                <h3>Sandwich</h3>
+                <p>Fresh & Filling</p>
+                <div class="price">AED 10.50</div>
+            </div>
+            <div class="menu-item">
+                <img src="apple_pie.jpg" alt="Apple Pie">
+                <h3>Apple Pie Slice</h3>
+                <p>Homey & Warm</p>
+                <div class="price">AED 7.75</div>
+            </div>
+        </div>
+
+        <!-- SPECIAL PACKAGES -->
         <h2>🎁 Special Cozy Packages</h2>
         <div class="services-text-grid">
             <div class="service-card">
@@ -320,6 +429,10 @@
             <div class="service-card">
                 <h3>Study Marathon</h3>
                 <p>12-hour study pass with unlimited coffee and tea. Price: <span class="highlight">AED 75-145</span></p>
+            </div>
+            <div class="service-card">
+                <h3>Cozy Membership</h3>
+                <p>Unlimited access + 15% discount. Price: <span class="highlight">AED 250-430/month</span></p>
             </div>
         </div>
     </main>
