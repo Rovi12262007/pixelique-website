@@ -16,10 +16,10 @@
 
         body {
             background-image: url('background.jpg');
-            background-size: cover;            /* Ensures the image covers the whole page */
-            background-attachment: fixed;      /* Keeps the background from moving when you scroll */
-            background-repeat: no-repeat;      /* Prevents the image from tiling */
-            background-position: center;       /* Centers the background image */
+            background-size: cover;            
+            background-attachment: fixed;      
+            background-repeat: no-repeat;      
+            background-position: center;       
             background-color: #ffe6f2;
             font-family: 'VT323', monospace;
             font-size: 20px; 
@@ -50,8 +50,6 @@
             text-align: center;
             margin: -15px -15px 15px -15px; 
             border-bottom: 4px outset #ff99d0;
-            
-            /* Background image slot remains here */
             background-image: url('background banner.jpg'); 
             background-size: cover;
             background-position: center;
@@ -62,7 +60,7 @@
         .main-logo-image {
             width: 100%;      
             max-width: none;  
-            height: auto;     /* RESTORED: Image will now show at its original height */
+            height: auto;     
             display: block;
             mix-blend-mode: multiply; 
         }
@@ -233,6 +231,15 @@
         .blink { animation: blinker 1s linear infinite; }
         @keyframes blinker { 50% { opacity: 0; } }
 
+        /* MUSIC PLAYER STYLING */
+        .music-player {
+            text-align: center;
+            margin: 20px 0;
+            padding: 10px;
+            border: 2px dashed #ff99d0;
+            background: #fff9fc;
+        }
+
         footer {
             margin-top: 20px;
             text-align: center;
@@ -286,12 +293,12 @@
                 <h2>-- Our Cozy Zones --</h2>
                 <div class="zones-container">
                     <div class="zone-card">
-                        <img src="https://web.archive.org/web/20090804113119im_/http://geocities.com/TimesSquare/Labyrinth/3415/controller.gif" class="zone-icon" alt="Gaming GIF">
+                        <img src="https://64.media.tumblr.com/2768e091bb543847123d009a9dd9cda4/tumblr_olxe276oAh1u1eojzo1_r1_1280.gif" class="zone-icon" alt="Gaming GIF">
                         <p><b>Gaming Zone</b></p>
                         <p><small>Experience gaming on high-performance PCs and consoles.</small></p>
                     </div>
                     <div class="zone-card">
-                        <img src="https://web.archive.org/web/20091027083015im_/http://www.geocities.com/the_m_and_m_page/books.gif" class="zone-icon" alt="Study GIF">
+                        <img src="https://www.pinterest.com/muzhibenying99/gif/" class="zone-icon" alt="Study GIF">
                         <p><b>Study Zone</b></p>
                         <p><small>A quiet, comfortable space designed for focused work.</small></p>
                     </div>
@@ -327,6 +334,15 @@
         </center>
     </main>
 
+    <!-- MUSIC PLAYER SECTION -->
+    <div class="music-player">
+        <p>♫ Play Background Music ♫</p>
+        <audio controls loop>
+            <source src="https://youtu.be/Uj93hicGDNc?si=ex5uLJw6_cKnF0Z6" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
     <footer>
         <p>&copy; 2026 Pixelique Café & Gaming Lounge. <br> 
         <span style="font-size: 14px; display: block; margin-top: 10px;">Play, Study, Relax — All in One Cozy World. 🌸☕✨</span></p>
@@ -335,4 +351,4 @@
 </div>
 
 </body>
-</html>```
+</html>
