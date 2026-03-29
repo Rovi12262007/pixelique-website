@@ -28,7 +28,7 @@
 
         .container {
             width: 95%;
-            max-width: 1100px; /* Slightly widened to accommodate larger squares side-by-side */
+            max-width: 1100px;
             margin: 20px auto;
             background-color: #ffffff;
             border: 4px outset #ff99d0;
@@ -121,7 +121,7 @@
             padding: 10px;
             font-size: 32px; 
             border-left: 10px solid #ff00ff;
-            margin-top: 30px;
+            margin-top: 0; /* Adjusted for split layout */
             margin-bottom: 15px;
             text-align: center;
         }
@@ -134,62 +134,75 @@
             font-size: 20px;
         }
 
-        /* SQUARE ZONE CARDS CONTAINER */
+        /* NEW: SPLIT LAYOUT WRAPPER */
+        .split-layout {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            margin-top: 30px;
+        }
+
+        .left-side {
+            flex: 0 0 340px; /* Width of the square + some padding */
+        }
+
+        .right-side {
+            flex: 1;
+        }
+
+        /* SQUARE ZONE CARDS CONTAINER (Stacking them vertically now) */
         .zones-container {
             display: flex;
-            flex-wrap: wrap; 
-            justify-content: center;
+            flex-direction: column; 
             gap: 25px;
             margin-bottom: 30px;
         }
 
-        /* UPDATED: PERFECTLY SQUARE AND LARGER BOXES */
         .zone-card {
             border: 5px solid #ffb3db;
             background: #ffffff;
             text-align: center;
-            width: 320px;       /* Increased size */
-            height: 320px;      /* Fixed Height for Perfect Square */
+            width: 320px;       
+            height: 320px;      
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             padding: 20px;
             box-sizing: border-box;
-            box-shadow: 4px 4px 0px #ff99d0; /* Adding a little depth */
+            box-shadow: 4px 4px 0px #ff99d0;
         }
 
-        /* UPDATED: LARGER INFO TEXT */
         .zone-card p {
             margin: 8px 0;
             line-height: 1.2;
-            font-size: 24px;   /* Made bigger and readable */
+            font-size: 24px;   
         }
 
         .zone-card b {
-            font-size: 30px;   /* Header text inside square made larger */
+            font-size: 30px;   
             color: #ff00ff;
             display: block;
             margin-bottom: 5px;
         }
 
-        /* UPDATED: LARGER GIFS */
         .zone-icon {
             display: block;
-            width: 100px;      /* Increased GIF size */
+            width: 100px;      
             height: 100px; 
             margin-bottom: 15px;
             object-fit: contain; 
             image-rendering: pixelated; 
         }
 
+        /* Adjusted "Why Pixelique" box for right-side alignment */
         .fit-box {
             border: 2px dotted #ff00ff;
-            padding: 15px;
+            padding: 20px;
             background-color: #fff9fc;
-            width: fit-content; 
-            margin: 0 auto 20px auto;
-            font-size: 20px;
+            width: 100%; /* Takes full width of the right column */
+            box-sizing: border-box;
+            font-size: 24px; /* Increased for readability */
         }
 
         .highlight {
@@ -217,6 +230,12 @@
 
         .blink { animation: blinker 1s linear infinite; }
         @keyframes blinker { 50% { opacity: 0; } }
+
+        /* Mobile Fix: Stacks them back if the screen is small */
+        @media (max-width: 800px) {
+            .split-layout { flex-direction: column; align-items: center; }
+            .left-side { flex: none; width: auto; }
+        }
     </style>
 </head>
 <body>
@@ -267,41 +286,55 @@
             </div>
         </section>
 
-        <h2>-- Our Cozy Zones --</h2>
-        <div class="zones-container">
-            <div class="zone-card">
-                <img src="https://web.archive.org/web/20090804113119im_/http://geocities.com/TimesSquare/Labyrinth/3415/controller.gif" class="zone-icon" alt="Gaming GIF">
-                <p><b>Gaming Zone</b></p>
-                <p><small>Experience gaming on high-performance PCs and consoles.</small></p>
+        <!-- SPLIT LAYOUT START -->
+        <div class="split-layout">
+            
+            <!-- LEFT SIDE: COZY ZONES -->
+            <div class="left-side">
+                <h2>-- Our Cozy Zones --</h2>
+                <div class="zones-container">
+                    <div class="zone-card">
+                        <img src="https://web.archive.org/web/20090804113119im_/http://geocities.com/TimesSquare/Labyrinth/3415/controller.gif" class="zone-icon" alt="Gaming GIF">
+                        <p><b>Gaming Zone</b></p>
+                        <p><small>Experience gaming on high-performance PCs and consoles.</small></p>
+                    </div>
+                    <div class="zone-card">
+                        <img src="https://web.archive.org/web/20091027083015im_/http://www.geocities.com/the_m_and_m_page/books.gif" class="zone-icon" alt="Study GIF">
+                        <p><b>Study Zone</b></p>
+                        <p><small>A quiet, comfortable space designed for focused work.</small></p>
+                    </div>
+                    <div class="zone-card">
+                        <img src="https://web.archive.org/web/20091027011432im_/http://geocities.com/Area51/Lair/5103/coffeecup.gif" class="zone-icon" alt="Coffee GIF">
+                        <p><b>Relaxation Lounge</b></p>
+                        <p><small>Unwind with premium coffee, pastries, and snacks.</small></p>
+                    </div>
+                </div>
             </div>
-            <div class="zone-card">
-                <img src="https://web.archive.org/web/20091027083015im_/http://www.geocities.com/the_m_and_m_page/books.gif" class="zone-icon" alt="Study GIF">
-                <p><b>Study Zone</b></p>
-                <p><small>A quiet, comfortable space designed for focused work.</small></p>
-            </div>
-            <div class="zone-card">
-                <img src="https://web.archive.org/web/20091027011432im_/http://geocities.com/Area51/Lair/5103/coffeecup.gif" class="zone-icon" alt="Coffee GIF">
-                <p><b>Relaxation Lounge</b></p>
-                <p><small>Unwind with premium coffee, pastries, and snacks.</small></p>
-            </div>
-        </div>
 
-        <h2>-- Why Pixelique? --</h2>
-        <div class="fit-box">
-            <ul style="list-style-type: '✨ '; padding-left: 20px; margin: 0;">
-                <li><b>Warm Design</b> - Soft pastels and cozy aesthetics</li>
-                <li><b>Comfortable Equipment</b> - Quality gaming PCs</li>
-                <li><b>Soothing Ambiance</b> - Gentle music and warm lighting</li>
-                <li><b>Delicious Refreshments</b> - Specialty coffee and pastries</li>
-                <li><b>Welcoming Community</b> - Connect with like-minded people</li>
-                <li><b>Extended Hours</b> - Open day or night!</li>
-            </ul>
+            <!-- RIGHT SIDE: WHY PIXELIQUE -->
+            <div class="right-side">
+                <h2>-- Why Pixelique? --</h2>
+                <div class="fit-box">
+                    <ul style="list-style-type: '✨ '; padding-left: 20px; margin: 0;">
+                        <li><b>Warm Design</b> - Soft pastels and cozy aesthetics</li>
+                        <li><b>Comfortable Equipment</b> - Quality gaming PCs</li>
+                        <li><b>Soothing Ambiance</b> - Gentle music and warm lighting</li>
+                        <li><b>Delicious Refreshments</b> - Specialty coffee and pastries</li>
+                        <li><b>Welcoming Community</b> - Connect with like-minded people</li>
+                        <li><b>Extended Hours</b> - Open day or night!</li>
+                    </ul>
+                    <div style="margin-top:20px; text-align:center;">
+                        <img src="https://web.archive.org/web/20090830035043/http://geocities.com/Athens/Acropolis/3324/netscape.gif" alt="Netscape">
+                        <img src="https://web.archive.org/web/20091024053915/http://geocities.com/the_m_and_m_page/ie_logo.gif" alt="IE">
+                    </div>
+                </div>
+            </div>
+
         </div>
+        <!-- SPLIT LAYOUT END -->
 
         <center style="margin-top:30px;">
             <p>Visitor Count: <span class="visitor-counter">0001337</span></p>
-            <img src="https://web.archive.org/web/20090830035043/http://geocities.com/Athens/Acropolis/3324/netscape.gif" alt="Netscape">
-            <img src="https://web.archive.org/web/20091024053915/http://geocities.com/the_m_and_m_page/ie_logo.gif" alt="IE">
         </center>
     </main>
 
