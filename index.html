@@ -41,15 +41,22 @@
             margin-bottom: 20px;
         }
 
-        /* UPDATED LOGO STYLE TO MATCH IMAGE */
+        /* UPDATED LOGO STYLE - PIXELATED EFFECT */
         .logo {
             font-family: 'Great Vibes', cursive;
-            font-size: 5rem;
+            font-size: 5.5rem; /* Slightly larger to help the pixel effect */
             font-weight: normal;
-            color: #ff00ff;
             text-decoration: none;
             display: inline-block;
             margin-bottom: 10px;
+            
+            /* Apply the pixelation filter defined in the SVG below */
+            filter: url(#pixelate); 
+            -webkit-filter: url(#pixelate);
+            
+            /* Vintage aliasing look */
+            image-rendering: pixelated;
+            text-rendering: optimizeSpeed;
         }
         
         .logo span.p { color: #f7a9ca; }
@@ -57,11 +64,9 @@
         .logo span.x { color: #b3d683; }
         .logo span.e1 { color: #b3d683; }
         .logo span.l { color: #a4d7f1; }
-        .logo span.i2 { color: #d4b6f0; }
-        .logo span.que { 
-            color: #fdfdfd; 
-            -webkit-text-stroke: 1px #999;
-        }
+        /* "ique" section - faint pastel pink */
+        .logo span.i2 { color: #ffdae9; }
+        .logo span.que { color: #ffdae9; }
 
         /* The iconic Marquee */
         .marquee-container {
@@ -207,9 +212,20 @@
 </head>
 <body>
 
+<!-- Hidden SVG Filter to create the pixelated effect -->
+<svg width="0" height="0" style="position:absolute;">
+  <filter id="pixelate" x="0" y="0">
+    <!-- This creates a grid of "pixels" -->
+    <feFlood x="2" y="2" height="1" width="1" />
+    <feComposite width="3" height="3" />
+    <feTile result="a" />
+    <feComposite in="SourceGraphic" in2="a" operator="in" />
+    <feMorphology operator="dilate" radius="1" />
+  </filter>
+</svg>
+
 <div class="container">
     <header>
-        <!-- UPDATED LOGO HTML -->
         <div class="logo">
             <span class="p">P</span><span class="i1">i</span><span class="x">x</span><span class="e1">e</span><span class="l">l</span><span class="i2">i</span><span class="que">que</span>
         </div>
