@@ -42,19 +42,27 @@
             margin-bottom: 20px;
         }
 
-        /* UPDATED: CENTERED & SMALLER LOGO */
+        /* UPDATED: LOGO WITH PNG BACKGROUND */
         .logo {
-            display: block; /* Changed to block for easier margin centering */
+            display: block; 
             text-align: center;
             margin-bottom: 15px;
+            
+            /* THIS USES YOUR PNG FILE AS A BACKGROUND */
+            background-image: url('background.png'); 
+            background-size: cover;
+            background-position: center;
+            
+            padding: 25px 0; /* Adjust this to show more or less of the background.png */
+            border: 2px inset #ff99d0; 
         }
 
         .main-logo-image {
-            max-width: 500px; /* Reduced from 800px to make it smaller */
+            max-width: 500px; 
             width: 100%;      
             height: auto;     
             display: block;
-            margin: 0 auto;   /* Perfectly centers the image */
+            margin: 0 auto;   
         }
 
         .marquee-container {
@@ -241,6 +249,27 @@
         }
     </style>
 </head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="logo">
+            <!-- Your logo image stays here -->
+            <img src="banner.jpg" alt="Welcome to Pixelique Cafe" class="main-logo-image">
+        </div>
+
+        <div class="marquee-container">
+            <marquee scrollamount="5">🌸 Welcome to Pixelique Café & Gaming Lounge! Play, Study, Relax — All in One Cozy World! 🌸</marquee>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-home">Home</a></li>
+                <li><a href="about.html" class="nav-about">About Us</a></li>
+                <li><a href="services.html" class="nav-services">Services & Menu</a></li>
+                <li><a href="contact.html" class="nav-contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
         <h1>About Pixelique</h1>
