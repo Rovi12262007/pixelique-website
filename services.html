@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>*** Welcome to Pixelique Café ***</title>
+    <title>*** Services & Menu - Pixelique Café ***</title>
+    <!-- Adding Great Vibes for Header and VT323 for thinner pixel font -->
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=VT323&display=swap" rel="stylesheet">
     <style>
         /* 2000s Scrollbar */
@@ -14,7 +15,11 @@
         }
 
         body {
-            background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+            background-image: url('background.jpg');
+            background-size: cover;            
+            background-attachment: fixed;      
+            background-repeat: no-repeat;      
+            background-position: center;       
             background-color: #ffe6f2;
             font-family: 'VT323', monospace;
             font-size: 20px; 
@@ -32,32 +37,32 @@
             background-color: #ffffff;
             border: 4px outset #ff99d0;
             padding: 15px;
+            overflow: hidden; 
         }
 
         header {
             text-align: center;
-            border-bottom: 3px dashed #ff66b2;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
         }
 
+        /* LOGO WITH PNG BACKGROUND */
         .logo {
             display: block; 
             text-align: center;
-            margin-bottom: 15px;
-            background-image: url('background.png'); 
+            margin: -15px -15px 15px -15px; 
+            border-bottom: 4px outset #ff99d0;
+            background-image: url('background banner.jpg'); 
             background-size: cover;
             background-position: center;
-            padding: 25px 0;
-            border: 2px inset #ff99d0; 
+            overflow: hidden;
+            line-height: 0; 
         }
 
         .main-logo-image {
-            max-width: 500px; 
             width: 100%;      
+            max-width: none;  
             height: auto;     
             display: block;
-            margin: 0 auto;   
+            mix-blend-mode: multiply; 
         }
 
         .marquee-container {
@@ -69,13 +74,14 @@
             margin: 10px 0;
         }
 
-        /* NAVIGATION */
+        /* NAVIGATION DESIGN (PILL BUTTONS) */
         nav {
             background: linear-gradient(to bottom, #fff6f9, #ffd9e8); 
             border: 2px solid #ffb3db;
             padding: 15px 10px;
             text-align: center;
             border-radius: 10px;
+            margin-bottom: 20px;
         }
 
         nav ul { list-style: none; padding: 0; margin: 0; }
@@ -88,17 +94,42 @@
             padding: 8px 25px;
             border-radius: 50px; 
             display: inline-block;
+            background: white;
             background: linear-gradient(to bottom, #ffffff 0%, #f2f2f2 100%); 
             box-shadow: inset 0 2px 5px rgba(255,255,255,0.8), 0 3px 6px rgba(0,0,0,0.1);
             transition: transform 0.2s;
         }
+
+        nav a:hover { transform: scale(1.05); filter: brightness(1.1); }
 
         .nav-home { border: 4px solid #ff4da6; color: #ff4da6; }
         .nav-about { border: 4px solid #a64dff; color: #a64dff; }
         .nav-services { border: 4px solid #7cdb4f; color: #7cdb4f; }
         .nav-contact { border: 4px solid #ffcc00; color: #ffcc00; }
 
-        h1 { text-align: center; color: #ff00ff; font-size: 45px; text-shadow: 2px 2px #ffb3db; }
+        /* BANNER SECTION */
+        .banner {
+            border: 5px double #ff99d0;
+            margin: 20px 0;
+            padding: 20px;
+            text-align: center;
+            background: #fff0f5;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ffb3db; 
+            border-top: 2px solid #ffffff;
+            border-left: 2px solid #ffffff;
+            border-right: 2px solid #666666;
+            border-bottom: 2px solid #666666;
+            padding: 10px 25px;
+            color: #000;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        h1 { text-align: center; color: #ff00ff; font-size: 45px; text-shadow: 2px 2px #ffb3db; margin-top: 20px;}
 
         h2 {
             background-color: #ffb3db;
@@ -190,6 +221,9 @@
             font-weight: bold;
         }
 
+        .blink { animation: blinker 1s linear infinite; }
+        @keyframes blinker { 50% { opacity: 0; } }
+
         footer {
             margin-top: 40px;
             text-align: center;
@@ -210,11 +244,14 @@
 <div class="container">
     <header>
         <div class="logo">
-            <img src="banner.jpg" alt="Welcome to Pixelique Cafe" class="main-logo-image">
+            <!-- Header Image -->
+            <img src="banner.png" alt="Welcome to Pixelique Cafe" class="main-logo-image">
         </div>
+
         <div class="marquee-container">
             <marquee scrollamount="5">🌸 Welcome to Pixelique Café & Gaming Lounge! Play, Study, Relax — All in One Cozy World! 🌸</marquee>
         </div>
+        
         <nav>
             <ul>
                 <li><a href="index.html" class="nav-home">Home</a></li>
@@ -224,6 +261,14 @@
             </ul>
         </nav>
     </header>
+
+    <!-- NEW BANNER SECTION ADDED HERE -->
+    <div class="banner">
+        <img src="logo.png" alt="Pixelique Logo" style="max-width: 200px; height: auto; margin-bottom: 10px;">
+        <p class="blink" style="margin-top: 10px; font-weight: bold;">*** ~ Your Cozy Haven for Gaming, Studying & Relaxation ~ ***</p>
+        <br>
+        <a href="services.html" class="cta-button">CLICK HERE TO EXPLORE!</a>
+    </div>
 
     <main>
         <h1>Services & Menu</h1>
@@ -270,7 +315,7 @@
             </div>
         </div>
 
-        <!-- CAFE MENU 3x3 -->
+        <!-- CAFE MENU -->
         <h2>☕ Cafe Menu</h2>
         <h3 class="subsection">Specialty Coffee & Warm Drinks</h3>
         <div class="menu-grid">
@@ -292,6 +337,7 @@
                 <p>Smooth & Comforting</p>
                 <div class="price">AED13.75</div>
             </div>
+            <!-- ... additional menu items remain same ... -->
             <div class="menu-item">
                 <img src="americano.jpg" alt="Americano">
                 <h3>Americano</h3>
@@ -332,84 +378,35 @@
 
         <h3 class="subsection">Cozy Pastries & Snacks</h3>
         <div class="menu-grid">
+            <!-- Note: Replace YOUR-IMAGE.jpg with your actual file names -->
             <div class="menu-item">
-                <img src="YOUR-IMAGE.jpg" alt="Croissant">
+                <img src="croissant.jpg" alt="Croissant">
                 <h3>Croissant</h3>
                 <p>Buttery & Flaky</p>
                 <div class="price">AED12.50</div>
             </div>
             <div class="menu-item">
-                <img src="YOUR-IMAGE.jpg" alt="Muffin">
+                <img src="muffin.jpg" alt="Muffin">
                 <h3>Blueberry Muffin</h3>
                 <p>Fresh & Sweet</p>
                 <div class="price">AED12.75</div>
             </div>
             <div class="menu-item">
-                <img src="YOUR-IMAGE.jpg" alt="Cookie">
+                <img src="cookie.jpg" alt="Cookie">
                 <h3>Choc Chip Cookie</h3>
                 <p>Warm & Delicious</p>
                 <div class="price">AED11.75</div>
-            </div>
-            <div class="menu-item">
-                <img src="YOUR-IMAGE.jpg" alt="Bagel">
-                <h3>Bagel + Cream</h3>
-                <p>Classic Comfort</p>
-                <div class="price">AED10.50</div>
-            </div>
-            <div class="menu-item">
-                <img src="YOUR-IMAGE.jpg" alt="Granola">
-                <h3>Granola Bar</h3>
-                <p>Healthy & Tasty</p>
-                <div class="price">AED3.00</div>
-            </div>
-            <div class="menu-item">
-                <img src="YOUR-IMAGE.jpg" alt="Pastries">
-                <h3>Mixed Pastries</h3>
-                <p>Variety Pack</p>
-                <div class="price">AED13.50</div>
-            </div>
-            <div class="menu-item">
-                <img src="YOUR-IMAGE.jpg" alt="Brownie">
-                <h3>Brownie</h3>
-                <p>Fudgy & Rich</p>
-                <div class="price">AED12.00</div>
-            </div>
-            <div class="menu-item">
-                <img src="YOUR-IMAGE.jpg" alt="Sandwich">
-                <h3>Sandwich</h3>
-                <p>Fresh & Filling</p>
-                <div class="price">AED10.50</div>
-            </div>
-            <div class="menu-item">
-                <img src="YOUR-IMAGE.jpg" alt="Apple Pie">
-                <h3>Apple Pie Slice</h3>
-                <p>Homey & Warm</p>
-                <div class="price">AED7.75</div>
-            </div>
-        </div>
-
-        <!-- SPECIAL PACKAGES -->
-        <h2>🎁 Special Cozy Packages</h2>
-        <div class="services-text-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
-            <div class="service-card">
-                <h3>Gaming Hangout Package</h3>
-                <p>Gather your friends for a cozy gaming session! Includes 4 gaming stations, snacks, and warm drinks. Price: <span class="highlight">$60-100+</span></p>
-            </div>
-            <div class="service-card">
-                <h3>Study Marathon Package</h3>
-                <p>12-hour or 24-hour study pass with unlimited coffee, tea, and snacks to fuel your studying. Price: <span class="highlight">$20-40</span></p>
-            </div>
-            <div class="service-card">
-                <h3>Cozy Membership</h3>
-                <p>Unlimited access to gaming/study zones, 15% discount on menu, and exclusive member perks. Price: <span class="highlight">$69-119/month</span></p>
             </div>
         </div>
 
     </main>
 
     <footer>
-        <p>&copy; 2026 Pixelique Café & Gaming Lounge. Play, Study, Relax — All in One Cozy World. 🌸☕✨</p>
+        <p>&copy; 2026 Pixelique Café & Gaming Lounge. <br>
+        <span style="font-size: 14px; display: block; margin-top: 10px;">Play, Study, Relax — All in One Cozy World. 🌸☕✨</span></p>
+        <p><marquee direction="right" width="50%">^_^ Hope you found something tasty! ^_^</marquee></p>
     </footer>
 </div>
+
 </body>
 </html>
