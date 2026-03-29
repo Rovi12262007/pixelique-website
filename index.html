@@ -44,15 +44,15 @@
             margin-bottom: 20px;
         }
 
-        /* HEADER LOGO - RESTORED TO ORIGINAL SCRIPT FONT */
+        /* HEADER LOGO - PLACED SIDE-BY-SIDE */
         .logo {
             font-family: 'Great Vibes', cursive;
-            font-size: 5rem; 
-            font-weight: normal;
             text-decoration: none;
-            display: inline-block;
+            display: flex; /* Using flex to put items side-by-side */
+            justify-content: center;
+            align-items: baseline; /* Aligns text along the bottom edge */
             margin-bottom: 10px;
-            line-height: 1;
+            gap: 15px; /* Space between "Welcome to" and "Pixelique" */
             
             /* Apply the pixelation filter */
             filter: url(#pixelate); 
@@ -61,10 +61,14 @@
         }
         
         .logo .welcome-text {
-            display: block;
-            font-size: 2.5rem;
-            color: #f7a9ca; /* Matching the pink in the logo */
-            margin-bottom: -10px;
+            font-size: 3rem;
+            color: #f7a9ca;
+            white-space: nowrap;
+        }
+
+        .logo-main {
+            font-size: 5rem;
+            white-space: nowrap;
         }
 
         .logo span.p { color: #f7a9ca; }
@@ -230,7 +234,9 @@
     <header>
         <div class="logo">
             <span class="welcome-text">Welcome to</span>
-            <span class="p">P</span><span class="i1">i</span><span class="x">x</span><span class="e1">e</span><span class="l">l</span><span class="i2">i</span><span class="que">que</span>
+            <div class="logo-main">
+                <span class="p">P</span><span class="i1">i</span><span class="x">x</span><span class="e1">e</span><span class="l">l</span><span class="i2">i</span><span class="que">que</span>
+            </div>
         </div>
 
         <div class="marquee-container">
