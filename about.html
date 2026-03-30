@@ -46,7 +46,7 @@
             text-align: center;
             margin: -15px -15px 15px -15px; 
             border-bottom: 4px outset #ff99d0;
-            background-image: url('background-banner.jpg'); 
+            background-image: url('background banner.jpg'); 
             background-size: cover;
             background-position: center;
             overflow: hidden;
@@ -94,6 +94,8 @@
             transition: transform 0.2s;
         }
 
+        nav a:hover { transform: scale(1.05); filter: brightness(1.1); }
+
         .nav-home { border: 4px solid #ff4da6; color: #ff4da6; }
         .nav-about { border: 4px solid #a64dff; color: #a64dff; }
         .nav-services { border: 4px solid #7cdb4f; color: #7cdb4f; }
@@ -117,7 +119,7 @@
             font-size: 20px;
         }
 
-        h1 { text-align: center; color: #ff00ff; font-size: 45px; text-shadow: 2px 2px #ffb3db; }
+        h1 { text-align: center; color: #ff00ff; font-size: 45px; text-shadow: 2px 2px #ffb3db; margin-top: 10px;}
 
         h2 {
             background-color: #ffb3db;
@@ -130,18 +132,41 @@
             text-align: center;
         }
 
-        .value-card {
+        /* FLEXBOX FOR CORE VALUES */
+        .values-container {
+            display: flex;
+            gap: 15px;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .value-box {
+            flex: 1;
             border: 2px dotted #ff00ff;
             padding: 15px;
             background-color: #fff9fc;
-            margin-bottom: 15px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .value-box h3 {
+            color: #ff00ff;
+            margin-top: 0;
+            font-size: 24px;
+        }
+
+        .value-box p {
+            font-size: 18px;
+            line-height: 1.2;
         }
 
         .highlight { color: #ff0000; background: yellow; padding: 0 4px; }
         .blink { animation: blinker 1s linear infinite; }
         @keyframes blinker { 50% { opacity: 0; } }
 
-        /* FLEXBOX SETUP */
+        /* SIDE BY SIDE STORY/MISSION */
         .side-by-side-container {
             display: flex;
             gap: 20px;
@@ -156,8 +181,8 @@
         }
 
         /* Responsive Fix: Stack boxes on mobile */
-        @media (max-width: 700px) {
-            .side-by-side-container {
+        @media (max-width: 800px) {
+            .side-by-side-container, .values-container {
                 flex-direction: column;
             }
         }
@@ -218,17 +243,21 @@
             </div>
 
             <h2>Our Core Values</h2>
-            <div class="value-card">
-                <h3 style="color:#ff00ff;">🎮 Joyful Gaming</h3>
-                <p>We create a fun, inclusive environment where gaming is about connection and joy, not pressure.</p>
-            </div>
-            <div class="value-card">
-                <h3 style="color:#ff00ff;">📚 Supportive Learning</h3>
-                <p>We understand the pressures students face. Our study zone is a judgment-free space to help you focus.</p>
-            </div>
-            <div class="value-card">
-                <h3 style="color:#ff00ff;">🌿 Wellness & Comfort</h3>
-                <p>Your well-being matters. From soft lighting to warm beverages, every detail is designed for your comfort.</p>
+            
+            <!-- NEW SIDE-BY-SIDE CORE VALUES BOXES -->
+            <div class="values-container">
+                <div class="value-box">
+                    <h3>🎮 Joyful Gaming</h3>
+                    <p>We create a fun, inclusive environment where gaming is about connection and joy, not pressure.</p>
+                </div>
+                <div class="value-box">
+                    <h3>📚 Supportive Learning</h3>
+                    <p>We understand the pressures students face. Our study zone is a judgment-free space to help you focus.</p>
+                </div>
+                <div class="value-box">
+                    <h3>🌿 Wellness & Comfort</h3>
+                    <p>Your well-being matters. From soft lighting to warm beverages, every detail is designed for your comfort.</p>
+                </div>
             </div>
 
             <h2>Why We're Different</h2>
@@ -243,4 +272,3 @@
 </div>
 
 </body>
-</html>
